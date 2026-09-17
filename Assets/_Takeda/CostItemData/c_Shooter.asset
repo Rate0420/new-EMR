@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a08cfff6061160c4dabe5fa9633f7202, type: 3}
+  m_Name: c_Shooter
+  m_EditorClassIdentifier: 
+  itemType: 7
+  itemName: "\u30D5\u30EA\u30FC\u30B7\u30E5\u30FC\u30C6\u30A3\u30F3\u30B0"
+  description: "30\u79D2\u9593\u597D\u304D\u306A\u4F4D\u7F6E\u306B\u30E1\u30C0\u30EB\u3092\u767A\u5C04\u3067\u304D\u308B"
+  cost: d0070000d0070000d0070000d0070000d0070000d0070000d0070000
+  icon: {fileID: 21300000, guid: 0366c24a6fdecc54d9f5c827e78b5268, type: 3}
+  effect: {fileID: 0}
+  isConsumable: 1
+  level: 0

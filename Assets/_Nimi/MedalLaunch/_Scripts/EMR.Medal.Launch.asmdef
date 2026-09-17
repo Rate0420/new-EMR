@@ -1,0 +1,20 @@
+{
+    "name": "EMR.Medal.Launch",
+    "rootNamespace": "EMR.Medal.Launch",
+    "references": [
+        "GUID:de769b98bbd69954ab3df3878c5123a2",
+        "GUID:22caa4807f77a1b4ba0704e06c940681",
+        "GUID:6158a352aa97dc34cbaeb169d78a6560",
+        "GUID:6a83097dfef916440ac8537e021c0499",
+        "GUID:bbc5a9ce90f50d347a460c1245106a6c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

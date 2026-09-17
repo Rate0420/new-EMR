@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72010afa68ba0b74688ee2a6b904bd5e, type: 3}
+  m_Name: S_StoryData_Test
+  m_EditorClassIdentifier: 
+  isMiniEvent: 0
+  entries:
+  - text: "\u3053\u308C\u306F\u30C6\u30B9\u30C8\u7528\u6587\u7AE0\u3060\u305E\uFF01"
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 21300000, guid: 21d37e0276214854d8dc994eb9453fc3, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 5c40a95d79cd3024fb77b60f1a87bce1, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u4F55\u304B\u9078\u629E\u80A2\u3092\u9078\u3093\u3067\u307F\u3066\u304F\u308C\uFF01"
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 21300000, guid: 21d37e0276214854d8dc994eb9453fc3, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 5c40a95d79cd3024fb77b60f1a87bce1, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices:
+    - label: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6\u597D\u304D"
+      jumpToIndex: 2
+      statusDeltas: []
+      resourceCost: 0
+    - label: "\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3\u306E\u65B9\u304C\u3044\u3044\u3060\u308D\uFF01\uFF01"
+      jumpToIndex: 3
+      statusDeltas: []
+      resourceCost: 0
+  - text: "\u306A...\u305D\u306E...\u6B63\u9762\u304B\u3089\u597D\u610F\u3092\u4F1D\u3048\u3089\u308C\u308B\u3068\u3060\u306A..."
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 21300000, guid: 21d37e0276214854d8dc994eb9453fc3, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 5c40a95d79cd3024fb77b60f1a87bce1, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: TestScene
+    nextIndex: -1
+    choices: []
+  - text: "\u3042\u3089\u3001\u3084\u306F\u308A\u8CB4\u65B9\u306F\u898B\u308B\u76EE\u304C\u3042\u308B\u308F\u306D\u3002...\u3055\u3066\u3001\u3053\u3053\u3067\u554F\u984C\u3088\u3002\u79C1\u306E\u4F5C\u3089\u308C\u305F\u7D4C\u7DEF\u3001\u77E5\u3063\u3066\u3044\u308B\uFF1F"
+    charName: "\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3"
+    char1Sprite: {fileID: 21300000, guid: 32fbf14f1005c3c44820670021a1d12e, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 9e30510c639a9af499c132213e700ca5, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices:
+    - label: "\u9152\u306E\u52E2\u3044"
+      jumpToIndex: 4
+      statusDeltas: []
+      resourceCost: 0
+    - label: "\u524D\u65E5\u306B\u6708\u59EB\u3092\u3084\u3063\u305F"
+      jumpToIndex: 5
+      statusDeltas: []
+      resourceCost: 0
+    - label: "\u6388\u696D\u30673D\u30E2\u30C7\u30EB\u304C\u5FC5\u8981\u3060\u3063\u305F"
+      jumpToIndex: 4
+      statusDeltas: []
+      resourceCost: 0
+  - text: "\u7B54\u3048\u306F\u5168\u90E8\u6B63\u89E3\u3088...\u3075\u3075\u3075..."
+    charName: "\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3"
+    char1Sprite: {fileID: 21300000, guid: 32fbf14f1005c3c44820670021a1d12e, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 9e30510c639a9af499c132213e700ca5, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u3080\u3001\u901A\u308A\u96E8\u304B...\u6FE1\u308C\u3066\u3057\u307E\u3046\u306A...\u5098\u306F\u5C11\u5E74\u306E\u4E00\u672C\u3057\u304B\u306A\u3044\u3057\u3001\u3069\u3046\u3059\u3079\u304D\u304B..."
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 21300000, guid: 21d37e0276214854d8dc994eb9453fc3, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 5c40a95d79cd3024fb77b60f1a87bce1, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices:
+    - label: "...\u4ED5\u65B9\u306A\u3044\u3001\u5098\u306B\u4E00\u7DD2\u306B\u5165\u3063\u3066\u884C\u3053\u3046\u3002"
+      jumpToIndex: 0
+      statusDeltas: []
+      resourceCost: 0
+    - label: "\u3069\u3063\u304B\u3067\u96E8\u5BBF\u308A\u3059\u308B\u304B\u3002"
+      jumpToIndex: 0
+      statusDeltas: []
+      resourceCost: 0

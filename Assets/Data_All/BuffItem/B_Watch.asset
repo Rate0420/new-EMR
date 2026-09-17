@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a08cfff6061160c4dabe5fa9633f7202, type: 3}
+  m_Name: B_Watch
+  m_EditorClassIdentifier: 
+  itemType: 2
+  itemName: "\u9AD8\u305D\u3046\u306A\u8155\u6642\u8A08"
+  description: "\u30E9\u30A6\u30F3\u30C9\u958B\u59CB\u6642\u3001\u73FE\u5728\u306E\u6240\u6301\u30E1\u30C0\u30EB\u304C\\n\u7D4C\u904E\u30E9\u30A6\u30F3\u30C9\xD72%\u5897\u52A0\u3059\u308B "
+  cost: 5e0100000d020000ee020000e80300001405000040060000d0070000
+  icon: {fileID: 21300000, guid: e5b9312826961cf48a689760078e3386, type: 3}
+  effect: {fileID: 0}
+  isConsumable: 0
+  level: 0

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="コメント&#xD;&#xA;">
+    <Position X="7.375" Y="1.187" Height="1.781" Width="1.7" />
+  </Comment>
+  <Class Name="EMR.Medal.Refund.MedalRefundBehaviour">
+    <Position X="5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAABAAAAAAEAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\_Nimi\MedalRefund\_Scripts\MedalRefundBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Yu Gothic UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,22 @@
+{
+    "name": "EMR.Medal.Refund",
+    "rootNamespace": "EMR.Medal.Refund",
+    "references": [
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:776d03a35f1b52c4a9aed9f56d7b4229",
+        "GUID:22caa4807f77a1b4ba0704e06c940681",
+        "GUID:de769b98bbd69954ab3df3878c5123a2",
+        "GUID:6a83097dfef916440ac8537e021c0499",
+        "GUID:a23bc9e028fad4b4fb9ffc3457999958",
+        "GUID:85fcb3e3aa29e9d47a008adfe8096a95"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
