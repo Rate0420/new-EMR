@@ -8,8 +8,8 @@ using EMR.Utility;
 namespace EMR.Medal.Refund
 {
     /// <summary>
-    /// <see cref="GameState.OnRefundRequested"/> 繧貞女縺大叙繧翫・
-    /// 螳滄圀縺ｫ謇謖√Γ繝繝ｫ縺ｸ譫壽焚繧貞刈邂励☆繧九さ繝ｳ繝昴・繝阪Φ繝医・
+    /// MedalRefundNotifier.OnRefundRequested を受け取り、
+    /// 実際に払い戻しメダルを生成するコンポーネント。
     /// </summary>
     public class MedalRefundBehaviour : MonoBehaviour
     {
@@ -17,25 +17,45 @@ namespace EMR.Medal.Refund
         [SerializeField] MedalRefundSpawner[] _spawner;
         [SerializeField] ProbabilitySelector<GameObject> _enemySelector;
 
-        // 謇輔＞謌ｻ縺励・騾夂衍
+        // 払い戻しの通知元
         private MedalRefundNotifier _refundNotifier;
 
-        public System.Action OnRefundFinished;  // 邨ゆｺ・夂衍
+        public System.Action OnRefundFinished;  // 終了通知
 
-        public System.Action<int> OnMedalSpawned; // 谿九ｊ譫壽焚
+        public System.Action<int> OnMedalSpawned; // 残り枚数
 
 
         private void Start()
         {
             _refundNotifier = GameState.Instance.RefundNotifier;
-            _refundNotifier.OnRefundRequested += HandleRefundRequested;
+            Subscribe();
+        }
+
+        private void OnEnable()
+        {
+            // SetActive(false)→(true)で再度有効化された時に、購読が切れたままにならないようにする。
+            // Start()より先にOnEnableが呼ばれるケース(最初の有効化時)では
+            // _refundNotifierがまだnullなので、その場合はStart()側の呼び出しで購読される。
+            Subscribe();
         }
 
         private void OnDisable()
         {
+            Unsubscribe();
+        }
+
+        private void Subscribe()
+        {
+            if (_refundNotifier == null) return;
+            // 二重登録を避けるため、一度外してから登録する
+            _refundNotifier.OnRefundRequested -= HandleRefundRequested;
+            _refundNotifier.OnRefundRequested += HandleRefundRequested;
+        }
+
+        private void Unsubscribe()
+        {
             if (_refundNotifier != null)
             {
-                // 繧､繝吶Φ繝医ｒ隗｣髯､
                 _refundNotifier.OnRefundRequested -= HandleRefundRequested;
             }
         }
@@ -46,9 +66,9 @@ namespace EMR.Medal.Refund
         }
 
         /// <summary>
-        /// 謇輔＞謌ｻ縺苓ｦ∵ｱゅｒ蜿励￠蜿悶ｊ縲√Γ繝繝ｫ繧呈賜蜃ｺ縺吶ｋ
+        /// 払い戻し要求を受け取り、メダルを排出する
         /// </summary>
-        /// <param name="amount">謇輔＞謌ｻ縺吶Γ繝繝ｫ縺ｮ譫壽焚</param>
+        /// <param name="refundAmount">払い戻すメダルの枚数</param>
         private async UniTask ProcessRefundAsync(int refundAmount)
         {
             Debug.Log($"Refund: {refundAmount}");
