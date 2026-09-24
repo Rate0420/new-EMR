@@ -44,6 +44,13 @@ namespace EMR.Core
         // 名前ごとの保持カウント(同じ名前が入れ子でAcquireしても崩れないように)
         readonly Dictionary<string, int> _holders = new Dictionary<string, int>();
 
+        // Acquire呼び出し中(WaitUntilで待機中も含む)の人数。
+        // 「実際にロックを持っているか」より広く、「Acquireを呼んでからReleaseするまで」をカバーする。
+        // これがある間はずっとpauseRequestedをtrueにしておくことで、
+        // 「リールが止まった瞬間、Acquire側がまだpauseRequestedを立てていない一瞬の隙」に
+        // ReserveManagerが次のスピンを始めてしまう競合を防ぐ。
+        readonly Dictionary<string, int> _pending = new Dictionary<string, int>();
+
         /// <summary>
         /// ReserveManagerはシーン上のオブジェクトのため、GameStateの初期化時点では
         /// まだ存在しないことがある。ReserveManager自身のStart()等から、準備できた時点で
@@ -57,6 +64,9 @@ namespace EMR.Core
 
         /// <summary>誰か(自分以外)がロックを持っているか</summary>
         public bool IsLocked => _holders.Count > 0;
+
+        /// <summary>誰かがAcquireを呼んでいる(待機中含む)か</summary>
+        public bool HasPending => _pending.Count > 0;
 
         /// <summary>現在のロック保持者一覧(デバッグ表示用)</summary>
         public IEnumerable<string> Holders => _holders.Keys;
@@ -77,10 +87,15 @@ namespace EMR.Core
         /// <summary>
         /// ロックを取得する。
         /// 「自分以外の誰かがロックを持っている間」「リールが回転中の間」は自動的に待つ。
-        /// 取得した瞬間からリールも一時停止状態になる(pauseRequested = true)。
+        /// pauseRequestedは待ち始めた瞬間(取得できるかどうかを問わず)ただちにtrueにする。
+        /// これにより、リールが止まった直後の1フレームで別のスピンが割り込むのを防ぐ。
         /// </summary>
         public IEnumerator Acquire(string who)
         {
+            if (!_pending.ContainsKey(who)) _pending[who] = 0;
+            _pending[who]++;
+            if (_reserveManager != null) _reserveManager.pauseRequested = true;
+
             yield return new WaitUntil(() =>
                 !IsHeldByOthers(who)
                 && (_reserveManager == null || !_reserveManager.isProcessing || _reserveManager.isBetweenReserves)
@@ -89,13 +104,12 @@ namespace EMR.Core
             if (!_holders.ContainsKey(who)) _holders[who] = 0;
             _holders[who]++;
 
-            if (_reserveManager != null) _reserveManager.pauseRequested = true;
             Debug.Log($"[GameLock] Acquire: {who} (保持者:{string.Join(",", Holders)})");
         }
 
         /// <summary>
         /// ロックを解放する。誰も持っていなければ自動的にリールの一時停止も解除される。
-        /// 保持していない名前を解放しようとしても何も起きない(安全に無視される)。
+        /// 保持していない(Acquireしていない)名前を解放しようとしても何も起きない(安全に無視される)。
         /// </summary>
         public void Release(string who)
         {
@@ -105,9 +119,15 @@ namespace EMR.Core
                 if (_holders[who] <= 0) _holders.Remove(who);
             }
 
+            if (_pending.ContainsKey(who))
+            {
+                _pending[who]--;
+                if (_pending[who] <= 0) _pending.Remove(who);
+            }
+
             Debug.Log($"[GameLock] Release: {who} (残り保持者:{string.Join(",", Holders)})");
 
-            if (!IsLocked && _reserveManager != null)
+            if (!HasPending && !IsLocked && _reserveManager != null)
             {
                 _reserveManager.pauseRequested = false;
             }

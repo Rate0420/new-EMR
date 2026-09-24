@@ -15,10 +15,10 @@ MonoBehaviour:
   _roundRequirements:
   - <RequiredBallCount>k__BackingField: 4
     <RequiredMedalCount>k__BackingField: 100
-  - <RequiredBallCount>k__BackingField: 888
-    <RequiredMedalCount>k__BackingField: 888
-  - <RequiredBallCount>k__BackingField: 0
-    <RequiredMedalCount>k__BackingField: 7
+  - <RequiredBallCount>k__BackingField: 6
+    <RequiredMedalCount>k__BackingField: 200
+  - <RequiredBallCount>k__BackingField: 8
+    <RequiredMedalCount>k__BackingField: 400
   - <RequiredBallCount>k__BackingField: 0
     <RequiredMedalCount>k__BackingField: 8
   - <RequiredBallCount>k__BackingField: 0
