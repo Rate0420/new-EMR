@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class TitleManager : MonoBehaviour
@@ -14,6 +13,7 @@ public class TitleManager : MonoBehaviour
     private void Start()
     {
         SetUpStart();
+        BGMManager.Instance.BGMChange(0);
         volumeSet.VolumeSetScene();
     }
 

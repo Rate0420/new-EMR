@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/_Tsujita/TestScenes/TitleScene.unity
     guid: 94e7d1c52203cbb4fa0d14bca5047554
   - enabled: 1
+    path: Assets/_Tsujita/Scene/MenuScene.unity
+    guid: c8273aa2f89204f48a9556b819e55262
+  - enabled: 1
     path: Assets/Projects/Scene/TestScene_sakaguchi_v3.unity
     guid: 2c6b9f3e0340f8f4f813f82bad213d09
   - enabled: 1

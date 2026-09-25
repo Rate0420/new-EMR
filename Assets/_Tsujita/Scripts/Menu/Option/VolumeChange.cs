@@ -15,7 +15,7 @@ public class VolumeChange : MonoBehaviour
     [SerializeField] private Slider seSlider;
     [SerializeField] private Slider voiceSlider;
 
-    [SerializeField] private AudioSource bgmSource, voiceSource;
+    [SerializeField] private AudioSource voiceSource;
     [SerializeField] private TextMeshProUGUI bgmText, seText, voiceText;
 
     private void Start()
@@ -43,7 +43,7 @@ public class VolumeChange : MonoBehaviour
         setSEVolume = PlayerPrefs.GetFloat("SEVolume", 5);
         setVoiceVolume = PlayerPrefs.GetFloat("VoiceVolume", 5);
 
-        bgmSource.volume = setBGMVolume / 10f;
+        BGMManager.Instance.SetVolume(setBGMVolume);
         SEManagerMenu.Instance.seSource.volume = setSEVolume / 10f;
         voiceSource.volume = setVoiceVolume / 10f;
 
@@ -55,8 +55,8 @@ public class VolumeChange : MonoBehaviour
     // BGM�̕ύX
     public void BGMSetVolume(float value)
     {
-        bgmSource.volume = value / 10f;
-        setBGMVolume = bgmSlider.value;
+        setBGMVolume = value;
+        BGMManager.Instance.SetVolume(value);
         bgmText.text = setBGMVolume.ToString();
     }
     // SE�̕ύX
