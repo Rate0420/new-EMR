@@ -75,6 +75,7 @@ public class MenuManager : MonoBehaviour
         isLBOpen = false;
         characterImage.Route();
         statusGet.SetStatus();
+        BGMManager.Instance.BGMChange(1);
         characterImage.MainImageChange();
     }
 
@@ -90,6 +91,8 @@ public class MenuManager : MonoBehaviour
         {
             sceneChangeImage.SetActive(true);
             isShopFlg = true;
+            // BGMïœçX
+
             zoomPanelAni.MenuPanelChange();
         }
         else

@@ -14,6 +14,7 @@ public class TitleManager : MonoBehaviour
     private void Start()
     {
         SetUpStart();
+        BGMManager.Instance.BGMChange(0);
         volumeSet.VolumeSetScene();
     }
 
