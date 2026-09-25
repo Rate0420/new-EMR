@@ -10,8 +10,8 @@ public class NormaTextManager : MonoBehaviour
     private void Update()
     {
         roundText.text = "Round:" + GameState.Instance.RoundManager.CurrentRound.ToString("F0");
-        normaText.text = "      [進行条件]\n必要メダル:\n<size=8>" + GameState.Instance.RoundService.ConsumedMedals.ToString("F0") + "/" + GameState.Instance.RoundService.RequiredMedalCount.ToString("F0") + "</size>枚" +
-            "\n必要ボール:\n<size=8>" + GameState.Instance.RoundService.DroppedBallCount.ToString("F0") + "/" + GameState.Instance.RoundService.RequiredBallCount.ToString("F0") + "</size>個";
+        normaText.text = "      [進行条件]\n必要メダル:\n<size=5>" + GameState.Instance.RoundService.ConsumedMedals.ToString("F0") + "/" + GameState.Instance.RoundService.RequiredMedalCount.ToString("F0") + "</size>枚" +
+            "\n必要ボール:\n<size=5>" + GameState.Instance.RoundService.DroppedBallCount.ToString("F0") + "/" + GameState.Instance.RoundService.RequiredBallCount.ToString("F0") + "</size>個";
 
 
 

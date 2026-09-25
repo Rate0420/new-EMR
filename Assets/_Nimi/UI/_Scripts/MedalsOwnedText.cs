@@ -42,7 +42,7 @@ namespace EMR.Medal.UI
             }
 
             // テキストに所持メダル数を表示
-            _medalsOwnedText.text = $"{medalOwnedCount.ToString("D5")}<size=8>枚";
+            _medalsOwnedText.text = $"{medalOwnedCount.ToString("D5")}<size=6>枚";
         }
     }
 }
