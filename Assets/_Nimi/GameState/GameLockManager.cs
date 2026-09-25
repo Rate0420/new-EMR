@@ -30,6 +30,20 @@ namespace EMR.Core
     /// </summary>
     /// 
 
+    /// <summary>
+    /// ロックの種類。
+    /// FullScreen: メニュー・シナリオ・ラウンドチェンジ等、画面を完全に占有する処理。
+    ///             リールが止まるのを待ってから取得し、取得中はリールの保留消化も止める。
+    /// SubMonitor: JPC払い出し・JPCC抽選等、サブモニター側で表示しつつ
+    ///             リールの保留消化とは並行して進めたい処理。
+    ///             FullScreen系の開始だけをブロックし、リールは止めない。
+    /// </summary>
+    public enum GameLockKind
+    {
+        FullScreen,
+        SubMonitor
+    }
+
     public interface IReserveGate
     {
         bool isProcessing { get; }
@@ -44,11 +58,15 @@ namespace EMR.Core
         // 名前ごとの保持カウント(同じ名前が入れ子でAcquireしても崩れないように)
         readonly Dictionary<string, int> _holders = new Dictionary<string, int>();
 
-        // Acquire呼び出し中(WaitUntilで待機中も含む)の人数。
+        // 各名前がどちらの種類でAcquireされているか
+        readonly Dictionary<string, GameLockKind> _kinds = new Dictionary<string, GameLockKind>();
+
+        // FullScreen系のAcquire呼び出し中(WaitUntilで待機中も含む)の人数。
         // 「実際にロックを持っているか」より広く、「Acquireを呼んでからReleaseするまで」をカバーする。
         // これがある間はずっとpauseRequestedをtrueにしておくことで、
         // 「リールが止まった瞬間、Acquire側がまだpauseRequestedを立てていない一瞬の隙」に
         // ReserveManagerが次のスピンを始めてしまう競合を防ぐ。
+        // SubMonitor系はここに加算しない(リールを止める対象ではないため)。
         readonly Dictionary<string, int> _pending = new Dictionary<string, int>();
 
         /// <summary>
@@ -62,17 +80,17 @@ namespace EMR.Core
         }
 
 
-        /// <summary>誰か(自分以外)がロックを持っているか</summary>
+        /// <summary>誰か(自分以外)がロックを持っているか(種類を問わず)</summary>
         public bool IsLocked => _holders.Count > 0;
 
-        /// <summary>誰かがAcquireを呼んでいる(待機中含む)か</summary>
+        /// <summary>FullScreen系のAcquireが呼ばれている(待機中含む)か</summary>
         public bool HasPending => _pending.Count > 0;
 
         /// <summary>現在のロック保持者一覧(デバッグ表示用)</summary>
         public IEnumerable<string> Holders => _holders.Keys;
 
         /// <summary>
-        /// 指定した名前(who)がロックを持っているか。
+        /// 指定した名前(who)以外の誰かがロックを持っているか(種類を問わず)。
         /// 「自分以外の誰かが処理中か」を調べたい時に "!IsHeldByOthers(自分の名前)" のように使う。
         /// </summary>
         public bool IsHeldByOthers(string who)
@@ -85,30 +103,55 @@ namespace EMR.Core
         }
 
         /// <summary>
-        /// ロックを取得する。
-        /// 「自分以外の誰かがロックを持っている間」「リールが回転中の間」は自動的に待つ。
-        /// pauseRequestedは待ち始めた瞬間(取得できるかどうかを問わず)ただちにtrueにする。
-        /// これにより、リールが止まった直後の1フレームで別のスピンが割り込むのを防ぐ。
+        /// 指定した名前(who)以外の「FullScreen系」の保持者がいるか。
+        /// SubMonitor系のAcquireは、他のSubMonitor系とは競合させず、
+        /// FullScreen系(メニュー・シナリオ・ラウンドチェンジ)の開始だけをブロックしたい時に使う。
         /// </summary>
-        public IEnumerator Acquire(string who)
+        public bool IsHeldByFullScreenOthers(string who)
         {
-            if (!_pending.ContainsKey(who)) _pending[who] = 0;
-            _pending[who]++;
-            if (_reserveManager != null) _reserveManager.pauseRequested = true;
+            foreach (var kv in _holders)
+            {
+                if (kv.Key == who || kv.Value <= 0) continue;
+                if (_kinds.TryGetValue(kv.Key, out var kind) && kind == GameLockKind.FullScreen) return true;
+            }
+            return false;
+        }
 
-            yield return new WaitUntil(() =>
-                !IsHeldByOthers(who)
-                && (_reserveManager == null || !_reserveManager.isProcessing || _reserveManager.isBetweenReserves)
-            );
+        /// <summary>
+        /// ロックを取得する。
+        /// kindがFullScreen(既定)の場合: 「自分以外の誰かがロックを持っている間(種類問わず)」
+        /// 「リールが回転中の間」は自動的に待ち、取得中はリールの保留消化も止める。
+        /// kindがSubMonitorの場合: FullScreen系が動いている間だけ待ち、リールは止めない。
+        /// SubMonitor同士は互いにブロックしない(必要なら呼び出し側の仕組みで直列化すること)。
+        /// </summary>
+        public IEnumerator Acquire(string who, GameLockKind kind = GameLockKind.FullScreen)
+        {
+            _kinds[who] = kind;
+
+            if (kind == GameLockKind.FullScreen)
+            {
+                if (!_pending.ContainsKey(who)) _pending[who] = 0;
+                _pending[who]++;
+                if (_reserveManager != null) _reserveManager.pauseRequested = true;
+
+                yield return new WaitUntil(() =>
+                    !IsHeldByOthers(who)
+                    && (_reserveManager == null || !_reserveManager.isProcessing || _reserveManager.isBetweenReserves)
+                );
+            }
+            else // SubMonitor
+            {
+                yield return new WaitUntil(() => !IsHeldByFullScreenOthers(who));
+            }
 
             if (!_holders.ContainsKey(who)) _holders[who] = 0;
             _holders[who]++;
 
-            Debug.Log($"[GameLock] Acquire: {who} (保持者:{string.Join(",", Holders)})");
+            Debug.Log($"[GameLock] Acquire: {who} ({kind}) (保持者:{string.Join(",", Holders)})");
         }
 
         /// <summary>
-        /// ロックを解放する。誰も持っていなければ自動的にリールの一時停止も解除される。
+        /// ロックを解放する。FullScreen系が誰も残っていなければ自動的にリールの一時停止も解除される。
         /// 保持していない(Acquireしていない)名前を解放しようとしても何も起きない(安全に無視される)。
         /// </summary>
         public void Release(string who)
@@ -116,7 +159,11 @@ namespace EMR.Core
             if (_holders.ContainsKey(who))
             {
                 _holders[who]--;
-                if (_holders[who] <= 0) _holders.Remove(who);
+                if (_holders[who] <= 0)
+                {
+                    _holders.Remove(who);
+                    _kinds.Remove(who);
+                }
             }
 
             if (_pending.ContainsKey(who))
@@ -127,7 +174,9 @@ namespace EMR.Core
 
             Debug.Log($"[GameLock] Release: {who} (残り保持者:{string.Join(",", Holders)})");
 
-            if (!HasPending && !IsLocked && _reserveManager != null)
+            // FullScreen系のpendingがすべて無くなった時だけリールの一時停止を解除する。
+            // (SubMonitor系はそもそもpauseRequestedを立てないので、ここには影響しない)
+            if (!HasPending && _reserveManager != null)
             {
                 _reserveManager.pauseRequested = false;
             }

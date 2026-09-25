@@ -100,7 +100,7 @@ public class SceneChanger : MonoBehaviour
 
     public IEnumerator EndScenarioCoroutine(string sceneName)
     {
-        roundChange.ResetMethod(); // ラウンドチェンジ由来のシナリオだった場合、ここで"RoundChange"ロックも解放される
+        roundChange.ResetMethod(); // ラウンドチェンジ由来のシナリオだった場合、UI(キャンバス)だけ先に片付ける
         yield return SceneManager.UnloadSceneAsync(sceneName);
         MedalRoot.SetActive(true);
 
@@ -112,6 +112,10 @@ public class SceneChanger : MonoBehaviour
         // ミニイベント等、"Scenario"ロックを持っていた場合はここで解放する
         // (ラウンドチェンジ由来で"Scenario"を持っていなかった場合は何も起きない)
         GameState.Instance.GameLock.Release("Scenario");
+
+        // "RoundChange"ロックの解放は、後片付けが全部終わった一番最後に行う
+        // (ラウンドチェンジ由来でなかった場合は何も起きない)
+        roundChange.CompleteRoundChange();
     }
 
     IEnumerator EndMenuCoroutine()

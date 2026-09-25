@@ -23,8 +23,8 @@ public class BallCounter : MonoBehaviour
 
     void BallCountCheck()
     {
-        // %2でミニイベント（キューに積む）
-        if (ballCount % 2 == 0)
+        // %3でミニイベント（キューに積む）
+        if (ballCount % 3 == 0)
         {
             ballEventQueue.EnqueueMiniEvent();
         }

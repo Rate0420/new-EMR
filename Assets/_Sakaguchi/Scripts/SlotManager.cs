@@ -95,7 +95,7 @@ public class SlotManager : MonoBehaviour
         IsBusy = false;  // 何があっても必ずここに来る
     }
 
-    int[] GenerateReelResult(int resultNumber,bool reach)
+    int[] GenerateReelResult(int resultNumber, bool reach)
     {
         int[] reels = new int[3];
 
@@ -162,7 +162,7 @@ public class SlotManager : MonoBehaviour
         {
             float r = Random.value;
 
-            if(r < 0.05f) rank = EffectRank.Weak;
+            if (r < 0.05f) rank = EffectRank.Weak;
             else if (r < 0.5f) rank = EffectRank.Normal;
             else if (r < 0.8f) rank = EffectRank.Strong;
             else if (r < 0.95f) rank = EffectRank.VeryStrong;
@@ -271,7 +271,7 @@ public class SlotManager : MonoBehaviour
     ReserveVisualType DecideReserveVisual(ReserveData data)
     {
         // 面倒だがswitchでランク別にどの保留色になるかを決める
-        switch(data.rank)
+        switch (data.rank)
         {
             case EffectRank.Weak:
                 // weakは7割ノーマル、3割青。
@@ -321,8 +321,8 @@ public class SlotManager : MonoBehaviour
 
             data.effect = EffectType.NormalTalk;
             data.rank = EffectRank.Weak;
-            Debug.Log("ランク:"+data.rank +"演出:"+data.effect); 
-            int[] reel = GenerateReelResult(data.resultNumber,data.isReach); // 3を当たりとして生成
+            Debug.Log("ランク:" + data.rank + "演出:" + data.effect);
+            int[] reel = GenerateReelResult(data.resultNumber, data.isReach); // 3を当たりとして生成
             reelManager.StartReels();
             Coroutine efc = StartCoroutine(effectManager.PlayEffect(data.effect));
             // efcが終わるまで待つ
@@ -338,27 +338,15 @@ public class SlotManager : MonoBehaviour
             // ★ここが重要（当たり処理）
             if (data.resultNumber != -1 && data.resultNumber != 7)
             {
-                // 保留停止
-                reserveManager.isPaused = true;
-
-                // 当たり演出
-                yield return StartCoroutine(winManager.PlayWin(data.resultNumber));
-
-                // 再開
-                reserveManager.isPaused = false;
+                // 当たり演出・払い出しはWinManagerのキューに投げるだけ。
+                // リールの保留消化はここで止めない(並行して進む)。
+                winManager.EnqueueWin(data.resultNumber);
             }
 
             // とりあえずresultnumが７の場合も処理する
             if (data.resultNumber == 7)
             {
-                // 保留停止
-                reserveManager.isPaused = true;
-
-                // 当たり演出
-                yield return StartCoroutine(winManager.PlayWin(data.resultNumber));
-
-                // 再開
-                reserveManager.isPaused = false;
+                winManager.EnqueueWin(data.resultNumber);
             }
 
             yield return new WaitForSeconds(slotEndDelay);
@@ -375,7 +363,7 @@ public class SlotManager : MonoBehaviour
             Coroutine preEffectCoroutine = null;
 
             // 先読み対象があるか確認
-            if ( reserveManager.HasPreTarget())
+            if (reserveManager.HasPreTarget())
             {
                 Debug.Log("先読み演出");
                 effectManager.PlayPreEffect();
@@ -392,7 +380,7 @@ public class SlotManager : MonoBehaviour
             {
                 reels = GenerateReelResult(data.resultNumber, data.isReach);
             }
-            
+
             Debug.Log("ランク:" + data.rank + "演出:" + data.effect);
             reelManager.StartReels();
 
@@ -426,7 +414,7 @@ public class SlotManager : MonoBehaviour
             // 当たりの場合
             if (data.resultNumber != -1)
             {
-                if(data.resultNumber == 7)
+                if (data.resultNumber == 7)
                 {
                     // JPC処理
                 }
@@ -451,27 +439,15 @@ public class SlotManager : MonoBehaviour
 
                 if (data.resultNumber != -1 && data.resultNumber != 7)
                 {
-                    // 保留停止
-                    reserveManager.isPaused = true;
-
-                    // 当たり演出
-                    yield return StartCoroutine(winManager.PlayWin(data.resultNumber));
-
-                    // 再開
-                    reserveManager.isPaused = false;
+                    // 当たり演出・払い出しはWinManagerのキューに投げるだけ。
+                    // リールの保留消化はここで止めない(並行して進む)。
+                    winManager.EnqueueWin(data.resultNumber);
                 }
 
                 // とりあえずresultnumが７の場合も処理する
                 if (data.resultNumber == 7)
                 {
-                    // 保留停止
-                    reserveManager.isPaused = true;
-
-                    // 当たり演出
-                    yield return StartCoroutine(winManager.PlayWin(data.resultNumber));
-
-                    // 再開
-                    reserveManager.isPaused = false;
+                    winManager.EnqueueWin(data.resultNumber);
                 }
             }
 
