@@ -1,24 +1,29 @@
 using UnityEngine;
 
-public class SEManagerMenu : MonoBehaviour
+public class SEManager : MonoBehaviour
 {
-    public static SEManagerMenu Instance { get; private set; }
+    public static SEManager Instance;
 
     [SerializeField] public AudioSource seSource;      // SEópAudioSource
-    [SerializeField] private AudioClip[] audioClips;   // SEâπåπ
+    [SerializeField] private AudioClip[] seClips;    // SEâπåπ
 
     private int clipNo; // çƒê∂Ç∑ÇÈâπåπî‘çÜ
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
         {
             Destroy(gameObject);
             return;
         }
 
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+        float volume = PlayerPrefs.GetFloat("SEVolume", 5);
+        seSource.volume = volume / 10f;
     }
 
     /// <summary>
@@ -33,7 +38,7 @@ public class SEManagerMenu : MonoBehaviour
     /// <summary>
     /// ÉLÉÉÉìÉZÉã
     /// </summary>
-    public void SE_Back() 
+    public void SE_Back()
     {
         clipNo = 1;
         SEPlays();
@@ -78,12 +83,11 @@ public class SEManagerMenu : MonoBehaviour
     /// <summary>
     /// çwì¸âπ
     /// </summary>
-    private void SE_Buy()
+    public void SE_Buy()
     {
         clipNo = 6;
         SEPlays();
     }
-
 
     /// <summary>
     /// SEçƒê∂
@@ -91,7 +95,7 @@ public class SEManagerMenu : MonoBehaviour
     private void SEPlays()
     {
         seSource.Stop();
-        seSource.clip = audioClips[clipNo];
+        seSource.clip = seClips[clipNo];
         seSource.PlayOneShot(seSource.clip);
     }
 }

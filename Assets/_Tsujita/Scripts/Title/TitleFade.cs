@@ -69,7 +69,7 @@ public class TitleFade : MonoBehaviour
     /// </summary>
     private async UniTask CloseAnimation()
     {
-        SEManagerMenu.Instance.SE_Shrink();
+        SEManager.Instance.SE_Shrink();
         await ScaleAnimation(zoomInPos, zoomOutPos);
         targetPanel = image;
         targerDuration = _duration;

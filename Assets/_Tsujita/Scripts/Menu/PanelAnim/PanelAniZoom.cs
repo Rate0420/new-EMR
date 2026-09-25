@@ -50,7 +50,7 @@ public class PanelAniZoom : MonoBehaviour
     /// </summary>
     private async UniTask CloseAnimation()
     {
-        SEManagerMenu.Instance.SE_Shrink();
+        SEManager.Instance.SE_Shrink();
         await ScaleAnimation(zoomInPos, zoomOutPos);
 
         // à√ì]äJén
@@ -84,7 +84,7 @@ public class PanelAniZoom : MonoBehaviour
             characterImage.MainImageChange();
 
         // à√ì]âèú
-        SEManagerMenu.Instance.SE_Enlarge();
+        SEManager.Instance.SE_Enlarge();
         await ScaleAnimation(_zoomInPos, _zoomOutPos);
         targetPanel = panel;
         targerDuration = duration;
