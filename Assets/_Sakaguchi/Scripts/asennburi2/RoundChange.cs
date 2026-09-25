@@ -79,7 +79,9 @@ public class RoundChange : MonoBehaviour
         //    ‚±‚ÌProcessRoundChange©‘Ì‚ª‚à‚¤ˆê“x“ñd‚É‘–‚Á‚Ä‚µ‚Ü‚¤Œ´ˆö‚É‚È‚Á‚Ä‚¢‚½)
         // •ÏXæ‚ÍS_DontDestroyStory.instance.characterStory‚ÌcurrentRound‚É‰‚¶‚½story‚É‚·‚é
         S_DontDestroyStory.instance.story = S_DontDestroyStory.instance.characterStory.storyParts[GameState.Instance.RoundManager.CurrentRound];
-
+        Debug.Log(GameState.Instance.RoundManager.CurrentRound);
+        Debug.Log(S_DontDestroyStory.instance.characterStory.storyParts[GameState.Instance.RoundManager.CurrentRound]);
+        Debug.Log(S_DontDestroyStory.instance.story);
         yield return SceneManager.LoadSceneAsync("Sakaguchi_TestStoryScene", LoadSceneMode.Additive);
 
 
