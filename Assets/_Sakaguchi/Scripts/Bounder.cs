@@ -1,59 +1,94 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Bounder : MonoBehaviour
 {
-    // Ballƒ^ƒO‚ğ‚ÂƒIƒuƒWƒFƒNƒg‚ªÕ“Ë‚µ‚½‚Æ‚«‚ÉAÕ“Ë‚µ‚½ƒIƒuƒWƒFƒNƒg‚ğ’µ‚Ë•Ô‚·
-    // ƒNƒ‹[ƒ“‚Ì’†S•”‚ÌƒIƒuƒWƒFƒNƒg‚É‚±‚ÌƒXƒNƒŠƒvƒg‚ğƒAƒ^ƒbƒ`‚·‚é
-    // Vector3‚ÅƒNƒ‹[ƒ“‚ÌŠeŒŠ‚ÌˆÊ’uAbool‚ÅŒŠ‚Éƒ{[ƒ‹‚ª“ü‚Á‚Ä‚¢‚é‚©‚Ç‚¤‚©‚ğŠÇ—‚·‚é
-    // ’µ‚Ë•Ô‚·•ûŒü‚ÍA‹ó‚¢‚Ä‚¢‚éŒŠ‚Ì’†‚Åƒ‰ƒ“ƒ_ƒ€‚ÈŒŠ‚ÉŒü‚©‚Á‚Ä’µ‚Ë•Ô‚·‚æ‚¤‚É‚·‚é
+    // Ballï¿½^ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ÂƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½Õ“Ë‚ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÉAï¿½Õ“Ë‚ï¿½ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ğ’µ‚Ë•Ô‚ï¿½
+    // ï¿½Nï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Ì’ï¿½ï¿½Sï¿½ï¿½ï¿½ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½É‚ï¿½ï¿½ÌƒXï¿½Nï¿½ï¿½ï¿½vï¿½gï¿½ï¿½ï¿½Aï¿½^ï¿½bï¿½`ï¿½ï¿½ï¿½ï¿½
+    // Vector3ï¿½ÅƒNï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ÌŠeï¿½ï¿½ï¿½ÌˆÊ’uï¿½Aboolï¿½ÅŒï¿½ï¿½Éƒ{ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©ï¿½Ç‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç—ï¿½ï¿½ï¿½ï¿½ï¿½
+    // ï¿½ï¿½ï¿½Ë•Ô‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÍAï¿½ó‚¢‚Ä‚ï¿½ï¿½éŒŠï¿½Ì’ï¿½ï¿½Åƒï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ÈŒï¿½ï¿½ÉŒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä’ï¿½ï¿½Ë•Ô‚ï¿½ï¿½æ‚¤ï¿½É‚ï¿½ï¿½ï¿½
 
-    public GameObject[] HoleObjects; // ƒNƒ‹[ƒ“‚ÌŒŠ‚ÌƒIƒuƒWƒFƒNƒg‚ğŠi”[‚·‚é”z—ñ
-    Vector3[] holePositions; // ƒNƒ‹[ƒ“‚ÌŒŠ‚ÌˆÊ’u‚ğŠi”[‚·‚é”z—ñ
-    public bool[] holeOccupied; // ŠeŒŠ‚ªƒ{[ƒ‹‚Åè—L‚³‚ê‚Ä‚¢‚é‚©‚Ç‚¤‚©‚ğŠi”[‚·‚é”z—ñ
-    public float bounceForce = 10f; // ’µ‚Ë•Ô‚·—Í‚Ì‘å‚«‚³
-
+    public GameObject[] HoleObjects; // ï¿½Nï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ÌŒï¿½ï¿½ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½iï¿½[ï¿½ï¿½ï¿½ï¿½zï¿½ï¿½
+    Vector3[] holePositions; // ï¿½Nï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ÌŒï¿½ï¿½ÌˆÊ’uï¿½ï¿½ï¿½iï¿½[ï¿½ï¿½ï¿½ï¿½zï¿½ï¿½
+    public bool[] holeOccupied; // ï¿½eï¿½ï¿½ï¿½ï¿½ï¿½{ï¿½[ï¿½ï¿½ï¿½Åï¿½Lï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©ï¿½Ç‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½iï¿½[ï¿½ï¿½ï¿½ï¿½zï¿½ï¿½
+    public float bounceForce = 10f; // ï¿½ï¿½ï¿½Ë•Ô‚ï¿½ï¿½Í‚Ì‘å‚«ï¿½ï¿½
+    public List<GameObject> Balls = new List<GameObject>();
+    float timer;
+    float interval = 4f; // 4ï¿½bï¿½ï¿½ï¿½ï¿½
+    
     private void Start()
     {
-        // holeOcupied,holeposition”z—ñ‚ÌƒTƒCƒY‚ğHoleObjects‚Ì”‚É‡‚í‚¹‚Ä‰Šú‰»
+        // holeOcupied,holepositionï¿½zï¿½ï¿½ÌƒTï¿½Cï¿½Yï¿½ï¿½HoleObjectsï¿½Ìï¿½ï¿½Éï¿½ï¿½í‚¹ï¿½Äï¿½ï¿½ï¿½ï¿½ï¿½
         holeOccupied = new bool[HoleObjects.Length];
         holePositions = new Vector3[HoleObjects.Length];
         for (int i = 0; i < HoleObjects.Length; i++)
         {
             holePositions[i] = HoleObjects[i].transform.position;
-            // holeOccupied”z—ñ‚Ì‰Šú‰»
+            // holeOccupiedï¿½zï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½
             holeOccupied[i] = false;
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void Update()
     {
-        if (collision.gameObject.CompareTag("Ball"))
+        timer += Time.deltaTime;
+        if (timer >= interval)
         {
-            // Õ“Ë‚µ‚½ƒIƒuƒWƒFƒNƒg‚ªBallƒ^ƒO‚ğ‚Âê‡A‹ó‚¢‚Ä‚¢‚éŒŠ‚Ì’†‚Åƒ‰ƒ“ƒ_ƒ€‚ÈŒŠ‚ÉŒü‚©‚Á‚Ä”ò‚Î‚·‚æ‚¤‚É‚·‚é
+            // 4ï¿½bï¿½ï¿½ï¿½Æ‚ÉAï¿½ó‚¢‚Ä‚ï¿½ï¿½éŒŠï¿½Ì’ï¿½ï¿½Åƒï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ÈŒï¿½ï¿½ÉŒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä’ï¿½ï¿½Ë•Ô‚ï¿½
             int holeIndex = GetRandomHoleIndex();
             if (holeIndex != -1)
             {
-                Debug.Log("Õ“Ë");
-
-                Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
-                Vector3 direction = holePositions[holeIndex] - transform.position;
-                direction.y = 0;
-                direction.Normalize();
-                if (rb != null)
+                foreach (GameObject ball in Balls)
                 {
-                    // ˆê’U‘¬“xA‰ñ“]‚ğƒŠƒZƒbƒg‚µ‚Ä‚©‚ç’µ‚Ë•Ô‚·
-                    rb.linearVelocity = Vector3.zero;
-                    rb.angularVelocity = Vector3.zero;
-                    rb.AddForce(direction * bounceForce, ForceMode.Impulse);
+                    if (ball != null)
+                    {
+                        Rigidbody rb = ball.GetComponent<Rigidbody>();
+                        Vector3 direction = holePositions[holeIndex] - transform.position;
+                        direction.y = 0;
+                        direction.Normalize();
+                        if (rb != null)
+                        {
+                            // ï¿½ï¿½Uï¿½ï¿½ï¿½xï¿½Aï¿½ï¿½]ï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½gï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ç’µï¿½Ë•Ô‚ï¿½
+                            rb.linearVelocity = Vector3.zero;
+                            rb.angularVelocity = Vector3.zero;
+                            rb.AddForce(direction * bounceForce, ForceMode.Impulse);
+                        }
+                    }
                 }
             }
+            timer = 0f;
         }
     }
 
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.transform.parent.CompareTag("Ball"))
+    //    {
+    //        // ï¿½Õ“Ë‚ï¿½ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½Ballï¿½^ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½Âê‡ï¿½Aï¿½ó‚¢‚Ä‚ï¿½ï¿½éŒŠï¿½Ì’ï¿½ï¿½Åƒï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ÈŒï¿½ï¿½ÉŒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä”ï¿½Î‚ï¿½ï¿½æ‚¤ï¿½É‚ï¿½ï¿½ï¿½
+    //        int holeIndex = GetRandomHoleIndex();
+    //        if (holeIndex != -1)
+    //        {
+    //            Debug.Log("ï¿½Õ“ï¿½");
+
+    //            Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
+    //            Vector3 direction = holePositions[holeIndex] - transform.position;
+    //            direction.y = 0;
+    //            direction.Normalize();
+    //            if (rb != null)
+    //            {
+    //                // ï¿½ï¿½Uï¿½ï¿½ï¿½xï¿½Aï¿½ï¿½]ï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½gï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ç’µï¿½Ë•Ô‚ï¿½
+    //                rb.linearVelocity = Vector3.zero;
+    //                rb.angularVelocity = Vector3.zero;
+    //                rb.AddForce(direction * bounceForce, ForceMode.Impulse);
+    //            }
+    //        }
+    //    }
+    //}
+
     int GetRandomHoleIndex()
     {
-        // ‹ó‚¢‚Ä‚¢‚éŒŠ‚Ì’†‚Åƒ‰ƒ“ƒ_ƒ€‚ÈŒŠ‚ÌƒCƒ“ƒfƒbƒNƒX‚ğ•Ô‚·
-        // ‚·‚×‚Ä‚ÌŒŠ‚ªè—L‚³‚ê‚Ä‚¢‚éê‡‚Í-1‚ğ•Ô‚·
+        // ï¿½ó‚¢‚Ä‚ï¿½ï¿½éŒŠï¿½Ì’ï¿½ï¿½Åƒï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ÈŒï¿½ï¿½ÌƒCï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½ï¿½Ô‚ï¿½
+        // ï¿½ï¿½ï¿½×‚Ä‚ÌŒï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ê‡ï¿½ï¿½-1ï¿½ï¿½Ô‚ï¿½
         int[] availableHoles = new int[holeOccupied.Length];
         int count = 0;
         for (int i = 0; i < holeOccupied.Length; i++)

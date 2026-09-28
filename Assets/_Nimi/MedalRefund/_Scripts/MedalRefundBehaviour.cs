@@ -24,6 +24,12 @@ namespace EMR.Medal.Refund
 
         public System.Action<int> OnMedalSpawned; // 残り枚数
 
+        // 排出ループが動いている間はtrue。
+        // 動いている最中に追加の払い戻し要求が来た場合は新しいループを始めず、
+        // 動いているループが RefundAmount の増加分をそのまま拾って排出する。
+        private bool _isProcessing = false;
+        public bool IsProcessing => _isProcessing;
+
 
         private void Start()
         {
@@ -62,6 +68,9 @@ namespace EMR.Medal.Refund
 
         private void HandleRefundRequested(int refundAmount)
         {
+            // すでに排出中なら、増えた分は動いているループが拾うので何もしない
+            if (_isProcessing) return;
+
             ProcessRefundAsync(refundAmount).Forget();
         }
 
@@ -72,6 +81,8 @@ namespace EMR.Medal.Refund
         private async UniTask ProcessRefundAsync(int refundAmount)
         {
             Debug.Log($"Refund: {refundAmount}");
+
+            _isProcessing = true;
 
             try
             {
@@ -98,6 +109,7 @@ namespace EMR.Medal.Refund
             }
             finally
             {
+                _isProcessing = false;
                 OnRefundFinished?.Invoke();
             }
         }

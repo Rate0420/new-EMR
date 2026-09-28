@@ -4,8 +4,8 @@ using static ReserveManager;
 
 public class SlotManager : MonoBehaviour
 {
-    public const float baseWinProbability = 0.1f; //当たりの確率
-    public const float baseChanceWinProbability = 0.3f; // 確変時の確率
+    public const float baseWinProbability = 0.4f; //当たりの確率
+    public const float baseChanceWinProbability = 0.8f; // 確変時の確率
     public float winProbability = 0.1f; //当たりの確率
     public float chanceWinProbability = 0.3f; // 確変時の確率
     [SerializeField] bool Kakuhen = false;
@@ -338,15 +338,15 @@ public class SlotManager : MonoBehaviour
             // ★ここが重要（当たり処理）
             if (data.resultNumber != -1 && data.resultNumber != 7)
             {
-                // 当たり演出・払い出しはWinManagerのキューに投げるだけ。
-                // リールの保留消化はここで止めない(並行して進む)。
-                winManager.EnqueueWin(data.resultNumber);
+                // 当たり演出が終わるまで次の変動は待つ。払い出し(メダル排出)は待たずに並行して進む。
+                // 払い出し中に別の当たりが来た場合は、WinManager側で今出している分に加算される。
+                yield return StartCoroutine(winManager.PlayWin(data.resultNumber));
             }
 
             // とりあえずresultnumが７の場合も処理する
             if (data.resultNumber == 7)
             {
-                winManager.EnqueueWin(data.resultNumber);
+                yield return StartCoroutine(winManager.PlayWin(data.resultNumber));
             }
 
             yield return new WaitForSeconds(slotEndDelay);
@@ -439,15 +439,15 @@ public class SlotManager : MonoBehaviour
 
                 if (data.resultNumber != -1 && data.resultNumber != 7)
                 {
-                    // 当たり演出・払い出しはWinManagerのキューに投げるだけ。
-                    // リールの保留消化はここで止めない(並行して進む)。
-                    winManager.EnqueueWin(data.resultNumber);
+                    // 当たり演出が終わるまで次の変動は待つ。払い出し(メダル排出)は待たずに並行して進む。
+                    // 払い出し中に別の当たりが来た場合は、WinManager側で今出している分に加算される。
+                    yield return StartCoroutine(winManager.PlayWin(data.resultNumber));
                 }
 
                 // とりあえずresultnumが７の場合も処理する
                 if (data.resultNumber == 7)
                 {
-                    winManager.EnqueueWin(data.resultNumber);
+                    yield return StartCoroutine(winManager.PlayWin(data.resultNumber));
                 }
             }
 

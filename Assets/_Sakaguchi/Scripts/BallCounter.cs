@@ -4,7 +4,8 @@ public class BallCounter : MonoBehaviour
 {
     int ballCount = 0;
     public BallEventQueue ballEventQueue; // © SceneChanger‚Ì‘ã‚í‚è‚É
-    public BallTest ballTest;
+    public BallTest JPCCBallTest;
+    public BallTest JPCBallTest;
 
     public int jpcPayoutAmount = 50; // JPC•¥‚¢o‚µ–‡”iInspectorİ’èj
 
