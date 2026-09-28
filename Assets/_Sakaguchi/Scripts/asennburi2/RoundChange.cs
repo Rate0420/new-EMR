@@ -79,9 +79,7 @@ public class RoundChange : MonoBehaviour
         //    このProcessRoundChange自体がもう一度二重に走ってしまう原因になっていた)
         // 変更先はS_DontDestroyStory.instance.characterStoryのcurrentRoundに応じたstoryにする
         S_DontDestroyStory.instance.story = S_DontDestroyStory.instance.characterStory.storyParts[GameState.Instance.RoundManager.CurrentRound];
-        Debug.Log(GameState.Instance.RoundManager.CurrentRound);
-        Debug.Log(S_DontDestroyStory.instance.characterStory.storyParts[GameState.Instance.RoundManager.CurrentRound]);
-        Debug.Log(S_DontDestroyStory.instance.story);
+
         yield return SceneManager.LoadSceneAsync("Sakaguchi_TestStoryScene", LoadSceneMode.Additive);
 
 
@@ -132,8 +130,17 @@ public class RoundChange : MonoBehaviour
         resultText.text = "";
 
         RoundChangeCanvas.gameObject.SetActive(false);
+    }
 
-        // ラウンドチェンジ処理(演出・ストーリー含め)が完全に終わったので、
+    /// <summary>
+    /// ラウンドチェンジ処理が"本当に完全に"終わった時(シーンのアンロード・
+    /// MedalRootの再表示・returnDelay待機・ポーズ解除まで全部終わった後)に呼ぶ。
+    /// ここより前に"RoundChange"ロックを解放すると、後片付けが終わる前に
+    /// 次の処理(ミニイベント等)が割り込んでしまうため、必ず一番最後に呼ぶこと。
+    /// </summary>
+    public void CompleteRoundChange()
+    {
+        // ラウンドチェンジ処理が完全に終わったので、
         // ここで初めて次のNextRound()を受け付けられるようにする
         GameState.Instance.RoundManager.FinishRoundChange();
 

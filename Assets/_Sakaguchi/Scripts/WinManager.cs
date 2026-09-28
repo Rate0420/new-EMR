@@ -3,6 +3,7 @@ using EMR.Medal.Refund;
 using TMPro;
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class WinManager : MonoBehaviour
 {
@@ -16,27 +17,92 @@ public class WinManager : MonoBehaviour
 
     public bool isPayout = false;
 
+    struct WinRequest
+    {
+        public int payout;
+        public bool isJPC;
+    }
+
+    // 通常当たり(スロット本体)とJPC(玉入れ)を共通で扱うキュー。
+    // 両方が同時に走ると winUI / payoutText / refundBehaviour を取り合ってしまうため、
+    // 必ずここで1件ずつ直列に処理する。
+    readonly Queue<WinRequest> winQueue = new Queue<WinRequest>();
+    bool isProcessing = false;
+
+    /// <summary>
+    /// 通常当たり・JPCのどちらかを処理中かどうか。
+    /// JPCPayoutManager や BallEventQueue から参照される。
+    /// </summary>
+    public bool IsWinProcessing => isProcessing;
+
     // どちらのrefundBehaviourを使うかのフラグ（SetActiveを使わない）
     bool useJPCRefund = false;
 
     public void SetIsPayout(bool value) => isPayout = value;
 
-    public IEnumerator PlayWin(int resultNumber)
+    /// <summary>
+    /// 通常当たり(スロット本体の結果)をキューに積む。呼びっぱなしでよく、
+    /// リールの保留消化を止めずに済む(以前はここをyield returnで待っていたため止まっていた)。
+    /// </summary>
+    public void EnqueueWin(int resultNumber)
     {
-        useJPCRefund = false;
-        refundBehaviour.gameObject.SetActive(true);
-        refundBehaviour2.gameObject.SetActive(false);
-        yield return StartCoroutine(PlayWinInternal(GetPayout(resultNumber)));
-        priseGenerator.DisChargeBall();
-        priseGenerator.PriseLottely();
+        winQueue.Enqueue(new WinRequest { payout = GetPayout(resultNumber), isJPC = false });
+        Debug.Log($"[Win] 通常当たりを予約 resultNumber:{resultNumber} キュー数:{winQueue.Count}");
+        TryStartProcessing();
     }
 
-    public IEnumerator PlayWinbyJPC(int payoutNum)
+    /// <summary>
+    /// JPC(玉入れ)払い出しをキューに積む。呼びっぱなしでよい。
+    /// </summary>
+    public void EnqueueJPC(int payoutNum)
     {
-        useJPCRefund = true;
-        refundBehaviour.gameObject.SetActive(false);
-        refundBehaviour2.gameObject.SetActive(true);
-        yield return StartCoroutine(PlayWinInternal(payoutNum));
+        winQueue.Enqueue(new WinRequest { payout = payoutNum, isJPC = true });
+        Debug.Log($"[Win] JPC払い出しを予約 payout:{payoutNum} キュー数:{winQueue.Count}");
+        TryStartProcessing();
+    }
+
+    void TryStartProcessing()
+    {
+        if (!isProcessing)
+        {
+            StartCoroutine(ProcessQueue());
+        }
+    }
+
+    IEnumerator ProcessQueue()
+    {
+        isProcessing = true;
+
+        while (winQueue.Count > 0)
+        {
+            WinRequest req = winQueue.Dequeue();
+            string lockName = req.isJPC ? "JPC" : "Win";
+
+            // SubMonitor扱い：リールの保留消化とは並行に進める。
+            // メニュー・シナリオ・ラウンドチェンジの開始だけはブロックされる。
+            yield return GameState.Instance.GameLock.Acquire(lockName, GameLockKind.SubMonitor);
+
+            useJPCRefund = req.isJPC;
+            refundBehaviour.gameObject.SetActive(!req.isJPC);
+            refundBehaviour2.gameObject.SetActive(req.isJPC);
+
+            yield return StartCoroutine(PlayWinInternal(req.payout));
+
+            if (!req.isJPC)
+            {
+                priseGenerator.DisChargeBall();
+                priseGenerator.PriseLottely();
+            }
+
+            GameState.Instance.GameLock.Release(lockName);
+
+            if (winQueue.Count > 0)
+            {
+                yield return new WaitForSeconds(1.0f);
+            }
+        }
+
+        isProcessing = false;
     }
 
     IEnumerator PlayWinInternal(int payout)
