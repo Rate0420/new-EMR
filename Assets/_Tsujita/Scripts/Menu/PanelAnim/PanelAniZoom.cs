@@ -50,7 +50,7 @@ public class PanelAniZoom : MonoBehaviour
     /// </summary>
     private async UniTask CloseAnimation()
     {
-        SEManager.Instance.SE_Shrink();
+        SEManager.Instance.SEPlays(SEManager.SEType.Shrink);
         await ScaleAnimation(zoomInPos, zoomOutPos);
 
         // à√ì]äJén
@@ -70,12 +70,20 @@ public class PanelAniZoom : MonoBehaviour
             {
                 shopPanel.SetActive(false);
                 menuManager.isShopFlg = false;
+                BGMManager.Instance.BGMChange(1);
+
             }
             else
+            {
                 shopPanel.SetActive(true);
+                BGMManager.Instance.BGMChange(2);
+            }
         }
         else
+        {
             menuPanel.SetActive(!menuPanel.activeSelf);
+            BGMManager.Instance.BGMChange(1);
+        }
 
         await UniTask.WaitForSeconds(wSF);
 
@@ -84,7 +92,7 @@ public class PanelAniZoom : MonoBehaviour
             characterImage.MainImageChange();
 
         // à√ì]âèú
-        SEManager.Instance.SE_Enlarge();
+        SEManager.Instance.SEPlays(SEManager.SEType.Enlarge);
         await ScaleAnimation(_zoomInPos, _zoomOutPos);
         targetPanel = panel;
         targerDuration = duration;

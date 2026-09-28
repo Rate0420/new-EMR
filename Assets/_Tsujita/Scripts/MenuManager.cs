@@ -9,6 +9,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private CharacterDatabase database;
     [SerializeField] private CharacterImage characterImage;
     [SerializeField] private StatusGet statusGet;
+    [SerializeField] private SlotManager slotManager;
 
     [Header("メインのボタンとパネル")]
     [SerializeField] private GameObject[] menuButtons;  // ボタン
@@ -111,7 +112,7 @@ public class MenuManager : MonoBehaviour
     {
         if (isLBOpen)    // 好感度パネル
         {
-            SEManager.Instance.SE_Slide();
+            SEManager.Instance.SEPlays(SEManager.SEType.Slide);
             panelAnis[currentPanelNo].Close();
             isLBOpen = false;
             currentPanelNo = -1;
@@ -122,7 +123,7 @@ public class MenuManager : MonoBehaviour
         }
         else if (isMenuFlg) // パネル全般の切り替え
         {
-            SEManager.Instance.SE_Slide();
+            SEManager.Instance.SEPlays(SEManager.SEType.Slide);
             panelAnis[nowPanelNo].Close();
             nowPanelNo = -1;
 
@@ -136,6 +137,12 @@ public class MenuManager : MonoBehaviour
             zoomPanelAni.MenuPanelChange();
             isPanelFlg = false;
 
+            // 確変時なら番号４、通常時なら番号３
+            if (!slotManager.Kakuhen)
+                BGMManager.Instance.BGMChange(3);
+            else
+                BGMManager.Instance.BGMChange(4);
+
             changer.EndMenu();
         }
     }
@@ -146,7 +153,7 @@ public class MenuManager : MonoBehaviour
     /// <param name="buttonNo"></param>
     private void PanelSet(int buttonNo)
     {
-        SEManager.Instance.SE_Slide();
+        SEManager.Instance.SEPlays(SEManager.SEType.Slide);
         if (!isMenuFlg)
         {
             nowPanelNo = buttonNo;

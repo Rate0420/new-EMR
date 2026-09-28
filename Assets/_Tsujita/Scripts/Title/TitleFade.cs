@@ -69,7 +69,7 @@ public class TitleFade : MonoBehaviour
     /// </summary>
     private async UniTask CloseAnimation()
     {
-        SEManager.Instance.SE_Shrink();
+        SEManager.Instance.SEPlays(SEManager.SEType.Shrink);
         await ScaleAnimation(zoomInPos, zoomOutPos);
         targetPanel = image;
         targerDuration = _duration;
@@ -79,15 +79,21 @@ public class TitleFade : MonoBehaviour
         // シーン遷移 タイトル⇔ゲームシーン
         currentScene = SceneManager.GetActiveScene().name;
         if (currentScene == titleSceneName)
+        {
             await SceneManager.LoadSceneAsync(gameSceneName);
+            BGMManager.Instance.BGMChange(3);
+        }
         else if (currentScene == gameSceneName)
+        {
             await SceneManager.LoadSceneAsync(titleSceneName);
+            BGMManager.Instance.BGMChange(0);
+        }
 
         // 暗転解除
         targetPanel = image;
         targerDuration = _duration;
 
-        SEManagerMenu.Instance.SE_Enlarge();
+        SEManager.Instance.SEPlays(SEManager.SEType.Enlarge);
         await ScaleAnimation(_zoomInPos, _zoomOutPos);
         targetPanel = panel;
         targerDuration = duration;
