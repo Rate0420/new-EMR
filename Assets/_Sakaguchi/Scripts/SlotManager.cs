@@ -8,7 +8,7 @@ public class SlotManager : MonoBehaviour
     public const float baseChanceWinProbability = 0.3f; // 確変時の確率
     public float winProbability = 0.1f; //当たりの確率
     public float chanceWinProbability = 0.3f; // 確変時の確率
-    [SerializeField] bool Kakuhen = false;
+    [SerializeField] public bool Kakuhen = false;
     [SerializeField] ReelManager reelManager; //リールの管理クラス
     [SerializeField] float slotEndDelay = 1.0f; //スロットが止まってから次の抽選までの遅延時間
     [SerializeField] EffectManager effectManager; // 演出管理クラス

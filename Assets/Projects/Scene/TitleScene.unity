@@ -758,12 +758,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seSource: {fileID: 960508005}
   seClips:
-  - {fileID: 8300000, guid: a2e82e89dae57154faf8646f5e4df7c3, type: 3}
-  - {fileID: 8300000, guid: 18720b413f8ebdd40b87b44a6dbe4871, type: 3}
+  - {fileID: 8300000, guid: 1ed18cdec4f656b408cdb9a796cb1b61, type: 3}
+  - {fileID: 8300000, guid: 0f220b207437e594f9a672caa54fcf02, type: 3}
   - {fileID: 8300000, guid: cc6e11916feebcd4baa162a3c33dadf7, type: 3}
   - {fileID: 8300000, guid: 8016f19cee175b0419d71f752d818f2f, type: 3}
   - {fileID: 8300000, guid: 782998ec24d8d0d4fb160b535c84b569, type: 3}
   - {fileID: 8300000, guid: 30e765aaab0664f44a198fa0e808ba1c, type: 3}
+  - {fileID: 8300000, guid: 17e5926e489ec574983330d5cf35f410, type: 3}
+  - {fileID: 8300000, guid: 9f8f83adafbf1a64dba84d0b6e6c1268, type: 3}
+  - {fileID: 8300000, guid: cd34454212291cf48863f9c4d4a85bf7, type: 3}
+  - {fileID: 8300000, guid: 33448779133d1ca47856c7a3e9c43e6b, type: 3}
+  - {fileID: 8300000, guid: a9ba7a225d000e846bd0006ace45090a, type: 3}
+  - {fileID: 8300000, guid: 5c2995c5781401d44bde8410b950a950, type: 3}
+  - {fileID: 8300000, guid: f011a0ec5f9b63049ba31d7d8e27a6e0, type: 3}
 --- !u!1 &1236614657
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,9 +1783,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgmClips:
-  - {fileID: 8300000, guid: ad6c663bf3925c44e91e234a6d6435b8, type: 3}
-  - {fileID: 8300000, guid: 6cdcdad367e48ea4eba6a1b1504af8ae, type: 3}
+  - {fileID: 8300000, guid: 662004b1490339b438df403ec15109b0, type: 3}
+  - {fileID: 8300000, guid: 8cd26234013ac5e4bb0d7b6de00c8af2, type: 3}
   - {fileID: 8300000, guid: 0fd10e62707818147a9d6d259fa79574, type: 3}
+  - {fileID: 8300000, guid: 299a0248bfdc42e4f86c55565059d551, type: 3}
+  - {fileID: 8300000, guid: 4d13db3d18d6d8443bd4b20f2d98b151, type: 3}
+  - {fileID: 8300000, guid: 97f2888bc3e560141a35ecc89f43af2f, type: 3}
+  - {fileID: 8300000, guid: a16f73f314bc7d64eaa4aed5be618525, type: 3}
+  - {fileID: 8300000, guid: e97ddb2d3df077b45860707079230ec0, type: 3}
+  - {fileID: 8300000, guid: de2da5905ff384b489507740670715b4, type: 3}
   bgmSource: {fileID: 1988665073}
   fadeTime: 0.5
 --- !u!4 &1988665075
