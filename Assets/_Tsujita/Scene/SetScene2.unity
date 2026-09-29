@@ -1050,6 +1050,7 @@ MonoBehaviour:
   bounder: {fileID: 1895448888}
   jpccManager: {fileID: 886674087}
   ballEventQueue: {fileID: 2112621051}
+  isJPC: 0
 --- !u!135 &92151395
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1401,6 +1402,7 @@ MonoBehaviour:
   bounder: {fileID: 1895448888}
   jpccManager: {fileID: 886674087}
   ballEventQueue: {fileID: 2112621051}
+  isJPC: 0
 --- !u!135 &140889122
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2239,6 +2241,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1010392252305421213, guid: 53d2af71912dafd4a96083356d1f1a38, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1897138750062597223, guid: 53d2af71912dafd4a96083356d1f1a38, type: 3}
       propertyPath: m_Name
       value: All_MenuPanel 3
@@ -2299,12 +2305,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4104064991946207854, guid: 53d2af71912dafd4a96083356d1f1a38, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6136013971469044189, guid: 53d2af71912dafd4a96083356d1f1a38, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9009942952277420453, guid: 53d2af71912dafd4a96083356d1f1a38, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9093302805391591891, guid: 53d2af71912dafd4a96083356d1f1a38, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4996,6 +5010,7 @@ MonoBehaviour:
   bounder: {fileID: 1895448888}
   jpccManager: {fileID: 886674087}
   ballEventQueue: {fileID: 2112621051}
+  isJPC: 0
 --- !u!135 &609221994
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6658,6 +6673,10 @@ MonoBehaviour:
   LowPrise: 64000000
   MiddlePrise: c8000000
   HighPrise: 2c010000
+  JPCLowPrise: 
+  JPCMiddlePrise: 
+  JPCHighPrise: 
+  JPCMaxPrise: 0
 --- !u!4 &886674088
 Transform:
   m_ObjectHideFlags: 0
@@ -6998,10 +7017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 284583517bb60b241acc6955aa1006b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reserveManager: {fileID: 163250825}
   winManager: {fileID: 611267530}
-  sceneChanger: {fileID: 310157679}
-  roundChange: {fileID: 0}
 --- !u!4 &917232201
 Transform:
   m_ObjectHideFlags: 0
@@ -9189,6 +9205,7 @@ MonoBehaviour:
   bounder: {fileID: 1895448888}
   jpccManager: {fileID: 886674087}
   ballEventQueue: {fileID: 2112621051}
+  isJPC: 0
 --- !u!135 &1159657600
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9816,6 +9833,7 @@ MonoBehaviour:
   bounder: {fileID: 1895448888}
   jpccManager: {fileID: 886674087}
   ballEventQueue: {fileID: 2112621051}
+  isJPC: 0
 --- !u!135 &1273059186
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10078,6 +10096,7 @@ MonoBehaviour:
   bounder: {fileID: 1895448888}
   jpccManager: {fileID: 886674087}
   ballEventQueue: {fileID: 2112621051}
+  isJPC: 0
 --- !u!135 &1321061102
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12254,6 +12273,7 @@ MonoBehaviour:
   bounder: {fileID: 1895448888}
   jpccManager: {fileID: 886674087}
   ballEventQueue: {fileID: 2112621051}
+  isJPC: 0
 --- !u!135 &1700043953
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14808,6 +14828,7 @@ MonoBehaviour:
   bounder: {fileID: 1895448888}
   jpccManager: {fileID: 886674087}
   ballEventQueue: {fileID: 2112621051}
+  isJPC: 0
 --- !u!135 &2128072435
 SphereCollider:
   m_ObjectHideFlags: 0

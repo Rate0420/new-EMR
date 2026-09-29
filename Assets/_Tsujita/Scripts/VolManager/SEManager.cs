@@ -46,6 +46,9 @@ public class SEManager : MonoBehaviour
     /// </summary>
     public void SEPlays(SEType seType)
     {
+        float volume = PlayerPrefs.GetFloat("SEVolume", 5);
+        seSource.volume = volume / 10f;
+
         int index = (int)seType;
 
         if (seSource == null || seClips == null || index >= seClips.Length || seClips[index] == null)
