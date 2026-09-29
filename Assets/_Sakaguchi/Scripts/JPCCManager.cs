@@ -18,12 +18,64 @@ public class JPCCManager : MonoBehaviour
 
     public int JPCMaxPrise;
 
+    [SerializeField] BallTest JPCBallTest;
+    [SerializeField] BallTest JPCCBallTest;
+
+    public string GetPriseText(int index,bool isJPC)
+    {
+        if (!isJPC)
+        {
+            switch (index)
+            {
+                case 0:
+                    return "JPC";
+                case 4:
+                    return $"{HighPrise[0]}";
+                case 2:
+                case 6:
+                    return $"{MiddlePrise[0]}";
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                    return $"{LowPrise[0]}";
+                default:
+                    return "???";
+            }
+        }
+        else
+        {
+            switch (index)
+            {
+                case 0:
+                    return $"{JPCMaxPrise}";
+                case 3:
+                case 7:
+                    return $"{HighPrise[0]}";
+                case 2:
+                case 5:
+                case 8:
+                    return $"{MiddlePrise[0]}";
+                case 1:
+                case 4:
+                case 6:
+                case 9:
+                    return $"{LowPrise[0]}";
+                default:
+                    return "???";
+            }
+        }
+    }
+
     public void JPCCPrise(int index)
     {
         switch (index)
         {
             case 0:
-                // JPCスタート。
+                JPCBallTest.StartJPCC();
+                // ballsをdestroyする
+                JPCCBallTest.Balls.ForEach(ball => Destroy(ball));
+
                 break;
             case 4:
                 // High

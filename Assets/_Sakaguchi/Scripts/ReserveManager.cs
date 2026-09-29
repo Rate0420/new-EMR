@@ -120,7 +120,37 @@ public class ReserveManager : MonoBehaviour, IReserveGate
 
         if (currentReserve != null)
         {
-            img0.color = GetColor(currentReserve.visual);
+            //img0.color = GetColor(currentReserve.visual);
+
+            switch (currentReserve.visual)
+            { 
+                case ReserveVisualType.Normal:
+                    img0.DisableKeyword("_EMISSION");
+                    img0.color = Color.white;
+                    break;
+
+                case ReserveVisualType.Blue:
+                    img0.EnableKeyword("_EMISSION");
+                    img0.color = Color.blue;
+                    img0.SetColor("_EmissionColor", Color.blue * 2.5f);
+                    break;
+
+                case ReserveVisualType.Green:
+                    img0.EnableKeyword("_EMISSION");
+                    img0.color = Color.green;
+                    img0.SetColor("_EmissionColor", Color.green * 2.5f);
+                    break;
+                case ReserveVisualType.Red:
+                    img0.EnableKeyword("_EMISSION");
+                    img0.color = Color.red;
+                    img0.SetColor("_EmissionColor", Color.red * 2.5f);
+                    break;
+                case ReserveVisualType.Gold:
+                    img0.EnableKeyword("_EMISSION");
+                    img0.color = Color.yellow;
+                    img0.SetColor("_EmissionColor", Color.yellow * 2.5f);
+                    break;
+            }
         }
         else
         {
