@@ -46,14 +46,20 @@ namespace EMR.Medal.Hole
                 if (_isCount)
                 {
                     if (collectable == null || ballCounter == null) return;
-                    if (collectable.Info.Type == CollectableType.Ball) ballCounter.BallCountAdd();
+                    if (collectable.Info.Type == CollectableType.Ball)
+                    {
+                        ballCounter.BallCountAdd();
+                    // SE予定地: ボール落下音
+                    }
 
+                    // SE予定地:コイン獲得時SE
                     OnCollected?.Invoke(collectable);
                     OnCollectedAt?.Invoke(collectable, HitPosition);
                 }
 
                 if (_isJackSpot)
                 {
+                    // SE予定地:チャッカー
                     reserveManager?.AddReserve();
                 }
             }
