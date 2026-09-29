@@ -63,7 +63,7 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
-        MenuStart();
+        // MenuStart();
     }
 
     /// <summary>
@@ -78,6 +78,7 @@ public class MenuManager : MonoBehaviour
         statusGet.SetStatus();
         BGMManager.Instance.BGMChange(1);
         characterImage.MainImageChange();
+        Debug.Log("123");
     }
 
     /// <summary>

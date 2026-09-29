@@ -40,6 +40,7 @@ public class PanelAniZoom : MonoBehaviour
     {
         bOImage[0].SetActive(true);
         bOImage[1].SetActive(true);
+        Debug.Log("asd");
         targetPanel = panel;
         targerDuration = duration;
         CloseAnimation().Forget();
@@ -89,7 +90,12 @@ public class PanelAniZoom : MonoBehaviour
 
         // ショップ以外の場合、キャラ画像の変更
         if (!shopPanel.activeSelf)
+        {
             characterImage.MainImageChange();
+
+            // 現在メニューにいるのか
+            menuManager.MenuStart();
+        }
 
         // 暗転解除
         SEManager.Instance.SEPlays(SEManager.SEType.Enlarge);
