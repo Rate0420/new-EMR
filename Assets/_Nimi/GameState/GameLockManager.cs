@@ -69,6 +69,10 @@ namespace EMR.Core
         // SubMonitor系はここに加算しない(リールを止める対象ではないため)。
         readonly Dictionary<string, int> _pending = new Dictionary<string, int>();
 
+        // 種類問わず、名前ごとに「Acquireが呼ばれてからReleaseされるまで」をカウントする。
+        // これと_holdersの差分(呼ばれてはいるが、まだ保持者になっていない)が「待機中」の判定に使える。
+        readonly Dictionary<string, int> _requesting = new Dictionary<string, int>();
+
         /// <summary>
         /// ReserveManagerはシーン上のオブジェクトのため、GameStateの初期化時点では
         /// まだ存在しないことがある。ReserveManager自身のStart()等から、準備できた時点で
@@ -128,6 +132,9 @@ namespace EMR.Core
         {
             _kinds[who] = kind;
 
+            if (!_requesting.ContainsKey(who)) _requesting[who] = 0;
+            _requesting[who]++;
+
             if (kind == GameLockKind.FullScreen)
             {
                 if (!_pending.ContainsKey(who)) _pending[who] = 0;
@@ -172,6 +179,12 @@ namespace EMR.Core
                 if (_pending[who] <= 0) _pending.Remove(who);
             }
 
+            if (_requesting.ContainsKey(who))
+            {
+                _requesting[who]--;
+                if (_requesting[who] <= 0) _requesting.Remove(who);
+            }
+
             Debug.Log($"[GameLock] Release: {who} (残り保持者:{string.Join(",", Holders)})");
 
             // FullScreen系のpendingがすべて無くなった時だけリールの一時停止を解除する。
@@ -181,5 +194,30 @@ namespace EMR.Core
                 _reserveManager.pauseRequested = false;
             }
         }
+
+        /// <summary>
+        /// 指定した名前が「Acquireは呼ばれたが、まだ実際には取得できていない(＝順番待ち中)」か。
+        /// メニュー・シナリオ・ラウンドチェンジ・JPCC等の「待機列」表示に使う想定。
+        /// 実際に取得できた(画面が動き始めた)後はfalseになる。
+        /// </summary>
+        public bool IsWaiting(string who)
+        {
+            bool requesting = _requesting.TryGetValue(who, out var rc) && rc > 0;
+            bool holding = _holders.TryGetValue(who, out var hc) && hc > 0;
+            return requesting && !holding;
+        }
+
+        // 分かりやすいように、代表的な名前をショートカットとして公開しておく。
+        // 実際のAcquire呼び出し箇所の名前と対応している:
+        //   "Menu"        : SceneChanger.StartMenu
+        //   "Scenario"    : SceneChanger.StartScenarioCoroutine
+        //                   (ミニイベント/BallEventQueue.WaitForMiniEvent経由、
+        //                    およびデバッグ用のUキー起動シナリオも同じ名前を使う)
+        //   "RoundChange" : RoundChange.ProcessRoundChange
+        //   "Ball"        : BallEventQueue(JPCC抽選中のボール)
+        public bool IsMenuWaiting => IsWaiting("Menu");
+        public bool IsMiniEventWaiting => IsWaiting("Scenario");
+        public bool IsRoundChangeWaiting => IsWaiting("RoundChange");
+        public bool IsJPCCWaiting => IsWaiting("Ball");
     }
 }

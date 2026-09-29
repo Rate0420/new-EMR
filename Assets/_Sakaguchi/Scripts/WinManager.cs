@@ -23,7 +23,7 @@ public class WinManager : MonoBehaviour
     [SerializeField] MedalRefundBehaviour refundBehaviour2;  // JPC用
     [SerializeField] PriseGenerator priseGenerator;
 
-    [SerializeField] BallTest jpcBallTest;
+    [SerializeField] BallTest jpccBallTest;
 
     // メダルを排出している最中(払い出しセッション中)かどうか
     public bool isPayout = false;
@@ -242,7 +242,7 @@ public class WinManager : MonoBehaviour
     {
         if (number == 7)
         {
-            jpcBallTest.StartJPCC();
+            jpccBallTest.StartJPCC();
             return 0;
         }
         if (number % 2 == 0) return 30;
