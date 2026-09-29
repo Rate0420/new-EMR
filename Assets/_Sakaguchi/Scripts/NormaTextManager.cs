@@ -15,19 +15,19 @@ public class NormaTextManager : MonoBehaviour
 
 
 
-        // デバッグ
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            GameState.Instance.OwnedModel.AddMedal(100);
-        }
-        if (Input.GetKeyDown(KeyCode.A))
+        //// デバッグ
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    GameState.Instance.OwnedModel.AddMedal(100);
+        //}
+        if (Input.GetKeyDown(KeyCode.N))
         {
             // ボール
             GameState.Instance.RoundService.AddDroppedBalls(1);
         }
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            GameState.Instance.RoundService.ConsumeMedals(20);
-        }
+        //if (Input.GetKeyDown(KeyCode.Z))
+        //{
+        //    GameState.Instance.RoundService.ConsumeMedals(20);
+        //}
     }
 }

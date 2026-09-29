@@ -40,6 +40,7 @@ public class PanelAniZoom : MonoBehaviour
     {
         bOImage[0].SetActive(true);
         bOImage[1].SetActive(true);
+        Debug.Log("asd");
         targetPanel = panel;
         targerDuration = duration;
         CloseAnimation().Forget();
@@ -50,7 +51,7 @@ public class PanelAniZoom : MonoBehaviour
     /// </summary>
     private async UniTask CloseAnimation()
     {
-        SEManager.Instance.SE_Shrink();
+        SEManager.Instance.SEPlays(SEManager.SEType.Shrink);
         await ScaleAnimation(zoomInPos, zoomOutPos);
 
         // 暗転開始
@@ -70,21 +71,34 @@ public class PanelAniZoom : MonoBehaviour
             {
                 shopPanel.SetActive(false);
                 menuManager.isShopFlg = false;
+                BGMManager.Instance.BGMChange(1);
+
             }
             else
+            {
                 shopPanel.SetActive(true);
+                BGMManager.Instance.BGMChange(2);
+            }
         }
         else
+        {
             menuPanel.SetActive(!menuPanel.activeSelf);
+            BGMManager.Instance.BGMChange(1);
+        }
 
         await UniTask.WaitForSeconds(wSF);
 
         // ショップ以外の場合、キャラ画像の変更
         if (!shopPanel.activeSelf)
+        {
             characterImage.MainImageChange();
 
+            // 現在メニューにいるのか
+            menuManager.MenuStart();
+        }
+
         // 暗転解除
-        SEManager.Instance.SE_Enlarge();
+        SEManager.Instance.SEPlays(SEManager.SEType.Enlarge);
         await ScaleAnimation(_zoomInPos, _zoomOutPos);
         targetPanel = panel;
         targerDuration = duration;

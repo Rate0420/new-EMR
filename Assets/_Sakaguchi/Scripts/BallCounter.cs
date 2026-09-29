@@ -4,7 +4,8 @@ public class BallCounter : MonoBehaviour
 {
     int ballCount = 0;
     public BallEventQueue ballEventQueue; // ← SceneChangerの代わりに
-    public BallTest ballTest;
+    public BallTest JPCCBallTest;
+    public BallTest JPCBallTest;
 
     public int jpcPayoutAmount = 50; // JPC払い出し枚数（Inspector設定）
 
@@ -23,8 +24,8 @@ public class BallCounter : MonoBehaviour
 
     void BallCountCheck()
     {
-        // %2でミニイベント（キューに積む）
-        if (ballCount % 2 == 0)
+        // %3でミニイベント（キューに積む）
+        if (ballCount % 3 == 0)
         {
             ballEventQueue.EnqueueMiniEvent();
         }

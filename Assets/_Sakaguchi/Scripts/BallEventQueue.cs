@@ -26,7 +26,8 @@ public class BallEventQueue : MonoBehaviour
 
     [SerializeField] JPCPayoutManager jpcPayoutManager;
     [SerializeField] SceneChanger sceneChanger;
-    [SerializeField] BallTest ballTest;
+    [SerializeField] BallTest JPCballTest;
+    [SerializeField] BallTest JPCCballTest;
 
     public void EnqueueMiniEvent()
     {
@@ -87,10 +88,11 @@ public class BallEventQueue : MonoBehaviour
                     break;
 
                 case EventType.BallSpawn:
-                    // リールが止まっていて、他の誰もロックを持っていない状態になるまで自動的に待つ
-                    yield return GameState.Instance.GameLock.Acquire("Ball");
+                    // SubMonitor扱い：リールの保留消化とは並行して進める。
+                    // メニュー・シナリオ・ラウンドチェンジの開始だけはブロックされる。
+                    yield return GameState.Instance.GameLock.Acquire("Ball", GameLockKind.SubMonitor);
                     isBallActive = true;
-                    ballTest.StartJPCC();
+                    JPCCballTest.StartJPCC();
                     Debug.Log("[BallEventQueue] ボール生成完了 isBallActive=true");
                     yield return new WaitUntil(() => !isBallActive);
                     Debug.Log("[BallEventQueue] ボール着地確認");

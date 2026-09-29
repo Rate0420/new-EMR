@@ -17,12 +17,31 @@ namespace EMR.Medal.Refund
         [SerializeField] MedalRefundSpawner[] _spawner;
         [SerializeField] ProbabilitySelector<GameObject> _enemySelector;
 
+        [Header("排出間隔")]
+        [SerializeField, Tooltip("残り枚数がslowThreshold以下の時の排出間隔(秒)")]
+        float normalInterval = 0.25f;
+
+        [SerializeField, Tooltip("残り枚数がfastThreshold以上の時の排出間隔(秒)。最速値")]
+        float fastInterval = 0.03f;
+
+        [SerializeField, Tooltip("この枚数以下ならnormalIntervalのまま")]
+        int slowThreshold = 10;
+
+        [SerializeField, Tooltip("この枚数以上でfastIntervalに達する")]
+        int fastThreshold = 100;
+
         // 払い戻しの通知元
         private MedalRefundNotifier _refundNotifier;
 
         public System.Action OnRefundFinished;  // 終了通知
 
         public System.Action<int> OnMedalSpawned; // 残り枚数
+
+        // 排出ループが動いている間はtrue。
+        // 動いている最中に追加の払い戻し要求が来た場合は新しいループを始めず、
+        // 動いているループが RefundAmount の増加分をそのまま拾って排出する。
+        private bool _isProcessing = false;
+        public bool IsProcessing => _isProcessing;
 
 
         private void Start()
@@ -62,7 +81,23 @@ namespace EMR.Medal.Refund
 
         private void HandleRefundRequested(int refundAmount)
         {
+            // すでに排出中なら、増えた分は動いているループが拾うので何もしない
+            if (_isProcessing) return;
+
             ProcessRefundAsync(refundAmount).Forget();
+        }
+
+        /// <summary>
+        /// 残り排出枚数に応じた排出間隔を返す。
+        /// slowThreshold以下ならnormalInterval、fastThreshold以上ならfastIntervalになり、
+        /// その間は線形に補間される。
+        /// </summary>
+        private float GetInterval(int remaining)
+        {
+            if (fastThreshold <= slowThreshold) return normalInterval;
+
+            float t = Mathf.InverseLerp(slowThreshold, fastThreshold, remaining);
+            return Mathf.Lerp(normalInterval, fastInterval, t);
         }
 
         /// <summary>
@@ -72,6 +107,8 @@ namespace EMR.Medal.Refund
         private async UniTask ProcessRefundAsync(int refundAmount)
         {
             Debug.Log($"Refund: {refundAmount}");
+
+            _isProcessing = true;
 
             try
             {
@@ -87,7 +124,7 @@ namespace EMR.Medal.Refund
                     // Notify remaining payout count.
                     OnMedalSpawned?.Invoke(_refundNotifier.RefundAmount);
 
-                    await UniTask.Delay(System.TimeSpan.FromSeconds(0.25f));
+                    await UniTask.Delay(System.TimeSpan.FromSeconds(GetInterval(_refundNotifier.RefundAmount)));
 
                     await UniTask.WaitUntil(() => !GameState.Instance.GamePause.isPaused);
                 }
@@ -98,6 +135,7 @@ namespace EMR.Medal.Refund
             }
             finally
             {
+                _isProcessing = false;
                 OnRefundFinished?.Invoke();
             }
         }

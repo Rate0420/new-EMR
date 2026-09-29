@@ -7,7 +7,23 @@ public class SEManagerMenu : MonoBehaviour
     [SerializeField] public AudioSource seSource;      // SE用AudioSource
     [SerializeField] private AudioClip[] audioClips;   // SE音源
 
-    private int clipNo; // 再生する音源番号
+    public enum SEType
+    {
+        Decision = 0,       // 決定
+        Back = 1,           // キャンセル
+        Enlarge = 2,        // 拡大
+        Shrink = 3,         // 縮小
+        Slide = 4,          // スライド
+        Tap = 5,            // タップ
+        Buy = 6,            // 購入
+        GetBall = 7,        // ボール取得
+        GetCoin = 8,        // コイン取得
+        Chukka = 9 ,        // チャッカ―反応
+        Reach = 10,         // リーチ時
+        SlotStop = 11,      // スロット停止
+        CoinLaunch = 12,    // コイン発射
+        JingleHit = 13,     // 当たり時ジングル
+    }
 
     private void Awake()
     {
@@ -21,77 +37,20 @@ public class SEManagerMenu : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    /// <summary>
-    /// 決定
-    /// </summary>
-    public void SE_Decision()
-    {
-        clipNo = 0;
-        SEPlays();
-    }
-
-    /// <summary>
-    /// キャンセル
-    /// </summary>
-    public void SE_Back() 
-    {
-        clipNo = 1;
-        SEPlays();
-    }
-
-    /// <summary>
-    /// 拡大
-    /// </summary>
-    public void SE_Enlarge()
-    {
-        clipNo = 2;
-        SEPlays();
-    }
-
-    /// <summary>
-    /// 縮小
-    /// </summary>
-    public void SE_Shrink()
-    {
-        clipNo = 3;
-        SEPlays();
-    }
-
-    /// <summary>
-    /// スライド
-    /// </summary>
-    public void SE_Slide()
-    {
-        clipNo = 4;
-        SEPlays();
-    }
-
-    /// <summary>
-    /// タップ
-    /// </summary>
-    public void SE_Tap()
-    {
-        clipNo = 5;
-        SEPlays();
-    }
-
-    /// <summary>
-    /// 購入音
-    /// </summary>
-    private void SE_Buy()
-    {
-        clipNo = 6;
-        SEPlays();
-    }
-
-
-    /// <summary>
+    /// <summary> 
     /// SE再生
     /// </summary>
-    private void SEPlays()
+    public void SEPlays(SEType seType)
     {
+        int index = (int)seType;
+
+        if (seSource == null || audioClips == null || index >= audioClips.Length || audioClips[index] == null)
+        {
+            Debug.LogWarning($"SE「{seType}」が設定されていません。");
+            return;
+        }
+
         seSource.Stop();
-        seSource.clip = audioClips[clipNo];
-        seSource.PlayOneShot(seSource.clip);
+        seSource.PlayOneShot(audioClips[index]);
     }
 }
