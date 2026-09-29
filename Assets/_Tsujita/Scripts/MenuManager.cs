@@ -64,6 +64,12 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         // MenuStart();
+        buckButton2.SetActive(false);
+        isMenuFlg = false;
+        isLBOpen = false;
+
+        characterImage.Route();
+        statusGet.SetStatus();
     }
 
     /// <summary>

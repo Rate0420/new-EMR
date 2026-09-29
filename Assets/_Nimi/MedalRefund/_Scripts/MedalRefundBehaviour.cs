@@ -17,6 +17,19 @@ namespace EMR.Medal.Refund
         [SerializeField] MedalRefundSpawner[] _spawner;
         [SerializeField] ProbabilitySelector<GameObject> _enemySelector;
 
+        [Header("排出間隔")]
+        [SerializeField, Tooltip("残り枚数がslowThreshold以下の時の排出間隔(秒)")]
+        float normalInterval = 0.25f;
+
+        [SerializeField, Tooltip("残り枚数がfastThreshold以上の時の排出間隔(秒)。最速値")]
+        float fastInterval = 0.03f;
+
+        [SerializeField, Tooltip("この枚数以下ならnormalIntervalのまま")]
+        int slowThreshold = 10;
+
+        [SerializeField, Tooltip("この枚数以上でfastIntervalに達する")]
+        int fastThreshold = 100;
+
         // 払い戻しの通知元
         private MedalRefundNotifier _refundNotifier;
 
@@ -75,6 +88,19 @@ namespace EMR.Medal.Refund
         }
 
         /// <summary>
+        /// 残り排出枚数に応じた排出間隔を返す。
+        /// slowThreshold以下ならnormalInterval、fastThreshold以上ならfastIntervalになり、
+        /// その間は線形に補間される。
+        /// </summary>
+        private float GetInterval(int remaining)
+        {
+            if (fastThreshold <= slowThreshold) return normalInterval;
+
+            float t = Mathf.InverseLerp(slowThreshold, fastThreshold, remaining);
+            return Mathf.Lerp(normalInterval, fastInterval, t);
+        }
+
+        /// <summary>
         /// 払い戻し要求を受け取り、メダルを排出する
         /// </summary>
         /// <param name="refundAmount">払い戻すメダルの枚数</param>
@@ -98,7 +124,7 @@ namespace EMR.Medal.Refund
                     // Notify remaining payout count.
                     OnMedalSpawned?.Invoke(_refundNotifier.RefundAmount);
 
-                    await UniTask.Delay(System.TimeSpan.FromSeconds(0.25f));
+                    await UniTask.Delay(System.TimeSpan.FromSeconds(GetInterval(_refundNotifier.RefundAmount)));
 
                     await UniTask.WaitUntil(() => !GameState.Instance.GamePause.isPaused);
                 }

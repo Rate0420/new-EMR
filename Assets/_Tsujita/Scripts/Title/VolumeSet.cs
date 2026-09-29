@@ -5,7 +5,6 @@ public class VolumeSet : MonoBehaviour
     [SerializeField] private AudioSource bgmSource, seSource, voiceSource;
 
     private float setBGMVolume;   // BGM•Û‘¶‰¹—Ê
-    private float setSEVolume;    // SE•Û‘¶‰¹—Ê
     private float setVoiceVolume; // Voice•Û‘¶‰¹—Ê
 
     /// <summary>
@@ -14,11 +13,9 @@ public class VolumeSet : MonoBehaviour
     public void VolumeSetScene()
     {
         setBGMVolume = PlayerPrefs.GetFloat("BGMVolume", 5);
-        setSEVolume = PlayerPrefs.GetFloat("SEVolume", 5);
         setVoiceVolume = PlayerPrefs.GetFloat("VoiceVolume", 5);
 
         bgmSource.volume = setBGMVolume / 10f;
-        seSource.volume = setSEVolume / 10f;
         voiceSource.volume = setVoiceVolume / 10f;
     }
 }

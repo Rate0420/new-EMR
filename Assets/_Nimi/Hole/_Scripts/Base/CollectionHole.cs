@@ -45,6 +45,7 @@ namespace EMR.Medal.Hole
 
                 if (_isCount)
                 {
+                    if (collectable == null || ballCounter == null) return;
                     if (collectable.Info.Type == CollectableType.Ball) ballCounter.BallCountAdd();
 
                     OnCollected?.Invoke(collectable);
