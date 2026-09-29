@@ -120,6 +120,7 @@ namespace EMR.Medal.Launch
             {
                 if (GameState.Instance.OwnedModel.Count > 0 && !GameState.Instance.GamePause.isPaused)
                 {
+                    // SE予定地:コイン発射
                     Launch();
                     GameState.Instance.OwnedModel.RemoveMedal();
                     GameState.Instance.RoundService.ConsumeMedals(1);
