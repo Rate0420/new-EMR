@@ -40,7 +40,6 @@ public class PanelAniZoom : MonoBehaviour
     {
         bOImage[0].SetActive(true);
         bOImage[1].SetActive(true);
-        Debug.Log("asd");
         targetPanel = panel;
         targerDuration = duration;
         CloseAnimation().Forget();
@@ -51,7 +50,6 @@ public class PanelAniZoom : MonoBehaviour
     /// </summary>
     private async UniTask CloseAnimation()
     {
-        SEManager.Instance.SEPlays(SEManager.SEType.Shrink);
         await ScaleAnimation(zoomInPos, zoomOutPos);
 
         // 暗転開始
@@ -83,10 +81,6 @@ public class PanelAniZoom : MonoBehaviour
         else
         {
             menuPanel.SetActive(!menuPanel.activeSelf);
-            if (menuManager.isPanelFlg)
-            {
-                Debug.Log("1234567");
-            }
         }
 
         await UniTask.WaitForSeconds(wSF);
@@ -98,11 +92,9 @@ public class PanelAniZoom : MonoBehaviour
 
             // 現在メニューにいるのか
             menuManager.MenuStart();
-            Debug.Log("111111111");
         }
 
         // 暗転解除
-        SEManager.Instance.SEPlays(SEManager.SEType.Enlarge);
         await ScaleAnimation(_zoomInPos, _zoomOutPos);
         targetPanel = panel;
         targerDuration = duration;

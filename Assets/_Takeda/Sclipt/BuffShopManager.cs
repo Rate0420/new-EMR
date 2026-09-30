@@ -169,6 +169,7 @@ public class BuffShopManager : MonoBehaviour
 
         // ƒƒ_ƒ‹‚Ìx•¥‚¢
         GameState.Instance.OwnedModel.RemoveMedal(currentItem.cost[round]);
+        SEManager.Instance.SEPlays(SEManager.SEType.Buy);
 
         currentItem = null;
 

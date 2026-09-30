@@ -6,11 +6,14 @@ using EMR.Core;
 public class SceneChanger : MonoBehaviour
 {
     private GamePause gamePause;
+
     [SerializeField] GameObject MedalRoot;
     [SerializeField] PanelAniZoom panelAniZoom;
     [SerializeField] GameObject menuCanvas;
     [SerializeField] GameObject BlackOutImage;
     [SerializeField] RoundChange roundChange;
+
+    [SerializeField] private MenuManager menuManager;
 
     bool isStartmenuprocessing = false;
 
@@ -37,15 +40,15 @@ public class SceneChanger : MonoBehaviour
         {
             StartCoroutine(EndScenarioCoroutine("Sakaguchi_TestStoryScene"));
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.M))
+    public void OnMenuButton()
+    {
+        if (!isStartmenuprocessing)
         {
-
-            if (!isStartmenuprocessing)
-            {
-                isStartmenuprocessing = true;
-                StartCoroutine(StartMenu());
-            }
+            isStartmenuprocessing = true;
+            menuManager.isAllMF = true;
+            StartCoroutine(StartMenu());
         }
     }
 
@@ -142,6 +145,7 @@ public class SceneChanger : MonoBehaviour
 
     public void EndMenu()
     {
+        menuManager.isAllMF = false;
         StartCoroutine(EndMenuCoroutine());
     }
 

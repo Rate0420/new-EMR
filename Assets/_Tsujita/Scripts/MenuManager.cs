@@ -42,6 +42,7 @@ public class MenuManager : MonoBehaviour
     public bool isMenuFlg;  // メニューパネル表示フラグ
     public bool isLBOpen;   // 追加パネル表示用フラグ
     public bool isShopFlg;
+    public bool isAllMF;
 
     public int nowPanelNo = -1;     // 現在開いているパネル番号
     public int currentPanelNo = -1; // 2重パネル用
@@ -81,9 +82,11 @@ public class MenuManager : MonoBehaviour
         isLBOpen = false;
         characterImage.Route();
         statusGet.SetStatus();
-        BGMManager.Instance.BGMChange(1);
-        characterImage.MainImageChange();
-        Debug.Log("123");
+        if(isAllMF)
+        {
+            BGMManager.Instance.BGMChange(1);
+            characterImage.MainImageChange();
+        }
     }
 
     /// <summary>
