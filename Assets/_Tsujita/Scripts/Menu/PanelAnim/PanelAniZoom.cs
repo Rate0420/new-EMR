@@ -83,7 +83,10 @@ public class PanelAniZoom : MonoBehaviour
         else
         {
             menuPanel.SetActive(!menuPanel.activeSelf);
-            BGMManager.Instance.BGMChange(1);
+            if (menuManager.isPanelFlg)
+            {
+                Debug.Log("1234567");
+            }
         }
 
         await UniTask.WaitForSeconds(wSF);
@@ -95,6 +98,7 @@ public class PanelAniZoom : MonoBehaviour
 
             // Œ»İƒƒjƒ…[‚É‚¢‚é‚Ì‚©
             menuManager.MenuStart();
+            Debug.Log("111111111");
         }
 
         // ˆÃ“]‰ğœ

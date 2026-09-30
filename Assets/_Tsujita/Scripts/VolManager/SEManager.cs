@@ -44,7 +44,7 @@ public class SEManager : MonoBehaviour
     /// <summary> 
     /// SEçƒê∂
     /// </summary>
-    public void SEPlays(SEType seType)
+    publicÅ@ void SEPlays(SEType seType)
     {
         float volume = PlayerPrefs.GetFloat("SEVolume", 5);
         seSource.volume = volume / 10f;

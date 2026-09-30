@@ -67,7 +67,6 @@ public class MenuManager : MonoBehaviour
         buckButton2.SetActive(false);
         isMenuFlg = false;
         isLBOpen = false;
-
         characterImage.Route();
         statusGet.SetStatus();
     }
