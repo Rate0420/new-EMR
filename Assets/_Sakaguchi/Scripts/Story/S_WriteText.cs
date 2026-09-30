@@ -95,7 +95,7 @@ public class S_WriteText : MonoBehaviour
             else
             {
                 // 通常テキスト：バックログ登録してから次へ
-                createBackLog?.CreateLog(snapIndex);
+                //createBackLog?.CreateLog(snapIndex);
 
                 if (currentEntry.HasJump)
                 {
@@ -213,7 +213,7 @@ public class S_WriteText : MonoBehaviour
         }
 
         // バックログに登録（選択肢エントリは登録しない）
-        createBackLog?.CreateLog(entryIndex);
+        //createBackLog?.CreateLog(entryIndex);
 
         // nextIndex が指定されていれば自動ジャンプ（次へボタンを押さずに飛ぶ）
         // nextIndex = -1 なら通常通り Index+1 へ進んで矢印を出して待機
