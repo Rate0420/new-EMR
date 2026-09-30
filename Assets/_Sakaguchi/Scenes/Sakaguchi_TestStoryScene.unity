@@ -235,7 +235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &27176671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,7 +397,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u3080\u3001\u901A\u308A\u96E8\u304B...\u6FE1\u308C\u3066\u3057\u307E\u3046\u306A....\u5098\u306F\u5C11\u5E74\u306E\u4E00\u672C\u3057\u304B\u306A\u3044\u3057\u3001\u3069\u3046\u3059\u3079\u304D\u304B..."
+  m_text: "\u3042\uFF1C\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\uFF1E"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6c54e31a636ba1b438e1bdda274251e8, type: 2}
   m_sharedMaterial: {fileID: -8845222356768940507, guid: 6c54e31a636ba1b438e1bdda274251e8, type: 2}
@@ -424,8 +424,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54
-  m_fontSizeBase: 54
+  m_fontSize: 46.7
+  m_fontSizeBase: 46.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2222,7 +2222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66715c1d197956b41937dd75fa89fce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storyData: {fileID: 0}
+  storyData: {fileID: 11400000, guid: 0945bb7585810e54a8d74f271cd73798, type: 2}
   writeText: {fileID: 2122193209}
   twoChoiceGroup: {fileID: 6540668693004977589}
   twoChoiceBtns:
@@ -3494,7 +3494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c3e32037c8d4504e9d47c948561fcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  story: {fileID: 11400000, guid: 0945bb7585810e54a8d74f271cd73798, type: 2}
+  story: {fileID: 11400000, guid: d956e320e455ed341a43da76a9f28f3d, type: 2}
   characterStory: {fileID: 0}
 --- !u!4 &946415719
 Transform:
@@ -4343,12 +4343,12 @@ GameObject:
   - component: {fileID: 1634625719}
   - component: {fileID: 1634625718}
   m_Layer: 0
-  m_Name: EventSystem
+  m_Name: EventSystem(HonbandehaKesu)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1634625718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5164,7 +5164,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2097658645
 MonoBehaviour:
   m_ObjectHideFlags: 0

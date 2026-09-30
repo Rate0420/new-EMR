@@ -51,16 +51,16 @@ public class JPCCManager : MonoBehaviour
                     return $"{JPCMaxPrise}";
                 case 3:
                 case 7:
-                    return $"{HighPrise[0]}";
+                    return $"{JPCHighPrise[0]}";
                 case 2:
                 case 5:
                 case 8:
-                    return $"{MiddlePrise[0]}";
+                    return $"{JPCMiddlePrise[0]}";
                 case 1:
                 case 4:
                 case 6:
                 case 9:
-                    return $"{LowPrise[0]}";
+                    return $"{JPCLowPrise[0]}";
                 default:
                     return "???";
             }

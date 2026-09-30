@@ -11,7 +11,7 @@ public class S_CreateBackLog : MonoBehaviour
 
     private HashSet<int> createdIndexes = new HashSet<int>();
 
-    private void Awake()
+    private void Start()
     {
         storyData = S_DontDestroyStory.instance.story;
     }

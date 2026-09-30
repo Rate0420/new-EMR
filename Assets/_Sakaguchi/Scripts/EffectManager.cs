@@ -119,6 +119,7 @@ public class EffectManager : MonoBehaviour
         // ‡D Œ‹‰Ê‚É‰‚¶‚Ä’â~
         reelManager.centerReel.StopSpin(isWin ? winIndex : reelManager.CurrentLoseIndex);
         yield return new WaitUntil(() => !reelManager.centerReel.IsSpinning);
+        SEManager.Instance.SEPlays(SEManager.SEType.SlotStop);
         Debug.Log("[EffectManager] ’†ƒŠ[ƒ‹’â~Š®—¹");
 
         // ‡E ƒAƒjƒ[ƒVƒ‡ƒ“I—¹‘Ò‚¿
@@ -145,6 +146,7 @@ public class EffectManager : MonoBehaviour
     public IEnumerator PlayReach()
     {
         StartCoroutine(videoEffectPlayer.PlayVideoNoFadeCoroutine(18, 1f));
+        SEManager.Instance.SEPlays(SEManager.SEType.Reach);
         yield return StartCoroutine(videoEffectPlayer.WaitEarlyEndCoroutine(1f));
     }
 
@@ -198,8 +200,5 @@ public class EffectManager : MonoBehaviour
                 StartCoroutine(preEffectPlayer.PlayVideoNoFadeCoroutine(r, 1f));
                 break;
         }
-
-
     }
-
 }

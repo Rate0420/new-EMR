@@ -17,7 +17,7 @@ public class MiniEventBet : MonoBehaviour
 
     public int consumptionMedal = 15;
 
-    void Awake()
+    void Start()
     {
         Medals = GameState.Instance.OwnedModel.Count;
         Debug.Log("ƒƒ_ƒ‹:"+Medals);

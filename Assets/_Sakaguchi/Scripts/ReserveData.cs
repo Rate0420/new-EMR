@@ -1,3 +1,4 @@
+using UnityEngine;
 using static ReserveManager;
 
 public class ReserveData
@@ -10,4 +11,5 @@ public class ReserveData
     public ReserveVisualType visual; // •Û—¯Œ©‚½–Ú
     public bool isReach;
     public bool isPreTarget;
+    public Sprite miniChara;
 }
