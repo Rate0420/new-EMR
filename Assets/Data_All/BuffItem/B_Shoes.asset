@@ -15,7 +15,7 @@ MonoBehaviour:
   itemType: 4
   itemName: "\u30B9\u30DD\u30FC\u30C4\u5E97\u306E\u9774"
   description: "\u76E4\u9762\u306E\u6469\u64E6\u3092\u4E0B\u3052\u308B"
-  cost: 3200000064000000af000000130100009001000026020000a3020000
+  cost: 32000000c8000000f401000057040000
   icon: {fileID: 21300000, guid: c984d5072e1dd694ba2de831fb587fcb, type: 3}
   effect: {fileID: 0}
   isConsumable: 0

@@ -44,7 +44,6 @@ public class BuffShopManager : MonoBehaviour
     private int rerollCount;    // リロール回数のリセット
 
     // ラウンドマネージャーができるまでの仮
-    public int round;
 
     void Start()
     {
@@ -106,7 +105,7 @@ public class BuffShopManager : MonoBehaviour
         detailIcon.sprite = item.icon;
         detailName.text = item.itemName;
         detailDesc.text = item.description;
-        costText.text = $"{item.cost[round]}枚"; ;
+        costText.text = $"{item.cost[item.level]}枚"; ;
         levelText.text = "Lv." + item.level; 
 
         if (item.isConsumable)
@@ -168,7 +167,7 @@ public class BuffShopManager : MonoBehaviour
         }
 
         // メダルの支払い
-        GameState.Instance.OwnedModel.RemoveMedal(currentItem.cost[round]);
+        GameState.Instance.OwnedModel.RemoveMedal(currentItem.cost[currentItem.level]);
         SEManager.Instance.SEPlays(SEManager.SEType.Buy);
 
         currentItem = null;
@@ -190,7 +189,7 @@ public class BuffShopManager : MonoBehaviour
         }
 
         buyButton.interactable =
-            GameState.Instance.OwnedModel.Count >= currentItem.cost[round];
+            GameState.Instance.OwnedModel.Count >= currentItem.cost[currentItem.level];
     }
 
     //------------------------------------
