@@ -184,6 +184,7 @@ public class ReserveManager : MonoBehaviour, IReserveGate
         {
             var img = ReserveObject[i].GetComponent<Renderer>().material;
             img.color = Color.gray;
+            SetMiniChara(i, null);
         }
     }
 
