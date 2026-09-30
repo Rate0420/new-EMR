@@ -4,8 +4,8 @@ using static ReserveManager;
 
 public class SlotManager : MonoBehaviour
 {
-    public const float baseWinProbability = 0.4f; //当たりの確率
-    public const float baseChanceWinProbability = 0.8f; // 確変時の確率
+    public const float baseWinProbability = 0.1f; //当たりの確率
+    public const float baseChanceWinProbability = 0.3f; // 確変時の確率
     public float winProbability = 0.1f; //当たりの確率
     public float chanceWinProbability = 0.3f; // 確変時の確率
     [SerializeField] public bool Kakuhen = false;

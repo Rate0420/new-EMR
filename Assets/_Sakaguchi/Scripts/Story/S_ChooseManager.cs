@@ -39,7 +39,7 @@ public class S_ChooseManager : MonoBehaviour
 
     // ----------------------------------------------------------------
 
-    private void Awake()
+    private void Start()
     {
         // Start より早い Awake で初期化することで、WriteText の Start から
         // ShowChoices が呼ばれる前に storyData が確実にセットされる
