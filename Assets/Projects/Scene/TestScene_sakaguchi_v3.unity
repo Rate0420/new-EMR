@@ -5606,6 +5606,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 327773068}
     m_Modifications:
+    - target: {fileID: 6629519228760761571, guid: 4b8eb7ef1956979468e74990acb6fbd2, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6885308345251761714, guid: 4b8eb7ef1956979468e74990acb6fbd2, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6885308345251761714, guid: 4b8eb7ef1956979468e74990acb6fbd2, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7341290539331128005, guid: 4b8eb7ef1956979468e74990acb6fbd2, type: 3}
       propertyPath: m_Name
       value: SideHole
@@ -9090,7 +9102,7 @@ Transform:
   m_GameObject: {fileID: 593073670}
   serializedVersion: 2
   m_LocalRotation: {x: 0.16062424, y: -0, z: -0, w: 0.98701566}
-  m_LocalPosition: {x: 0, y: 11, z: -10.68}
+  m_LocalPosition: {x: 0, y: 11, z: -11.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
