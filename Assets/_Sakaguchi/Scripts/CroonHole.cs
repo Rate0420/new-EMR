@@ -12,7 +12,10 @@ public class CroonHole : MonoBehaviour
 
     private void Start()
     {
-        prizeText.text = jpccManager.GetPriseText(holeIndex, isJPC);
+        if (prizeText != null)
+        {
+            prizeText.text = jpccManager?.GetPriseText(holeIndex, isJPC);
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -25,16 +28,16 @@ public class CroonHole : MonoBehaviour
                     bounder.holeOccupied[holeIndex] = true;
 
                 // ボールが穴に落ちたことを通知（BallSpawnの待機を解除）
-                ballEventQueue.NotifyBallEntered(); // ← 追加
+                ballEventQueue?.NotifyBallEntered(); // ← 追加
 
-                jpccManager.JPCCPrise(holeIndex);
+                jpccManager?.JPCCPrise(holeIndex);
             }
         }
 
         else if (other.transform.parent.CompareTag("Ball"))
         {
             // otherを削除
-            jpccManager.JPCPrise(holeIndex);
+            jpccManager?.JPCPrise(holeIndex);
             Destroy(other.transform.parent.gameObject);
         }
     }
