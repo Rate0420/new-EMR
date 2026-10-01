@@ -1,9 +1,8 @@
 using UnityEngine;
 using UnityEngine.Serialization;
-
 using EMR.Core;
+using UnityEngine.EventSystems;
 
-using Codice.CM.WorkspaceServer;
 
 namespace EMR.Medal.Launch
 {
@@ -13,6 +12,8 @@ namespace EMR.Medal.Launch
     /// </summary>
     public partial class MedalLaunch : MonoBehaviour, IMedalLaunch
     {
+        [SerializeField] CameraSwitch _cameraSwitch;
+
         //発射時に生成するメダルPrefabのRigidbody。
         [Header("メダルの設定")]
         [SerializeField, FormerlySerializedAs("_medalPrefab")]
@@ -120,7 +121,8 @@ namespace EMR.Medal.Launch
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (GameState.Instance.OwnedModel.Count > 0 && !GameState.Instance.GamePause.isPaused)
+                if (GameState.Instance.OwnedModel.Count > 0 && !GameState.Instance.GamePause.isPaused
+                    && !EventSystem.current.IsPointerOverGameObject())
                 {
                     // SE予定地:コイン発射
                     Launch();
