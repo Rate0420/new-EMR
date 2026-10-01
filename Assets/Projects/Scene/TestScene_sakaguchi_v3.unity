@@ -13338,6 +13338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946feaac6e76a2e46946d7c6c872b762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cameraSwitch: {fileID: 828441235}
   _medalRigidbodyPrefab: {fileID: 2764741081746486083, guid: 3cb9304156e295e458528324926f3f35, type: 3}
   _medalParentTransform: {fileID: 1852758205}
   _mouseInputCamera: {fileID: 1020852543}
@@ -14203,6 +14204,7 @@ MonoBehaviour:
   moveSpeed: 5
   rotateSpeed: 5
   Camera: {fileID: 828441232}
+  currentCameraPosition: 0
 --- !u!4 &828836610 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1840463067707330430, guid: 3cb9304156e295e458528324926f3f35, type: 3}
@@ -33388,22 +33390,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 614159850035940346, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
+      propertyPath: jpccManager
+      value: 
+      objectReference: {fileID: 886674087}
+    - target: {fileID: 614159850035940346, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
+      propertyPath: ballEventQueue
+      value: 
+      objectReference: {fileID: 2112621051}
     - target: {fileID: 1050301772086255823, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
       propertyPath: jpccManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 886674087}
     - target: {fileID: 1050301772086255823, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
       propertyPath: ballEventQueue
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2112621051}
+    - target: {fileID: 1292547612470929705, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
+      propertyPath: jpccManager
+      value: 
+      objectReference: {fileID: 886674087}
+    - target: {fileID: 1292547612470929705, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
+      propertyPath: ballEventQueue
+      value: 
+      objectReference: {fileID: 2112621051}
     - target: {fileID: 1462708162079051930, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
       propertyPath: jpccManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 886674087}
     - target: {fileID: 1462708162079051930, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
       propertyPath: ballEventQueue
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2112621051}
+    - target: {fileID: 2736107877677056850, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
+      propertyPath: jpccManager
+      value: 
+      objectReference: {fileID: 886674087}
+    - target: {fileID: 2736107877677056850, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
+      propertyPath: ballEventQueue
+      value: 
+      objectReference: {fileID: 2112621051}
     - target: {fileID: 3591251882381324346, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
       propertyPath: m_Name
       value: JPCC
@@ -33451,27 +33477,27 @@ PrefabInstance:
     - target: {fileID: 4872454739391432721, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
       propertyPath: jpccManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 886674087}
     - target: {fileID: 4872454739391432721, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
       propertyPath: ballEventQueue
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2112621051}
     - target: {fileID: 5025556324973411565, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
       propertyPath: jpccManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 886674087}
     - target: {fileID: 5025556324973411565, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
       propertyPath: ballEventQueue
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2112621051}
     - target: {fileID: 5582181330974210096, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
       propertyPath: jpccManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 886674087}
     - target: {fileID: 5582181330974210096, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
       propertyPath: ballEventQueue
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2112621051}
     - target: {fileID: 6461957287843982673, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
       propertyPath: jpccManager
       value: 
@@ -33480,22 +33506,62 @@ PrefabInstance:
       propertyPath: ballEventQueue
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6654662383112210872, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
+      propertyPath: jpccManager
+      value: 
+      objectReference: {fileID: 886674087}
+    - target: {fileID: 6654662383112210872, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
+      propertyPath: ballEventQueue
+      value: 
+      objectReference: {fileID: 2112621051}
     - target: {fileID: 7267673284963826559, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
       propertyPath: jpccManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 886674087}
     - target: {fileID: 7267673284963826559, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
       propertyPath: ballEventQueue
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2112621051}
+    - target: {fileID: 7312068025881125986, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
+      propertyPath: jpccManager
+      value: 
+      objectReference: {fileID: 886674087}
+    - target: {fileID: 7312068025881125986, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
+      propertyPath: ballEventQueue
+      value: 
+      objectReference: {fileID: 2112621051}
     - target: {fileID: 7827389376388518539, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
       propertyPath: jpccManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 886674087}
     - target: {fileID: 7827389376388518539, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
       propertyPath: ballEventQueue
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2112621051}
+    - target: {fileID: 8262534595959618068, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
+      propertyPath: jpccManager
+      value: 
+      objectReference: {fileID: 886674087}
+    - target: {fileID: 8262534595959618068, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
+      propertyPath: ballEventQueue
+      value: 
+      objectReference: {fileID: 2112621051}
+    - target: {fileID: 8546012948158734263, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
+      propertyPath: jpccManager
+      value: 
+      objectReference: {fileID: 886674087}
+    - target: {fileID: 8546012948158734263, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
+      propertyPath: ballEventQueue
+      value: 
+      objectReference: {fileID: 2112621051}
+    - target: {fileID: 8712879737800415639, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
+      propertyPath: jpccManager
+      value: 
+      objectReference: {fileID: 886674087}
+    - target: {fileID: 8712879737800415639, guid: 5e8edc8ce1f3510409be044f412de940, type: 3}
+      propertyPath: ballEventQueue
+      value: 
+      objectReference: {fileID: 2112621051}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
