@@ -26,6 +26,7 @@ public class TitleFade : MonoBehaviour
 
     [SerializeField] private string titleSceneName; // タイトルシーン名
     [SerializeField] private string gameSceneName;  // ゲームシーン名
+    [SerializeField] private string charaScene;     // キャラ選択シーン
 
     private RectTransform targetPanel;  // 現在暗転させているもの
     private float targerDuration;       // 現在設定されている暗転時間
@@ -33,6 +34,8 @@ public class TitleFade : MonoBehaviour
     private string currentScene;
 
     [SerializeField] private Image c_Image;
+
+    private bool isChara;
 
     private void Awake()
     {
@@ -46,6 +49,8 @@ public class TitleFade : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         fadePanel.SetActive(false);
+
+        isChara = false;
     }
 
     public void ImageChange(Sprite sprite)
@@ -77,7 +82,18 @@ public class TitleFade : MonoBehaviour
 
         // シーン遷移 タイトル⇔ゲームシーン
         currentScene = SceneManager.GetActiveScene().name;
-        if (currentScene == titleSceneName)
+        if(!isChara)
+        {
+            // 一度だけキャラ選択画面に移行
+            isChara = true;
+            await SceneManager.LoadSceneAsync(charaScene);
+        }
+        else if (currentScene == charaScene)
+        {
+            await SceneManager.LoadSceneAsync(gameSceneName);
+            BGMManager.Instance.BGMChange(3);
+        }
+        else if (currentScene == titleSceneName)
         {
             await SceneManager.LoadSceneAsync(gameSceneName);
             BGMManager.Instance.BGMChange(3);

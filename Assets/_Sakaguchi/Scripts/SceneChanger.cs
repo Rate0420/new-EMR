@@ -69,6 +69,9 @@ public class SceneChanger : MonoBehaviour
         gamePause.ChangePause(true);
         panelAniZoom.isGameScene = true;
         menuCanvas.SetActive(true);
+        menuManager.isAllMF = true;
+
+        yield return null;
         BlackOutImage.SetActive(true);
         panelAniZoom.MenuPanelChange();
 

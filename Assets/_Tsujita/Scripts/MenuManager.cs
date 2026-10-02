@@ -46,6 +46,7 @@ public class MenuManager : MonoBehaviour
 
     public int nowPanelNo = -1;     // 現在開いているパネル番号
     public int currentPanelNo = -1; // 2重パネル用
+    private int routeNo;
 
     private void Awake()
     {
@@ -64,7 +65,8 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
-        // MenuStart();
+        routeNo =  PlayerPrefs.GetInt("RouteNo");
+        currentRoute = (CharactorType)routeNo;
         buckButton2.SetActive(false);
         isMenuFlg = false;
         isLBOpen = false;

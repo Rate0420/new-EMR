@@ -2125,6 +2125,7 @@ MonoBehaviour:
   wSF: 1
   titleSceneName: TitleScene
   gameSceneName: TestScene_sakaguchi_v3
+  charaScene: CharaScene
   c_Image: {fileID: 7044578312513355534}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
