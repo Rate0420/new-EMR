@@ -3494,7 +3494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c3e32037c8d4504e9d47c948561fcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  story: {fileID: 11400000, guid: d956e320e455ed341a43da76a9f28f3d, type: 2}
+  story: {fileID: 11400000, guid: d670dcff3f462a747a8ab960af89f0bf, type: 2}
   characterStory: {fileID: 0}
 --- !u!4 &946415719
 Transform:
