@@ -3,6 +3,8 @@ using UnityEngine.Serialization;
 
 using EMR.Core;
 
+using Codice.CM.WorkspaceServer;
+
 namespace EMR.Medal.Launch
 {
     /// <summary>
@@ -122,6 +124,7 @@ namespace EMR.Medal.Launch
                 {
                     // SE予定地:コイン発射
                     Launch();
+                    SEManager.Instance.SEPlays(SEManager.SEType.CoinLaunch);
                     GameState.Instance.OwnedModel.RemoveMedal();
                     GameState.Instance.RoundService.ConsumeMedals(1);
                 }

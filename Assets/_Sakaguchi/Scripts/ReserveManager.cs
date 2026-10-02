@@ -16,12 +16,13 @@ public class ReserveManager : MonoBehaviour, IReserveGate
     [SerializeField] EffectManager effectManager;
     [SerializeField] GameObject[] ReserveObject;  // 0:現在消化中の保留、1~5:保留スロット
 
+    [SerializeField] private Sprite[] miniCharas;   // ミニキャラ画像 
+    [SerializeField] private SpriteRenderer[] miniCharaRenderers;
+
     private GamePause gamePause;
 
     public bool isProcessing { get; set; } = false;
     public bool pauseRequested { get; set; } = false;
-
-
 
     public bool isPaused = false;
 
@@ -99,6 +100,13 @@ public class ReserveManager : MonoBehaviour, IReserveGate
 
         ReserveData data = slotManager.GenerateReserveData();
         reserves.Enqueue(data);
+
+        if (miniCharas != null && miniCharas.Length > 0)
+        {
+            int randomIndex = Random.Range(0, miniCharas.Length);
+            data.miniChara = miniCharas[randomIndex];
+        }
+
         UpdateReserveVisuals();
 
         if (!isProcessing)
@@ -157,11 +165,18 @@ public class ReserveManager : MonoBehaviour, IReserveGate
             img0.color = Color.gray;
         }
 
+        // 画像の更新
+        SetMiniChara(0, currentReserve);
+
         // 1以降は「待機中保留」
         for (int i = 0; i < array.Length; i++)
         {
             var img = ReserveObject[i + 1].GetComponent<Renderer>().material;
+
             img.color = GetColor(array[i].visual);
+
+            // 画像の更新
+            SetMiniChara(i + 1, array[i]);
         }
 
         // 空きスロット
@@ -169,6 +184,7 @@ public class ReserveManager : MonoBehaviour, IReserveGate
         {
             var img = ReserveObject[i].GetComponent<Renderer>().material;
             img.color = Color.gray;
+            SetMiniChara(i, null);
         }
     }
 
@@ -239,6 +255,31 @@ public class ReserveManager : MonoBehaviour, IReserveGate
     public void ChangePause()
     {
         isPaused = gamePause.isPaused;
+    }
+
+    private void SetMiniChara(int index, ReserveData data)
+    {
+        if (miniCharaRenderers == null ||
+            index < 0 ||
+            index >= miniCharaRenderers.Length)
+        {
+            return;
+        }
+
+        SpriteRenderer spriteRenderer = miniCharaRenderers[index];
+
+        if (spriteRenderer == null) return;
+
+        if (data != null && data.miniChara != null)
+        {
+            spriteRenderer.sprite = data.miniChara;
+            spriteRenderer.enabled = true;
+        }
+        else
+        {
+            spriteRenderer.sprite = null;
+            spriteRenderer.enabled = false;
+        }
     }
 }
 

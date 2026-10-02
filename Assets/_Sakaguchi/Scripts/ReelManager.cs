@@ -154,7 +154,6 @@ public class ReelManager : MonoBehaviour
             // ① 通常リーチ演出（動画）
             yield return StartCoroutine(effectManager.PlayReach());
             Debug.Log("[ReelManager] PlayReach完了");
-            SEManager.Instance.SEPlays(SEManager.SEType.Reach);
 
             // ② 仮停止
             centerReel.TempStop(result[1], result[0]);
@@ -174,6 +173,7 @@ public class ReelManager : MonoBehaviour
             yield return StartCoroutine(effectManager.PlayReach());
             centerReel.StopSpin(result[1], 1f);
             yield return WaitReelStopped(centerReel, result[1], "center");
+            SEManager.Instance.SEPlays(SEManager.SEType.SlotStop);
             Debug.Log("[ReelManager] 通常リーチ中停止完了");
         }
         else
