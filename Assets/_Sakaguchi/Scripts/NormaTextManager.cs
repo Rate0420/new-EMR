@@ -27,7 +27,7 @@ public class NormaTextManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            GameState.Instance.RoundService.ConsumeMedals(20);
+            //GameState.Instance.RoundService.ConsumeMedals(20);
         }
     }
 }

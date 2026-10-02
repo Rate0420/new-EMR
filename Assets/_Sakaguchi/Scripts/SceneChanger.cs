@@ -32,14 +32,7 @@ public class SceneChanger : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            StartScenario("Sakaguchi_TestStoryScene");
-        }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            StartCoroutine(EndScenarioCoroutine("Sakaguchi_TestStoryScene"));
-        }
+
     }
 
     public void OnMenuButton()
@@ -69,9 +62,6 @@ public class SceneChanger : MonoBehaviour
         gamePause.ChangePause(true);
         panelAniZoom.isGameScene = true;
         menuCanvas.SetActive(true);
-        menuManager.isAllMF = true;
-
-        yield return null;
         BlackOutImage.SetActive(true);
         panelAniZoom.MenuPanelChange();
 

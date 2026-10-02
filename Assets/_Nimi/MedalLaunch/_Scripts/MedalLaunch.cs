@@ -122,7 +122,7 @@ namespace EMR.Medal.Launch
             if (Input.GetMouseButtonDown(0))
             {
                 if (GameState.Instance.OwnedModel.Count > 0 && !GameState.Instance.GamePause.isPaused
-                    && !EventSystem.current.IsPointerOverGameObject() && _cameraSwitch.currentCameraPosition == CameraPosition.Default)
+                    /*&& !EventSystem.current.IsPointerOverGameObject()*/ && _cameraSwitch.currentCameraPosition == CameraPosition.Default)
                 {
                     // SE予定地:コイン発射
                     Launch();

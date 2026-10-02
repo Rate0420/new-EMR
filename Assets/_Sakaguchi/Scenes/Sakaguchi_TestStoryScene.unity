@@ -2222,7 +2222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66715c1d197956b41937dd75fa89fce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storyData: {fileID: 11400000, guid: 0945bb7585810e54a8d74f271cd73798, type: 2}
+  storyData: {fileID: 11400000, guid: a86eea320797b324abd04af86654497f, type: 2}
   writeText: {fileID: 2122193209}
   twoChoiceGroup: {fileID: 6540668693004977589}
   twoChoiceBtns:
@@ -3496,7 +3496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c3e32037c8d4504e9d47c948561fcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  story: {fileID: 11400000, guid: d44089d921dcbe14b941f92b0d0d567b, type: 2}
+  story: {fileID: 11400000, guid: 3105144ae80cf44439a957616eea1e4c, type: 2}
   characterStory: {fileID: 0}
 --- !u!4 &946415719
 Transform:
