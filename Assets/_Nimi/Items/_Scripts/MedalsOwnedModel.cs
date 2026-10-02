@@ -1,3 +1,4 @@
+using EMR.Core;
 using System;
 
 namespace EMR.Medal
@@ -67,6 +68,8 @@ namespace EMR.Medal
 
             Count += count;
             OnCountChanged?.Invoke(Count);
+
+            GameState.Instance.RoundService.SetConsumedMedals(Count);
         }
 
 
@@ -94,6 +97,8 @@ namespace EMR.Medal
             ConsumedCount += removed;
 
             OnCountChanged?.Invoke(Count);
+
+            GameState.Instance.RoundService.SetConsumedMedals(Count);
         }
     }
 }

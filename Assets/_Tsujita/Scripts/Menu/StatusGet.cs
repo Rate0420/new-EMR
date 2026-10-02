@@ -54,6 +54,8 @@ public class StatusGet : MonoBehaviour
                 MenuManager.Instance.currentRoute
             );
 
+        Debug.Log(MenuManager.Instance.currentRoute);
+
         cutinSprite.sprite = characterData.cutinSprite;
 
         // ステータス取得　未実装

@@ -20,7 +20,7 @@ namespace EMR.Round
         public int RequiredBallCount { get; private set; }
 
         /// <summary>
-        /// ラウンド進行に必要なメダル数
+        /// ラウンド進行に必要な所持メダル数
         /// </summary>
         public int RequiredMedalCount { get; private set; }
 
@@ -32,9 +32,9 @@ namespace EMR.Round
 
 
         /// <summary>
-        /// 現在ラウンドで消費したメダル数
+        /// 現在ラウンドで獲得したメダル数
         /// </summary>
-        public int ConsumedMedals { get; private set; }
+        public int CollectedMedals { get; private set; }
 
         /// <summary>
         /// ラウンド進行までに必要な残りボール数
@@ -46,7 +46,7 @@ namespace EMR.Round
         /// ラウンド進行までに必要な残りメダル数
         /// </summary>
         public int RemainingMedals =>
-            Math.Max(0, RequiredMedalCount - ConsumedMedals);
+            Math.Max(0, RequiredMedalCount - CollectedMedals);
 
         /// <summary>
         /// ボールを取得したとき
@@ -54,9 +54,9 @@ namespace EMR.Round
         public event Action<int> OnBallsDropped;
 
         /// <summary>
-        /// メダルを消費した時
+        /// メダルを獲得したとき
         /// </summary>
-        public event Action<int> OnMedalsConsumed;
+        public event Action<int> OnMedalsCollected;
 
         /// <summary>
         /// ラウンドが進んだ時
@@ -72,6 +72,7 @@ namespace EMR.Round
             _roundManager.OnRoundChanged += HandleRoundChanged;
         }
 
+        
         private void HandleRoundChanged(int newRound)
         {
             OnRoundAdvanced?.Invoke(newRound);
@@ -84,21 +85,32 @@ namespace EMR.Round
         {
             RequiredBallCount = requirement.RequiredBallCount;
             RequiredMedalCount = requirement.RequiredMedalCount;
-            Debug.Log($"NextRound {_roundManager.CurrentRound + 1} -> Ball:{RequiredBallCount}, Medal:{RequiredMedalCount}");
+            //Debug.Log($"NextRound {_roundManager.CurrentRound + 1} -> Ball:{RequiredBallCount}, Medal:{RequiredMedalCount}");
         }
 
         /// <summary>
-        /// メダルを消費する。
+        /// メダルを追加する
         /// </summary>
-        public void ConsumeMedals(int amount)
+        public void AddMedals(int amount)
         {
-            if (amount <= 0)
-                return;
+            if (amount <= 0) return;
 
-            ConsumedMedals += amount;
+            CollectedMedals += amount;
 
-            OnMedalsConsumed?.Invoke(amount);
+            OnMedalsCollected?.Invoke(amount);
 
+            CheckRoundAdvance();
+        }
+
+        /// <summary>
+        /// メダル所持数を指定した数にする
+        /// </summary>
+        /// <param name="amount"></param>
+        public void SetConsumedMedals(int amount)
+        {
+            if (amount < 0) return;
+            CollectedMedals = amount;
+            OnMedalsCollected?.Invoke(amount);
             CheckRoundAdvance();
         }
 
@@ -121,7 +133,7 @@ namespace EMR.Round
         /// </summary>
         public void CheckRoundAdvance()
         {
-            if (ConsumedMedals < RequiredMedalCount) return;
+            if (CollectedMedals < RequiredMedalCount) return;
 
             if (DroppedBallCount < RequiredBallCount) return;
 
@@ -136,9 +148,12 @@ namespace EMR.Round
             // 実際にCurrentRoundが変わったタイミング(RoundManager.OnRoundChanged)で自動的に発火する。
         }
 
+        /// <summary>
+        /// ラウンド進行条件をリセットする。
+        /// </summary>
         public void ResetProgress()
         {
-            ConsumedMedals = 0;
+            CollectedMedals = 0;
             DroppedBallCount = 0;
         }
     }
