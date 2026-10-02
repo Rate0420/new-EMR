@@ -6,7 +6,7 @@ public class CharaRoutr : MonoBehaviour
 
     public void RouteChara01()
     {
-        routeNo = 7;
+        routeNo = 5;
         PlayerPrefs.SetInt("RouteNo", routeNo);
         TitleFade.Instance.SceneChangeAni();
     }
