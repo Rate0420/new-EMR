@@ -128,7 +128,6 @@ namespace EMR.Medal.Launch
                     Launch();
                     SEManager.Instance.SEPlays(SEManager.SEType.CoinLaunch);
                     GameState.Instance.OwnedModel.RemoveMedal();
-                    GameState.Instance.RoundService.ConsumeMedals(1);
                 }
             }
         }
