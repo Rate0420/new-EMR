@@ -5316,7 +5316,7 @@ MonoBehaviour:
   roundChange: {fileID: 755666152}
   menuManager: {fileID: 1282841340}
   MiniEvents:
-  - {fileID: 11400000, guid: 3759df1bf24fb2c47ad2ef978bdb1d87, type: 2}
+  - {fileID: 11400000, guid: d44089d921dcbe14b941f92b0d0d567b, type: 2}
   returnDelay: 3
   slotManager: {fileID: 614288897}
 --- !u!1 &313012504
@@ -10179,7 +10179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7502586791848081527, guid: 5173992a212c7e443a174aa7e18a63ce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -34.2
+      value: -41.01
       objectReference: {fileID: 0}
     - target: {fileID: 7502586791848081527, guid: 5173992a212c7e443a174aa7e18a63ce, type: 3}
       propertyPath: m_LocalRotation.w

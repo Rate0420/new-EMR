@@ -22,12 +22,32 @@ public class PriseGenerator : MonoBehaviour
         if (r <= diamondProbability) DisChargeCollectables(diamond);
     }
 
+    private void Update()
+    {
+        // デバッグ用　
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            DebugDisChargeBall();
+        }
+    }
+
     public void DisChargeBall()
     {
         Vector3 dischargePos = new Vector3(
     Random.Range(dischargePos0.x, dischargePos1.x),
     Random.Range(dischargePos0.y, dischargePos1.y),
     Random.Range(dischargePos0.z, dischargePos1.z)
+);
+
+        Instantiate(ball, dischargePos, Quaternion.identity, ItemRoot.transform);
+    }
+
+    public void DebugDisChargeBall()
+    {
+        Vector3 dischargePos = new Vector3(
+    Random.Range(dischargePos0.x, dischargePos1.x),
+    Random.Range(dischargePos0.y, dischargePos1.y),
+    -10
 );
 
         Instantiate(ball, dischargePos, Quaternion.identity, ItemRoot.transform);
@@ -42,12 +62,5 @@ public class PriseGenerator : MonoBehaviour
 );
 
         Instantiate(obj, dischargePos, Quaternion.identity, ItemRoot.transform);
-    }
-
-
-
-    void Update()
-    {
-        
     }
 }
