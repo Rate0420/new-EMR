@@ -31,6 +31,13 @@ public class S_ChooseManager : MonoBehaviour
     [SerializeField] CharacterData Liselotte;
     [SerializeField] CharacterData Sayo;
 
+    [SerializeField] S_CharacterStory Liselotte_1;
+    [SerializeField] S_CharacterStory Liselotte_2;
+
+    [SerializeField] S_CharacterStory Sayo_1;
+    [SerializeField] S_CharacterStory Sayo_2;
+
+
     public bool IsShowingChoices { get; private set; } = false;
 
     /// <summary> 現在表示中の選択肢数（BackLogManager のNavigation設定に使用）</summary>
@@ -136,6 +143,32 @@ public class S_ChooseManager : MonoBehaviour
                         case "Sayo":
                             Sayo.likeability += delta.delta;
                             Debug.Log("小夜の好感度");
+                            break;
+                    }
+                }
+            }
+        }
+
+        if (choice.statusDeltas != null)
+        {
+            foreach (var delta in choice.statusDeltas)
+            {
+                if(delta.statusKey == "key")
+                {
+                    switch (delta.characterId)
+                    {
+                        case "Liselotte":
+                            if (S_AffinityManager.Instance.Get("Liselotte", "key") >= 2)
+                            { 
+                                S_DontDestroyStory.instance.characterStory = Liselotte_2;
+                            }
+                            
+                            break;
+                        case "Sayo":
+                            if (S_AffinityManager.Instance.Get("Sayo", "key") >= 2)
+                            {
+                                S_DontDestroyStory.instance.characterStory = Sayo_2;
+                            }
                             break;
                     }
                 }

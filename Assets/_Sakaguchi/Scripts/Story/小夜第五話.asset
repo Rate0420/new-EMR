@@ -1,0 +1,772 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72010afa68ba0b74688ee2a6b904bd5e, type: 3}
+  m_Name: "\u5C0F\u591C\u7B2C\u4E94\u8A71"
+  m_EditorClassIdentifier: 
+  isMiniEvent: 0
+  entries:
+  - text: "\u5C0F\u591C\u304C\u7C21\u5358\u306B\u6355\u307E\u308B\u306F\u305A\u304C\u306A\u3044\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u5F7C\u5973\u306E\u3042\u306E\u7570\u5E38\u306A\u307E\u3067\u306E\u30B9\u30C6\u30EB\u30B9\u80FD\u529B\u3068\u3001\u4FFA\u3092\u5B88\u3063\u3066\u304F\u308C\u305F\u78BA\u304B\u306A\u5B9F\u529B\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u8FFD\u624B\u306E\u7537\u306F\u300C\u56DE\u53CE\u3057\u305F\u300D\u3068\u8A00\u3063\u3066\u3044\u305F\u304C\u3001\u4FFA\u306E\u76F4\u611F\u306F\u305D\u308C\u3092\u5426\u5B9A\u3057\u3066\u3044\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u4FFA\u306F\u30E1\u30C0\u30EB\u30B2\u30FC\u30E0\u3067\u8CC7\u91D1\u3092\u8ABF\u9054\u3057\u3064\u3064\u3001\u5FC5\u6B7B\u306B\u8A18\u61B6\u3092\u6398\u308A\u8D77\u3053\u3057\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u300E\u5148\u8F29\u2026\u2026\u79C1\u3001\u305A\u3063\u3068\u5C71\u5965\u306E\u91CC\u3067\u4FEE\u884C\u3070\u304B\u308A\u3057\u3066\u307E\u3057\u305F\u304B\u3089\u2026\u2026\u300F"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u300E\u2026\u2026\u8AB0\u3082\u79C1\u306B\u300C\u4EFB\u52D9\u300D\u3092\u5F37\u5236\u3057\u306A\u3044\u3001\u305F\u3060\u306E\u3093\u3073\u308A\u3067\u304D\u308B\u5834\u6240\u2026\u2026\u300F"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u300E\u6D77\u2026\u2026\u898B\u305F\u3053\u3068\u306A\u3044\u3093\u3067\u3059\u3002\u4E00\u5EA6\u3067\u3044\u3044\u304B\u3089\u3001\u5148\u8F29\u3068\u2026\u2026\u300F"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u3044\u3064\u304B\u30D9\u30F3\u30C1\u3067\u30D1\u30D5\u30A7\u3092\u98DF\u3079\u3066\u3044\u305F\u6642\u306E\u3001\u5F7C\u5973\u306E\u4E9B\u7D30\u306A\u8A00\u8449\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u3082\u3057\u5F7C\u5973\u304C\u91CC\u306E\u8FFD\u624B\u304B\u3089\u9003\u308C\u3001\u8EAB\u3092\u96A0\u3059\u3068\u3057\u305F\u3089\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u4FFA\u306F\u30EC\u30F3\u30BF\u30AB\u30FC\u3092\u98DB\u3070\u3057\u3001\u96A3\u770C\u306B\u3042\u308B\u4EBA\u6C17\u306E\u306A\u3044\u5BC2\u308C\u305F\u6D77\u5CB8\u3078\u3068\u5411\u304B\u3063\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u591C\u306E\u6D77\u3002\u6708\u660E\u304B\u308A\u3060\u3051\u304C\u7167\u3089\u3059\u6CE2\u6253\u3061\u969B\u306B\u3001\u5FAE\u304B\u306A\u4EBA\u5F71\u304C\u3042\u3063\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u300C\u2026\u2026\u5C0F\u591C\uFF01\u300D"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u4FFA\u304C\u53EB\u3076\u3068\u3001\u305D\u306E\u4EBA\u5F71\u304C\u30D3\u30AF\u30C3\u3068\u8DF3\u306D\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u300C\u305B\u3001\u5148\u8F29\u2026\u2026\uFF01\uFF1F \u306A\u3093\u3067\u3001\u3053\u3053\u306B\u2026\u2026\u3063\uFF01\u300D"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u632F\u308A\u8FD4\u3063\u305F\u5C0F\u591C\u306E\u9854\u306B\u306F\u3001\u3044\u3064\u3082\u306E\u304A\u3069\u304A\u3069\u3057\u305F\u8868\u60C5\u306F\u306A\u304F\u3001\u6DF1\u3044\u7D76\u671B\u3068\u9A5A\u6115\u304C\u5F35\u308A\u4ED8\u3044\u3066\u3044\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u5F7C\u5973\u306E\u548C\u670D\u306E\u88C5\u675F\u306F\u6240\u3005\u7834\u308C\u3001\u6CE5\u306B\u5857\u308C\u3066\u3044\u308B\u3002\u8FFD\u624B\u304B\u3089\u9003\u3052\u7D9A\u3051\u3066\u3044\u305F\u306E\u306F\u660E\u767D\u3060\u3063\u305F\u3002\r\n"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u300C\u306A\u3093\u3067\u3063\u3066\u3001\u304A\u524D\u3092\u8FCE\u3048\u306B\u6765\u305F\u306B\u6C7A\u307E\u3063\u3066\u2014\u2014\u300D"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u4FFA\u304C\u99C6\u3051\u5BC4\u308D\u3046\u3068\u3057\u305F\u77AC\u9593\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u30D2\u30E5\u30F3\u30C3\uFF01\uFF01"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u4FFA\u306E\u8DB3\u5143\u306E\u7802\u6D5C\u306B\u3001\u92ED\u3044\u82E6\u7121\uFF08\u304F\u306A\u3044\uFF09\u304C\u7A81\u304D\u523A\u3055\u3063\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u300C\u2014\u2014\u305D\u3053\u307E\u3067\u3060\u3001\u4E00\u822C\u4EBA\u300D"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u95C7\u306E\u4E2D\u304B\u3089\u3001\u97F3\u3082\u306A\u304F\u9ED2\u88C5\u675F\u306E\u7537\u305F\u3061\u304C\u73FE\u308C\u305F\u3002\u3042\u306E\u30A2\u30D1\u30FC\u30C8\u306B\u3044\u305F\u7537\u3092\u542B\u3081\u3001\u305D\u306E\u6570\u306F\u4E94\u4EBA\u3002\u5B8C\u5168\u306B\u4FFA\u305F\u3061\u3092\u53D6\u308A\u56F2\u3093\u3067\u3044\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u300C\u611A\u304B\u306A\u3002\u91CC\u306B\u5E30\u308B\u3068\u507D\u308A\u3001\u9699\u3092\u898B\u3066\u9003\u8D70\u3057\u305F\u6319\u53E5\u3001\u3053\u3093\u306A\u5834\u6240\u3067\u4E00\u822C\u4EBA\u3068\u5408\u6D41\u3059\u308B\u3068\u306F\u306A\u3002\u3082\u306F\u3084\u5F01\u660E\u306E\u4F59\u5730\u306F\u306A\u3044\u300D"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u30EA\u30FC\u30C0\u30FC\u683C\u306E\u7537\u304C\u51B7\u9177\u306B\u8A00\u3044\u653E\u3064\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u300C\u3053\u3053\u307E\u3067\u6211\u3005\u306E\u6A5F\u5BC6\u306B\u95A2\u308F\u3063\u3066\u3057\u307E\u3063\u305F\u4EE5\u4E0A\u3001\u751F\u304B\u3057\u3066\u304A\u304F\u308F\u3051\u306B\u306F\u3044\u304B\u306A\u3044\u3002\u3053\u306E\u4E00\u822C\u4EBA\u3082\u308D\u3068\u3082\u3001\u3053\u3053\u3067\u59CB\u672B\u3059\u308B\u300D"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u7537\u305F\u3061\u304C\u30B8\u30EA\u30B8\u30EA\u3068\u8DDD\u96E2\u3092\u8A70\u3081\u3066\u304F\u308B\u3002\u6BBA\u6C17\u304C\u3001\u591C\u306E\u51B7\u305F\u3044\u7A7A\u6C17\u3092\u3055\u3089\u306B\u51CD\u3066\u3064\u304B\u305B\u308B\u3002\r"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u300C\u2026\u2026\u3084\u3081\u3066\u3063\uFF01\uFF01\u300D"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u5C0F\u591C\u304C\u60B2\u9CF4\u306E\u3088\u3046\u306A\u58F0\u3092\u4E0A\u3052\u3001\u4FFA\u306E\u524D\u306B\u7ACB\u3061\u585E\u304C\u3063\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u300C\u5148\u8F29\u306F\u95A2\u4FC2\u306A\u3044\u3067\u3059\uFF01 \u79C1\u304C\u52DD\u624B\u306B\u3084\u3063\u305F\u3053\u3068\u3067\u3059\u304B\u3089\u2026\u2026\uFF01
+      \u3060\u304B\u3089\u3001\u5148\u8F29\u306B\u306F\u624B\u3092\u51FA\u3055\u306A\u3044\u3067\u304F\u3060\u3055\u3044\u2026\u2026\uFF01\u300D"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u300C\u639F\u3092\u7834\u3063\u305F\u629C\u3051\u5FCD\u306B\u3001\u4EA4\u6E09\u306E\u6A29\u5229\u306A\u3069\u306A\u3044\uFF01\u300D"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u7537\u306E\u4E00\u4EBA\u304C\u5C0F\u591C\u306B\u65AC\u308A\u304B\u304B\u308B\u3002\u5C0F\u591C\u306F\u305D\u308C\u3092\u898B\u5207\u308A\u3001\u61D0\u304B\u3089\u5203\u3092\u53D6\u308A\u51FA\u3057\u3066\u5FDC\u6226\u3059\u308B\u304C\u3001\u4E94\u4EBA\u3092\u76F8\u624B\u306B\u3059\u308B\u306B\u306F\u660E\u3089\u304B\u306B\u5206\u304C\u60AA\u304B\u3063\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u5F7C\u5973\u306E\u4F53\u306B\u306F\u65E2\u306B\u75B2\u52B4\u304C\u84C4\u7A4D\u3057\u3066\u304A\u308A\u3001\u52D5\u304D\u304C\u920D\u3044\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u300C\u5C0F\u591C\u2026\u2026\uFF01\u300D"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u300C\u5148\u8F29\u3001\u9003\u3052\u3066\u304F\u3060\u3055\u3044\u2026\u2026\uFF01
+      \u79C1\u3001\u3082\u3046\u2026\u2026\u300D"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u5C0F\u591C\u306E\u58F0\u304C\u9707\u3048\u3066\u3044\u308B\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u5FCD\u3068\u3057\u3066\u306E\u300C\u639F\u300D\u3002\u305D\u308C\u306B\u5F93\u3048\u3070\u3001\u5F7C\u5973\u306F\u4FFA\u3092\u5207\u308A\u6368\u3066\u3001\u91CC\u306E\u51E6\u7F70\u3092\u53D7\u3051\u5165\u308C\u308B\u3079\u304D\u3060\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u3060\u304C\u3001\u5F7C\u5973\u306F\u4ECA\u3001\u4FFA\u306E\u524D\u306B\u7ACB\u3061\u3001\u4FFA\u3092\u5B88\u308B\u305F\u3081\u306B\u91CC\u306E\u8FFD\u624B\u3068\u5203\u3092\u4EA4\u3048\u3066\u3044\u308B\u3002\r"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u300C\u79C1\u2026\u2026\u5148\u8F29\u306E\u305D\u3070\u306B\u3044\u305F\u3044\u2026\u2026\u3063\uFF01
+      \u307E\u3060\u3001\u30D1\u30D5\u30A7\u3082\u98DF\u3079\u305F\u3044\u3057\u3001\u30B5\u30FC\u30AF\u30EB\u3067\u306E\u3093\u3073\u308A\u3057\u305F\u3044\u2026\u2026\uFF01
+      \u306A\u306E\u306B\u2026\u2026\u3063\uFF01\u300D"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u5F7C\u5973\u306E\u982C\u3092\u6D99\u304C\u4F1D\u3046\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u5FCD\u3068\u3057\u3066\u306E\u51B7\u5FB9\u306A\u5BBF\u547D\u3068\u3001\u30A2\u30A4\u30C8\u306E\u96A3\u306B\u3044\u305F\u3044\u3068\u3044\u3046\u666E\u901A\u306E\u5973\u306E\u5B50\u3068\u3057\u3066\u306E\u300C\u6211\u6B32\u300D\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u305D\u306E\u9593\u3067\u5F15\u304D\u88C2\u304B\u308C\u305D\u3046\u306B\u306A\u308A\u306A\u304C\u3089\u3001\u5F7C\u5973\u306F\u5FC5\u6B7B\u306B\u5203\u3092\u632F\u308B\u3063\u3066\u3044\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u300C\u5C0F\u591C\u2026\u2026\uFF01\u300D"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u4FFA\u306F\u30DD\u30B1\u30C3\u30C8\u306E\u4E2D\u306E\u30B9\u30DE\u30DB\u3092\u5F37\u304F\u63E1\u308A\u3057\u3081\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u4FFA\u306B\u306F\u5FCD\u8005\u306E\u3088\u3046\u306A\u6226\u3044\u306E\u529B\u306F\u306A\u3044\u3002\u3060\u304C\u3001\u3053\u306E\u7D76\u4F53\u7D76\u547D\u306E\u72B6\u6CC1\u3092\u8986\u3059\u305F\u3081\u306E\u300C\u529B\u300D\u306A\u3089\u3042\u308B\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u300C\u2026\u2026\u9078\u629E\u306E\u6642\u3060\u3001\u4E09\u96F2\u5C0F\u591C\u3002\u4E00\u822C\u4EBA\u3068\u5171\u306B\u3053\u3053\u3067\u6B7B\u306C\u304B\u3001\u3042\u308B\u3044\u306F\u2014\u2014\u300D"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u8FFD\u624B\u306E\u7537\u304C\u6700\u5F8C\u306E\u4E00\u6483\u3092\u632F\u308A\u4E0B\u308D\u305D\u3046\u3068\u3057\u305F\u305D\u306E\u6642\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []
+  - text: "\u4FFA\u306F\u5C0F\u591C\u306E\u80CC\u4E2D\u306B\u624B\u3092\u4F38\u3070\u3057\u3001\u305D\u3057\u3066\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: 0
+    choices: []

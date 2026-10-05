@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class S_WriteText : MonoBehaviour
 {
@@ -62,11 +63,12 @@ public class S_WriteText : MonoBehaviour
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
             OnAdvanceInput();
 
-        if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetMouseButton(1) || Input.GetKey(KeyCode.LeftShift))
         {
-            isFast = !isFast;
-            textSpeed = isFast ? fastTextSpeed : 0.1f;
-            if (fastAnim != null) fastAnim.SetBool("ScaleBool", isFast);
+            OnAdvanceInput();
+            //isFast = !isFast;
+            //textSpeed = isFast ? fastTextSpeed : 0.1f;
+            //if (fastAnim != null) fastAnim.SetBool("ScaleBool", isFast);
         }
     }
 
@@ -124,6 +126,10 @@ public class S_WriteText : MonoBehaviour
             {
                 sceneChanger.StartCoroutine(sceneChanger.EndScenarioCoroutine("Sakaguchi_TestStoryScene"));
             }
+        }
+        if (nextScene == "EndingScene")
+        {
+            SceneManager.LoadScene("EndingScene");
         }
 
         if (Index < storyData.Length)

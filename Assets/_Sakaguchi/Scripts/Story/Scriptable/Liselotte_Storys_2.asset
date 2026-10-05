@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86901ee8853ca5847b615b64b3da4d71, type: 3}
+  m_Name: Liselotte_Storys_2
+  m_EditorClassIdentifier: 
+  characterName: 
+  storyParts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: d956e320e455ed341a43da76a9f28f3d, type: 2}
+  - {fileID: 11400000, guid: 1021e0d716ac7fc4e8ecd3cb5ac120d5, type: 2}
+  - {fileID: 11400000, guid: b531da3fb34f15842be029e5b4d89143, type: 2}
+  - {fileID: 11400000, guid: d670dcff3f462a747a8ab960af89f0bf, type: 2}
+  - {fileID: 11400000, guid: 9a54ec8d0669e7f4fabda6843b27668d, type: 2}
+  - {fileID: 11400000, guid: 3105144ae80cf44439a957616eea1e4c, type: 2}

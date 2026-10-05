@@ -766,7 +766,7 @@ MonoBehaviour:
         \u2026\u2026\u304A\u524D\u307E\u3067\u5931\u3063\u305F\u3089\u3001\u5143\u3082\u5B50\u3082\u306A\u3044\u3093\u3060\u304B\u3089\u306A\u300D"
       jumpToIndex: 53
       statusDeltas:
-      - characterId: liselotte
+      - characterId: Liselotte
         statusKey: key
         delta: 0
       resourceCost: 0
@@ -1543,6 +1543,6 @@ MonoBehaviour:
     se: {fileID: 0}
     voice: {fileID: 0}
     scEffect: 0
-    nextScene: 
+    nextScene: End
     nextIndex: -1
     choices: []

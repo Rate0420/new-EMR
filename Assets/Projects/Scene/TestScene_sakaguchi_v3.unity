@@ -3777,8 +3777,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c3e32037c8d4504e9d47c948561fcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  story: {fileID: 11400000, guid: 10b96343339c2d14bb00db787a910662, type: 2}
-  characterStory: {fileID: 11400000, guid: a3d68ceafb96f4447b2e81924dad4a8d, type: 2}
+  story: {fileID: 11400000, guid: d956e320e455ed341a43da76a9f28f3d, type: 2}
+  characterStory: {fileID: 11400000, guid: 6e70425a5d0859845b0c5806da4c8a97, type: 2}
 --- !u!4 &223477580
 Transform:
   m_ObjectHideFlags: 0
@@ -22539,6 +22539,10 @@ PrefabInstance:
       propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4181196725714426870, guid: d584136267bea624f966dcf3043aec4b, type: 3}
+      propertyPath: 'buffStats.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 947cdafa365898f41ac685b1c3748473, type: 2}
     - target: {fileID: 4603365489695426938, guid: d584136267bea624f966dcf3043aec4b, type: 3}
       propertyPath: m_IsActive
       value: 0

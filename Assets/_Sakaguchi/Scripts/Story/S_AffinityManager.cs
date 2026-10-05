@@ -45,7 +45,10 @@ public class S_AffinityManager : MonoBehaviour
     {
         if (deltas == null) return;
         foreach (var d in deltas)
+        {
             Add(d.characterId, d.statusKey, d.delta);
+        }
+
     }
 
     /// <summary> キャラID・ステータスキーを指定して値を加算する </summary>

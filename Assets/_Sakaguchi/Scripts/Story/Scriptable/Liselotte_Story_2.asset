@@ -1136,22 +1136,6 @@ MonoBehaviour:
     se: {fileID: 0}
     voice: {fileID: 0}
     scEffect: 0
-    nextScene: 
-    nextIndex: -1
-    choices: []
-  - text: "(\u5148\u307B\u3069\u306E\u9078\u629E\u3067\u3001\u904B\u547D\u304C\u5909\u308F\u3063\u305F\u6C17\u304C\u3057\u305F\u3002)"
-    charName: none
-    char1Sprite: {fileID: 0}
-    char1OffsetX: 0
-    char1OffsetY: 0
-    char2Sprite: {fileID: 0}
-    char2OffsetX: 0
-    char2OffsetY: 0
-    bgSprite: {fileID: 21300000, guid: 2e9eb551d51ae2543aaae4335aa1a2dc, type: 3}
-    bgm: {fileID: 0}
-    se: {fileID: 0}
-    voice: {fileID: 0}
-    scEffect: 0
-    nextScene: 
+    nextScene: End
     nextIndex: -1
     choices: []
