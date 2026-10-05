@@ -19,7 +19,10 @@ public class MiniEventBet : MonoBehaviour
 
     void Start()
     {
-        Medals = GameState.Instance.OwnedModel.Count;
+        if (GameState.Instance != null)
+        {
+            Medals = GameState.Instance.OwnedModel.Count;
+        }
         Debug.Log("ƒƒ_ƒ‹:"+Medals);
         textMedals = Medals;
 

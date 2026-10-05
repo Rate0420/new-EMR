@@ -822,6 +822,6 @@ MonoBehaviour:
     se: {fileID: 0}
     voice: {fileID: 0}
     scEffect: 0
-    nextScene: 
+    nextScene: End
     nextIndex: -1
     choices: []

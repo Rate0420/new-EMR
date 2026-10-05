@@ -32,7 +32,7 @@ public class BallTest : MonoBehaviour
 
     public void StartJPCC()
     {
-        GameObject Ball = Instantiate(BallObject, startpos.gameObject.transform.position, startrot,items.transform);
+        GameObject Ball = Instantiate(BallObject, startpos.gameObject.transform.position, startrot);
         Rigidbody newRb = Ball.GetComponent<Rigidbody>();
         newRb.AddForce(Ball.transform.forward * force, ForceMode.Impulse);
         Balls.Add(Ball);

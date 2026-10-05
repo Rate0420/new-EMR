@@ -2222,7 +2222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66715c1d197956b41937dd75fa89fce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storyData: {fileID: 11400000, guid: 0945bb7585810e54a8d74f271cd73798, type: 2}
+  storyData: {fileID: 11400000, guid: a86eea320797b324abd04af86654497f, type: 2}
   writeText: {fileID: 2122193209}
   twoChoiceGroup: {fileID: 6540668693004977589}
   twoChoiceBtns:
@@ -2236,6 +2236,10 @@ MonoBehaviour:
   resourceUI: {fileID: 28508520}
   Liselotte: {fileID: 11400000, guid: 79525964dcbcbaa46a115c184797ce5f, type: 2}
   Sayo: {fileID: 11400000, guid: 92bf83cd0e10f7d42ba378eb62d69b5f, type: 2}
+  Liselotte_1: {fileID: 11400000, guid: 6e70425a5d0859845b0c5806da4c8a97, type: 2}
+  Liselotte_2: {fileID: 11400000, guid: 1e3e975d3c3b7fd4aa752137dad59da2, type: 2}
+  Sayo_1: {fileID: 0}
+  Sayo_2: {fileID: 0}
 --- !u!1 &742259843
 GameObject:
   m_ObjectHideFlags: 0
@@ -3057,7 +3061,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -58.999878}
+  m_AnchoredPosition: {x: 0, y: -58.999756}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &853245946
@@ -3496,7 +3500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c3e32037c8d4504e9d47c948561fcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  story: {fileID: 11400000, guid: d44089d921dcbe14b941f92b0d0d567b, type: 2}
+  story: {fileID: 11400000, guid: 1021e0d716ac7fc4e8ecd3cb5ac120d5, type: 2}
   characterStory: {fileID: 0}
 --- !u!4 &946415719
 Transform:
