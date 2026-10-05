@@ -56,13 +56,10 @@ public class StatusGet : MonoBehaviour
                 MenuManager.Instance.currentRoute
             );
 
-        Debug.Log(MenuManager.Instance.currentRoute);
-
         cutinSprite.sprite = characterData.cutinSprite;
 
         // ステータス取得
         nowStory = GameState.Instance.RoundManager.CurrentRound;
-        miniStory = 1;
 
         // 画面左のステータス画面に反映
         nowStoryText.text = nowStory.ToString() + "/7";

@@ -10,7 +10,7 @@ public class CharacterImage : MonoBehaviour
 
     [SerializeField] private Image targetImage;
 
-    [SerializeField] private AudioSource voiceAudio;
+    //[SerializeField] private AudioSource voiceAudio;
 
     [SerializeField] private TextMeshProUGUI targetTMP;
 
@@ -62,13 +62,13 @@ public class CharacterImage : MonoBehaviour
                 character.sprites[randomIndex];
 
             // ボイス反映
-            if (character.voice.Length > randomIndex)
-            {
-                voiceAudio.Stop();
-                voiceAudio.PlayOneShot(
-                    character.voice[randomIndex]
-                );
-            }
+            //if (character.voice.Length > randomIndex)
+            //{
+            //    voiceAudio.Stop();
+            //    voiceAudio.PlayOneShot(
+            //        character.voice[randomIndex]
+            //    );
+            //}
 
             // テキスト反映
             if (character.menuTexts.Length > randomIndex)

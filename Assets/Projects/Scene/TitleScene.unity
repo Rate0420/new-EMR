@@ -1643,6 +1643,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a16f73f314bc7d64eaa4aed5be618525, type: 3}
   - {fileID: 8300000, guid: e97ddb2d3df077b45860707079230ec0, type: 3}
   - {fileID: 8300000, guid: de2da5905ff384b489507740670715b4, type: 3}
+  - {fileID: 8300000, guid: 80688000bd236034c8c229aa68caecd0, type: 3}
+  - {fileID: 8300000, guid: 753ea63f84a8997489caeb289763597c, type: 3}
+  - {fileID: 8300000, guid: e305e3bc096fd4a4fa6599625cf99f82, type: 3}
+  - {fileID: 8300000, guid: 107ee2dfbf0561143a04815e421cf23d, type: 3}
   bgmSource: {fileID: 1988665073}
   fadeTime: 0.5
 --- !u!4 &1988665075
@@ -2071,7 +2075,7 @@ RectTransform:
   m_GameObject: {fileID: 2241748134530743396}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 61.599762, y: 36.959858, z: 0}
+  m_LocalScale: {x: 20, y: 12, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5855489563830613811}

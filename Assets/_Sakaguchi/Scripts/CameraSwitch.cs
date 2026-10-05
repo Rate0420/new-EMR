@@ -33,33 +33,40 @@ public class CameraSwitch : MonoBehaviour
         currentCameraPosition = CameraPosition.Default;
     }
 
-    void Update()
+    public void CameraNo1()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            pip.SetActive(false);
-            targetPoint = DefaultCameraPoint;
-            currentCameraPosition = CameraPosition.Default;
-        }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            pip.SetActive(false);
-            targetPoint = SlotZoomCameraPoint;
-            currentCameraPosition = CameraPosition.SlotZoom;
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            pip.SetActive(true);
-            targetPoint = JPCCCameraPoint;
-            currentCameraPosition = CameraPosition.JPCC;
-        }
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            pip.SetActive(false);
-            targetPoint = JPCCameraPoint;
-            currentCameraPosition = CameraPosition.JPC;
-        }
+        pip.SetActive(false);
+        targetPoint = DefaultCameraPoint;
+        currentCameraPosition = CameraPosition.Default;
+        CameraS();
+    }
 
+    public void CameraNo2()
+    {
+        pip.SetActive(false);
+        targetPoint = SlotZoomCameraPoint;
+        currentCameraPosition = CameraPosition.SlotZoom;
+        CameraS();
+    }
+
+    public void CameraNo3()
+    {
+        pip.SetActive(true);
+        targetPoint = JPCCCameraPoint;
+        currentCameraPosition = CameraPosition.JPCC;
+        CameraS();
+    }
+
+    public void CameraNo4()
+    {
+        pip.SetActive(false);
+        targetPoint = JPCCameraPoint;
+        currentCameraPosition = CameraPosition.JPC;
+        CameraS();
+    }
+
+    private void CameraS()
+    {
         // ‚È‚ß‚ç‚©‚ÉˆÚ“®
         transform.position = Vector3.Lerp(
             transform.position,
