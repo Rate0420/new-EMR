@@ -18,6 +18,7 @@ public class JPCCManager : MonoBehaviour
 
     public int JPCMaxPrise;
 
+
     [SerializeField] BallTest JPCBallTest;
     [SerializeField] BallTest JPCCBallTest;
 

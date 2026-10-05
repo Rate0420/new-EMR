@@ -532,6 +532,8 @@ MonoBehaviour:
   isJPC: 1
   prizeText: {fileID: 1628336362}
   isEnding: 0
+  isGoodEndHole: 0
+  endingJPCManager: {fileID: 0}
 --- !u!135 &17301760
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1991,6 +1993,8 @@ MonoBehaviour:
   isJPC: 1
   prizeText: {fileID: 1229421703}
   isEnding: 0
+  isGoodEndHole: 0
+  endingJPCManager: {fileID: 0}
 --- !u!135 &96252926
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3336,6 +3340,8 @@ MonoBehaviour:
   isJPC: 1
   prizeText: {fileID: 1631082360}
   isEnding: 0
+  isGoodEndHole: 0
+  endingJPCManager: {fileID: 0}
 --- !u!135 &196858589
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6317,6 +6323,8 @@ MonoBehaviour:
   isJPC: 1
   prizeText: {fileID: 1099420361}
   isEnding: 0
+  isGoodEndHole: 0
+  endingJPCManager: {fileID: 0}
 --- !u!135 &353640668
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12943,6 +12951,8 @@ MonoBehaviour:
   isJPC: 1
   prizeText: {fileID: 728119688}
   isEnding: 0
+  isGoodEndHole: 0
+  endingJPCManager: {fileID: 0}
 --- !u!135 &762262790
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -17965,6 +17975,8 @@ MonoBehaviour:
   isJPC: 1
   prizeText: {fileID: 1510985077}
   isEnding: 0
+  isGoodEndHole: 0
+  endingJPCManager: {fileID: 0}
 --- !u!135 &1068152942
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -20295,6 +20307,8 @@ MonoBehaviour:
   isJPC: 1
   prizeText: {fileID: 658565038}
   isEnding: 0
+  isGoodEndHole: 0
+  endingJPCManager: {fileID: 0}
 --- !u!135 &1173913330
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -23447,6 +23461,8 @@ MonoBehaviour:
   isJPC: 1
   prizeText: {fileID: 791083658}
   isEnding: 0
+  isGoodEndHole: 0
+  endingJPCManager: {fileID: 0}
 --- !u!135 &1332066303
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -27090,6 +27106,8 @@ MonoBehaviour:
   isJPC: 1
   prizeText: {fileID: 240079937}
   isEnding: 0
+  isGoodEndHole: 0
+  endingJPCManager: {fileID: 0}
 --- !u!135 &1530358321
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -27545,6 +27563,8 @@ MonoBehaviour:
   isJPC: 1
   prizeText: {fileID: 1381561585}
   isEnding: 0
+  isGoodEndHole: 0
+  endingJPCManager: {fileID: 0}
 --- !u!135 &1568085754
 SphereCollider:
   m_ObjectHideFlags: 0

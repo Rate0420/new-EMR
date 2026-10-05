@@ -13,6 +13,7 @@ public class SceneChanger : MonoBehaviour
     [SerializeField] GameObject BlackOutImage;
     [SerializeField] RoundChange roundChange;
     [SerializeField] StatusGet statusGet;
+    public bool IsTransitioning = false;
 
     [SerializeField] private MenuManager menuManager;
 
@@ -73,16 +74,24 @@ public class SceneChanger : MonoBehaviour
 
     IEnumerator StartScenarioCoroutine(string sceneName)
     {
+        IsTransitioning = true;
         IsSceneActive = true;
+
         yield return null;
 
         yield return GameState.Instance.GameLock.Acquire("Scenario");
 
         gamePause.ChangePause(true);
-        yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-        MedalRoot.SetActive(false);
-    }
 
+        yield return SceneManager.LoadSceneAsync(
+            sceneName,
+            LoadSceneMode.Additive
+        );
+
+        MedalRoot.SetActive(false);
+
+        IsTransitioning = false;
+    }
     public IEnumerator StartShopCoroutine()
     {
         IsSceneActive = true;
@@ -97,24 +106,25 @@ public class SceneChanger : MonoBehaviour
 
     public IEnumerator EndScenarioCoroutine(string sceneName)
     {
-        roundChange.ResetMethod(); // ラウンドチェンジ由来のシナリオだった場合、UI(キャンバス)だけ先に片付ける
+        IsTransitioning = true;
+
+        roundChange.ResetMethod();
+
         yield return SceneManager.UnloadSceneAsync(sceneName);
+
         MedalRoot.SetActive(true);
 
         yield return new WaitForSeconds(returnDelay);
 
         gamePause.ChangePause(false);
-        IsSceneActive = false; // ← 終了時にfalse
+        IsSceneActive = false;
 
-        // ミニイベント等、"Scenario"ロックを持っていた場合はここで解放する
-        // (ラウンドチェンジ由来で"Scenario"を持っていなかった場合は何も起きない)
         GameState.Instance.GameLock.Release("Scenario");
 
-        // "RoundChange"ロックの解放は、後片付けが全部終わった一番最後に行う
-        // (ラウンドチェンジ由来でなかった場合は何も起きない)
         roundChange.CompleteRoundChange();
-    }
 
+        IsTransitioning = false;
+    }
     IEnumerator EndMenuCoroutine()
     {
         MedalRoot.SetActive(true);

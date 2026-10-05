@@ -654,6 +654,37 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &353534617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 353534618}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &353534618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353534617}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.34, y: 5.21, z: 0.47}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &399102120
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,6 +916,7 @@ MonoBehaviour:
   isJPC: 1
   prizeText: {fileID: 599002500}
   isEnding: 0
+  isGoodEndHole: 0
 --- !u!135 &410045609
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -959,6 +991,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410045606}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &414427040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 414427042}
+  - component: {fileID: 414427041}
+  m_Layer: 0
+  m_Name: EndingJPCManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &414427041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414427040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25f0d58c48a5e748a8329d85161b83a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endingJPCHoles:
+  - {fileID: 2001743248}
+  - {fileID: 569535599}
+  - {fileID: 1594672330}
+  - {fileID: 634409870}
+  - {fileID: 1350897949}
+  - {fileID: 1924665977}
+  - {fileID: 857081668}
+  - {fileID: 818440550}
+  - {fileID: 756565468}
+  - {fileID: 410045608}
+  Ball: {fileID: 5301785042666199167, guid: f00c3570fab13954e94512ae80ee451e, type: 3}
+  BallSpawnPos: {fileID: 353534618}
+--- !u!4 &414427042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414427040}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.454614, y: 6.2053275, z: 6.571858}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &569535597
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,6 +1103,7 @@ MonoBehaviour:
   isJPC: 1
   prizeText: {fileID: 102306579}
   isEnding: 0
+  isGoodEndHole: 0
 --- !u!135 &569535600
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1319,6 +1409,7 @@ MonoBehaviour:
   isJPC: 1
   prizeText: {fileID: 399102122}
   isEnding: 0
+  isGoodEndHole: 0
 --- !u!135 &634409871
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1791,6 +1882,7 @@ MonoBehaviour:
   isJPC: 1
   prizeText: {fileID: 1094040532}
   isEnding: 0
+  isGoodEndHole: 0
 --- !u!135 &756565469
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2096,6 +2188,7 @@ MonoBehaviour:
   isJPC: 1
   prizeText: {fileID: 784569832}
   isEnding: 0
+  isGoodEndHole: 0
 --- !u!135 &818440551
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2225,6 +2318,7 @@ MonoBehaviour:
   isJPC: 1
   prizeText: {fileID: 1548730246}
   isEnding: 0
+  isGoodEndHole: 0
 --- !u!135 &857081669
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2384,6 +2478,7 @@ MonoBehaviour:
   stopTime: 0
   JPC: 1
   useTimer: 0
+  isEnding: 0
 --- !u!54 &958347762
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3117,6 +3212,7 @@ MonoBehaviour:
   isJPC: 1
   prizeText: {fileID: 1403658301}
   isEnding: 0
+  isGoodEndHole: 0
 --- !u!135 &1350897950
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3635,6 +3731,7 @@ MonoBehaviour:
   isJPC: 1
   prizeText: {fileID: 662242551}
   isEnding: 0
+  isGoodEndHole: 0
 --- !u!135 &1594672331
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3764,6 +3861,7 @@ MonoBehaviour:
   isJPC: 1
   prizeText: {fileID: 29939813}
   isEnding: 0
+  isGoodEndHole: 0
 --- !u!135 &1924665978
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3893,6 +3991,7 @@ MonoBehaviour:
   isJPC: 1
   prizeText: {fileID: 1313049100}
   isEnding: 0
+  isGoodEndHole: 0
 --- !u!135 &2001743249
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4174,6 +4273,7 @@ MonoBehaviour:
   stopTime: 0
   JPC: 1
   useTimer: 0
+  isEnding: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4181,3 +4281,5 @@ SceneRoots:
   - {fileID: 984414254}
   - {fileID: 311807779}
   - {fileID: 1554836089}
+  - {fileID: 414427042}
+  - {fileID: 353534618}

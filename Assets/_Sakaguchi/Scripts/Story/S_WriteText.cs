@@ -27,6 +27,7 @@ public class S_WriteText : MonoBehaviour
     private bool isFast;
     private bool isDrawing;
     private bool isSceneChanged;
+    float GuardTimer;
 
     // true の間は入力を無視する（Start直後・JumpTo直後の誤発火防止）
     private bool inputBlocked = true;
@@ -37,6 +38,8 @@ public class S_WriteText : MonoBehaviour
 
     private void Start()
     {
+       
+
         storyData = S_DontDestroyStory.instance.story;
         if (fastAnim == null && fastUI != null)
             fastAnim = fastUI.GetComponent<Animator>();
@@ -70,6 +73,8 @@ public class S_WriteText : MonoBehaviour
             //textSpeed = isFast ? fastTextSpeed : 0.1f;
             //if (fastAnim != null) fastAnim.SetBool("ScaleBool", isFast);
         }
+
+        GuardTimer += Time.deltaTime;
     }
 
     // ----------------------------------------------------------------
@@ -77,9 +82,11 @@ public class S_WriteText : MonoBehaviour
     private void OnAdvanceInput()
     {
         // シーン遷移開始後は一切入力を受け付けない
-        if (isSceneChanged) return;
+    if (sceneChanger != null && sceneChanger.IsTransitioning)
+        return;
 
-        if (chooseManager.IsShowingChoices) return;
+    if (chooseManager.IsShowingChoices)
+        return;
 
         if (isDrawing)
         {
@@ -90,6 +97,8 @@ public class S_WriteText : MonoBehaviour
             var currentEntry = storyData.Get(snapIndex);
             messageText.text = currentEntry.text;
             isDrawing = false;
+
+            
 
             if (currentEntry.HasChoices)
             {
@@ -119,20 +128,17 @@ public class S_WriteText : MonoBehaviour
         string nextScene = lastEntry.nextScene;
 
         // Gameへ
-        if (nextScene == "Game")
+        if (nextScene == "Game" && GuardTimer >= 5)
         {
-            isSceneChanged = true;
-
+            GuardTimer = 0;
             TitleFade.Instance.SceneChangeAni();
             return;
         }
 
         // Endへ
-        if (nextScene == "End")
+        if (nextScene == "End" && GuardTimer >= 5)
         {
-            Debug.Log("end");
-
-            isSceneChanged = true;
+            GuardTimer = 0;
 
             sceneChanger.StartCoroutine(
                 sceneChanger.EndScenarioCoroutine("Sakaguchi_TestStoryScene")
@@ -141,12 +147,19 @@ public class S_WriteText : MonoBehaviour
             return;
         }
 
-        // EndingSceneへ
-        if (nextScene == "EndingScene")
+        // JPCへ
+        if (nextScene == "JPC" && GuardTimer >= 5)
         {
-            isSceneChanged = true;
+            GuardTimer = 0;
+            SceneManager.LoadScene("EndingJPC");
+            return;
+        }
 
-            SceneManager.LoadScene("EndingScene");
+        // EndingSceneへ
+        if (nextScene == "EndingScene" && GuardTimer >= 5)
+        {
+            GuardTimer = 0;
+            SceneManager.LoadScene("TitleScene");
             return;
         }
 
