@@ -1,9 +1,7 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 using EMR.Core;
-using UnityEngine.EventSystems;
-
-
+using EMR.Medal;
 namespace EMR.Medal.Launch
 {
     /// <summary>
@@ -12,8 +10,6 @@ namespace EMR.Medal.Launch
     /// </summary>
     public partial class MedalLaunch : MonoBehaviour, IMedalLaunch
     {
-        [SerializeField] CameraSwitch _cameraSwitch;
-
         //発射時に生成するメダルPrefabのRigidbody。
         [Header("メダルの設定")]
         [SerializeField, FormerlySerializedAs("_medalPrefab")]
@@ -44,7 +40,7 @@ namespace EMR.Medal.Launch
 
         // 発射してから着地点に到達するまでの秒数。
         [Header("着地時間の設定")]
-        [SerializeField, Min(MedalLaunchMath.MinimumTimeToLanding)]
+        [SerializeField, Min(0.01f)]
         private float _timeToLanding = 1f;
 
         // 発射可能範囲の開始位置。
@@ -73,6 +69,12 @@ namespace EMR.Medal.Launch
         [Header("デバッグ設定")]
         [SerializeField, FormerlySerializedAs("_isDrawGizmos")]
         private bool _drawGizmos = true;
+        [Header("金メダル設定")]
+        [SerializeField]
+        private Rigidbody _goldMedalRigidbodyPrefab;
+
+
+       
 
         /// <summary>
         /// 現在設定されている発射Prefab。
@@ -121,13 +123,11 @@ namespace EMR.Medal.Launch
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (GameState.Instance.OwnedModel.Count > 0 && !GameState.Instance.GamePause.isPaused
-                    /*&& !EventSystem.current.IsPointerOverGameObject()*/ && _cameraSwitch.currentCameraPosition == CameraPosition.Default)
+                if (GameState.Instance.OwnedModel.Count > 0 && !GameState.Instance.GamePause.isPaused)
                 {
-                    // SE予定地:コイン発射
                     Launch();
-                    SEManager.Instance.SEPlays(SEManager.SEType.CoinLaunch);
                     GameState.Instance.OwnedModel.RemoveMedal();
+                    GameState.Instance.RoundService.SetConsumedMedals(1);
                 }
             }
         }
@@ -143,20 +143,30 @@ namespace EMR.Medal.Launch
                 return;
             }
 
-            // クリック位置から、今回の発射に必要な位置、回転、初速をまとめて計算する。
+            // 発射位置などを計算
             var shot = CreateLaunchShot(Input.mousePosition);
 
-            // 計算済みの発射位置と回転でメダルを生成する。
+            // 通常メダル
+            Rigidbody launchPrefab = _medalRigidbodyPrefab;
+
+            // 金メダル判定
+            if (_goldMedalRigidbodyPrefab != null &&
+                Random.value < MedalBuffData.GoldMedalChance)
+            {
+                launchPrefab = _goldMedalRigidbodyPrefab;
+                Debug.Log("ID11発動！金メダル発射！");
+            }
+
+            // メダル生成
             var medal = Instantiate(
-                _medalRigidbodyPrefab,
+                launchPrefab,
                 shot.Position,
                 shot.Rotation,
                 _medalParentTransform);
 
-            // Unityのバージョン差を吸収しながらRigidbodyへ初速を反映する。
+            // 初速設定
             SetRigidbodyVelocity(medal, shot.InitialVelocity);
         }
-
         /// <summary>
         /// 発射するメダルPrefabを外部から差し替える。
         /// </summary>
