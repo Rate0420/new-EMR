@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using Microsoft.Win32.SafeHandles;
 
 /// <summary>
 /// S_StoryData の ChoiceEntry に基づき選択肢UIを表示し、
@@ -26,6 +27,9 @@ public class S_ChooseManager : MonoBehaviour
     [Header("ミニイベント用リソースUI")]
     [Tooltip("ミニイベント時に選択肢と一緒に表示する所持金などのUIオブジェクト")]
     [SerializeField] private GameObject resourceUI;
+
+    [SerializeField] CharacterData Liselotte;
+    [SerializeField] CharacterData Sayo;
 
     public bool IsShowingChoices { get; private set; } = false;
 
@@ -114,6 +118,31 @@ public class S_ChooseManager : MonoBehaviour
 
         // キャラ別・ステータス別に変化量をまとめて適用
         S_AffinityManager.Instance?.ApplyDeltas(choice.statusDeltas);
+        // affinity以外(特にlikabilityの処理)
+
+        // もしchoiceのkeyがlikabilityだったら
+        if(choice.statusDeltas != null)
+        {
+            foreach (var delta in choice.statusDeltas)
+            {
+                if (delta.statusKey == "likeability")
+                {
+                    switch (delta.characterId)
+                    {
+                        case "Liselotte":
+                            Liselotte.likeability += delta.delta;
+                            Debug.Log("リーゼロッテの好感度");
+                            break;
+                        case "Sayo":
+                            Sayo.likeability += delta.delta;
+                            Debug.Log("小夜の好感度");
+                            break;
+                    }
+                }
+            }
+        }
+
+
 
         HideAll();
         IsShowingChoices = false;

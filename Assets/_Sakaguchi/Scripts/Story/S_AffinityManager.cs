@@ -8,6 +8,18 @@ using UnityEngine;
 /// </summary>
 public class S_AffinityManager : MonoBehaviour
 {
+
+    // characterとid一覧
+    // Character:
+    // Liselotte
+    // Sayo
+    // id:
+    // key(分岐用)
+    // likability(好感度)
+
+    // 使用例
+    // int likability = S_AffinityManager.Instance.Get("Liselotte", "likability");
+
     public static S_AffinityManager Instance { get; private set; }
 
     // characterId → (statusKey → value)

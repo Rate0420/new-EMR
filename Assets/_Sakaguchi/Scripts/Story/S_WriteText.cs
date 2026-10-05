@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class S_WriteText : MonoBehaviour
@@ -75,6 +76,7 @@ public class S_WriteText : MonoBehaviour
     {
         if (chooseManager.IsShowingChoices) return;
 
+
         if (isDrawing)
         {
             // 書いている最中 → コルーチンを止めて全文一括表示
@@ -95,7 +97,7 @@ public class S_WriteText : MonoBehaviour
             else
             {
                 // 通常テキスト：バックログ登録してから次へ
-                //createBackLog?.CreateLog(snapIndex);
+                createBackLog?.CreateLog(snapIndex);
 
                 if (currentEntry.HasJump)
                 {
@@ -112,6 +114,18 @@ public class S_WriteText : MonoBehaviour
             return;
         }
 
+        var lastEntry = storyData.Get(Index - 1);
+
+        string nextScene = lastEntry.nextScene;
+        if (nextScene == "End")
+        {
+            Debug.Log("end");
+            if (!string.IsNullOrEmpty(nextScene))
+            {
+                sceneChanger.StartCoroutine(sceneChanger.EndScenarioCoroutine("Sakaguchi_TestStoryScene"));
+            }
+        }
+
         if (Index < storyData.Length)
         {
             HideNextArrow();
@@ -119,11 +133,11 @@ public class S_WriteText : MonoBehaviour
             return;
         }
 
+
         // もし現在表示されているエントリの nextScene が指定されていればシーン遷移する
         if (Index > 0 && Index <= storyData.Length)
         {
-            var lastEntry = storyData.Get(Index - 1);
-            string nextScene = lastEntry.nextScene;
+            Debug.Log("end");
             if (!string.IsNullOrEmpty(nextScene))
             {
                 sceneChanger.StartCoroutine(sceneChanger.EndScenarioCoroutine("Sakaguchi_TestStoryScene"));

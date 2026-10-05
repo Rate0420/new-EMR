@@ -17,17 +17,17 @@ public class BallTest : MonoBehaviour
     private void Update()
     {
         if(!debug) return;
-        // Sを押すと新しくBallを生成する
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            StartJPCC();
-        }
+        //// Sを押すと新しくBallを生成する
+        //if (Input.GetKeyDown(KeyCode.S))
+        //{
+        //    StartJPCC();
+        //}
 
-        // Rを押すと全てのBallを削除する
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            ResetJPCC();
-        }
+        //// Rを押すと全てのBallを削除する
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    ResetJPCC();
+        //}
     }
 
     public void StartJPCC()

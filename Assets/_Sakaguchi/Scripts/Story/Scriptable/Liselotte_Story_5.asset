@@ -1,0 +1,1432 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72010afa68ba0b74688ee2a6b904bd5e, type: 3}
+  m_Name: Liselotte_Story_5
+  m_EditorClassIdentifier: 
+  isMiniEvent: 0
+  entries:
+  - text: "\u2014\u2014\u30AE\u30A3\u30A3\u30A3\u30A3\u30A3\u30F3\u30C3\u30C3\uFF01\uFF01\r\n\u92FC\u3068\u722A\u304C\u6FC0\u7A81\u3057\u3001\u6697\u95C7\u3092\u5F15\u304D\u88C2\u304F\u3088\u3046\u306A\u706B\u82B1\u304C\u6563\u308B\u3002\r\n"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 3cca79d114231754982e518af3575475, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u30C9\u30A9\u30F3\u30C3\uFF01 \u3068\u30B3\u30F3\u30AF\u30EA\u30FC\u30C8\u306E\u58C1\u304C\u5439\u304D\u98DB\u3073\u3001\u9244\u9AA8\u304C\u98F4\u7D30\u5DE5\u306E\u3088\u3046\u306B\u3078\u3057\u6298\u308C\u308B\u3002\r\n"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u304F\u3063\u2026\u2026\u3046\u304A\u304A\u304A\u304A\u3063\uFF01\uFF01\u300D\r\n"
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 500
+    char1OffsetY: 0
+    char2Sprite: {fileID: 21300000, guid: b7abea9bb8f1fe54a9c9ca23b1d665e8, type: 3}
+    char2OffsetX: -500
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u3042\u306F\u3063\u3001\u3044\u3044\u308F\uFF01 \u3044\u3044\u653B\u6483\u3088\u3001\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6\uFF01\u300D\r\n"
+    charName: "\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3"
+    char1Sprite: {fileID: 21300000, guid: 05ae8231e62bf884ab38da8902c1989d, type: 3}
+    char1OffsetX: 500
+    char1OffsetY: 0
+    char2Sprite: {fileID: 21300000, guid: b7abea9bb8f1fe54a9c9ca23b1d665e8, type: 3}
+    char2OffsetX: -500
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u5927\u5263\u3092\u5D50\u306E\u3088\u3046\u306B\u632F\u308A\u629C\u304F\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6\u3068\u3001\u91CD\u529B\u3092\u3042\u3056\u7B11\u3046\u304B\u306E\u3088\u3046\u306B\u305D\u306E\u5263\u3092\u8EB1\u3057\u3001\u8840\u306E\u5203\u3092\u6483\u3061\u51FA\u3059\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3\u3002\r\n\u5C11\u3057\u96E2\u308C\u305F\u74E6\u792B\u306E\u9670\u304B\u3089\u898B\u3066\u3044\u308B\u3060\u3051\u3067\u3001\u9AA8\u306E\u9AC4\u307E\u3067\u51CD\u308A\u3064\u304F\u3088\u3046\u306A\u6BBA\u6C17\u304C\u808C\u3092\u524A\u308A\u3001\u80C3\u6DB2\u304C\u5589\u307E\u3067\u305B\u308A\u4E0A\u304C\u3063\u3066\u304F\u308B\u3002\r\n\u3053\u308C\u304C\u2014\u2014\u672C\u7269\u306E\u3001\u547D\u306E\u524A\u308A\u5408\u3044\u3002\r"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u3060\u304C\u3001\u7D20\u4EBA\u76EE\u306B\u3082\u6226\u6CC1\u306E\u50BE\u304D\u306F\u660E\u767D\u3060\u3063\u305F\u3002\r\n\u4EE5\u524D\u306F\u52DD\u5229\u3057\u305F\u3068\u8A00\u3063\u3066\u3044\u305F\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6\u304C\u3001\u5B8C\u5168\u306B\u9632\u6226\u4E00\u65B9\u306B\u8FFD\u3044\u8FBC\u307E\u308C\u3066\u3044\u308B\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u3075\u3075\u3063\u2026\u2026\u3042\u306F\u306F\u306F\u306F\uFF01
+      \u81EA\u6162\u306E\u525B\u529B\u306F\u3069\u3046\u3057\u305F\u306E\u304B\u3057\u3089\uFF1F
+      \u3042\u306E\u6642\u3088\u308A\u305A\u3063\u3068\u920D\u3044\u308F\u3088\uFF1F\u300D\r\n"
+    charName: "\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3"
+    char1Sprite: {fileID: 21300000, guid: 05ae8231e62bf884ab38da8902c1989d, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u7B11\u3063\u3066\u3044\u308B\u3002\r\n\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3\u306F\u3053\u306E\u6975\u9650\u306E\u6BBA\u622E\u306E\u4E2D\u3067\u2014\u2014\u5FC3\u5E95\u697D\u3057\u305D\u3046\u306B\u7B11\u3063\u3066\u3044\u305F\u3002\r\n\u4EBA\u306E\u5F62\u3092\u3057\u3066\u3001\u4EBA\u306E\u8A00\u8449\u3092\u8A71\u3057\u3001\u53EF\u6190\u306A\u5C11\u5973\u306E\u5BB9\u59FF\u3092\u3057\u3066\u3044\u306A\u304C\u3089\u3001\u305D\u306E\u4E2D\u8EAB\u306B\u306F\u300C\u4EBA\u9593\u306E\u5FC3\u300D\u306A\u3069\u3072\u3068\u304B\u3051\u3089\u3082\u5B58\u5728\u3057\u306A\u3044\u3002\u7D76\u5BFE\u7684\u306A\u6355\u98DF\u8005\u306E\u72C2\u6C17\u3002"
+    charName: none
+    char1Sprite: {fileID: 21300000, guid: 05ae8231e62bf884ab38da8902c1989d, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 2e9eb551d51ae2543aaae4335aa1a2dc, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u306F\u3041\u30C3\u3001\u306F\u3041\u30C3\u2026\u2026\u79C1\u306F\u2026\u2026\u3053\u306E\u7A0B\u5EA6\u3067\u3001\u5D29\u308C\u306F\u2026\u2026\u3063\uFF01\u300D\r\n"
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 21300000, guid: 0fda9ea6dd67dab44b68796dd9aeb7e9, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 3cca79d114231754982e518af3575475, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u2014\u2014\u30B6\u30B7\u30E5\u30C3\u30C3\u30C3\uFF01\uFF01\uFF01\uFF01\n\n\u920D\u3044\u8089\u306E\u88C2\u3051\u308B\u97F3\u304C\u3001\u5EC3\u5DE5\u5834\u306B\u97FF\u3044\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 5cb0aeb2fbdc8c94ead5ab0ee1150063, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u3050\u2026\u2026\u3042\u2026\u2026\u3063\uFF01\uFF1F\u300D\r\n"
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u76EE\u306B\u3082\u7559\u307E\u3089\u306C\u901F\u3055\u3067\u6F5C\u308A\u8FBC\u3093\u3060\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3\u306E\u92ED\u5229\u306A\u722A\u304C\u3001\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6\u306E\u80F4\u3092\u8599\u304E\u6255\u3063\u3066\u3044\u305F\u3002\r\n\u88C5\u7532\u304C\u7D19\u306E\u3088\u3046\u306B\u5207\u308A\u88C2\u304B\u308C\u3001\u9BAE\u8840\u304C\u591C\u6C17\u3092\u8D64\u304F\u67D3\u3081\u308B\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 3cca79d114231754982e518af3575475, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6\u30C3\u30C3\uFF01\uFF01\u300D"
+    charName: "\u30A2\u30A4\u30C8"
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u53EB\u3093\u3060\u4FFA\u306E\u8996\u754C\u306E\u5148\u3067\u3001\u5F7C\u5973\u306F\u529B\u5C3D\u304D\u305F\u3088\u3046\u306B\u819D\u3092\u3064\u304D\u3001\u3069\u3059\u9ED2\u3044\u8840\u6E9C\u307E\u308A\u306E\u4E0A\u306B\u5D29\u308C\u843D\u3061\u305F\u3002\r\n\u5927\u5263\u304C\u624B\u304B\u3089\u6ED1\u308A\u843D\u3061\u3001\u4E7E\u3044\u305F\u91D1\u5C5E\u97F3\u3092\u7ACB\u3066\u308B\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u2026\u2026\u518D\u6226\u3001\u79C1\u306E\u52DD\u3061\u306D\u3002\u3075\u3075\u3001\u4E8C\u5EA6\u3082\u540C\u3058\u4EBA\u9593\u306B\u5F8C\u308C\u3092\u53D6\u308B\u308F\u3051\u306B\u306F\u3044\u304B\u306A\u3044\u3082\u306E\u300D\r\n"
+    charName: "\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3"
+    char1Sprite: {fileID: 21300000, guid: 9f6c36649195917499e8fe9f0b6a08f8, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3\u306F\u8FD4\u308A\u8840\u3092\u8210\u3081\u306A\u304C\u3089\u3001\u5012\u308C\u4F0F\u3059\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6\u3078\u3068\u512A\u96C5\u306B\u6B69\u307F\u5BC4\u308B\u3002\r\n"
+    charName: none
+    char1Sprite: {fileID: 21300000, guid: 9bcc231d9f5a33243b70a0ba0655dc89, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u3055\u3066\u2026\u2026\u307E\u305A\u306F\u3001\u8CB4\u5973\u306E\u8840\u3092\u4F59\u3055\u305A\u5438\u3044\u5C3D\u304F\u3057\u3066\u3042\u3052\u307E\u3057\u3087\u3046\u304B\u3002\u8A87\u308A\u9AD8\u304D\u9A0E\u58EB\u306E\u8840\u8089\u2026\u2026\u305D\u308C\u3092\u55B0\u3089\u3048\u3070\u3001\u79C1\u306F\u3069\u308C\u307B\u3069\u306E\u9AD8\u307F\u3078\u81F3\u308C\u308B\u304B\u3057\u3089\u3002\u60F3\u50CF\u3059\u308B\u3060\u3051\u3067\u3001\u5168\u8EAB\u306E\u6E07\u304D\u304C\u75BC\u304F\u308F\u2026\u2026\u3075\u3075\u2026\u2026\u300D\r\n"
+    charName: "\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3"
+    char1Sprite: {fileID: 21300000, guid: 40ced72a0c3b30a4a84184e76ae0f91b, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6\u306F\u618E\u60AA\u3092\u8FBC\u3081\u3066\u5438\u8840\u9B3C\u3092\u7768\u307F\u3064\u3051\u3066\u3044\u308B\u304C\u3001\u6D41\u8840\u304C\u9177\u304F\u3001\u6307\u4E00\u672C\u52D5\u304B\u3059\u3053\u3068\u304C\u3067\u304D\u306A\u3044\u3002\r\n"
+    charName: none
+    char1Sprite: {fileID: 21300000, guid: 40ced72a0c3b30a4a84184e76ae0f91b, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u3069\u3046\u3059\u308B\u3002\u3069\u3046\u3059\u308B\u3002\u3069\u3046\u3059\u308B\u2014\u2014\u30C3\r\n\u3053\u306E\u307E\u307E\u3058\u3083\u3001\u5F7C\u5973\u304C\u6B7B\u306C\u3002\u4FFA\u306E\u305B\u3044\u3067\u3001\u4FFA\u3092\u5B88\u308B\u305F\u3081\u306B\u3001\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6\u304C\u98DF\u3044\u6BBA\u3055\u308C\u308B\u3002\r\n\u547D\u4E5E\u3044\u306A\u3069\u901A\u7528\u3059\u308B\u76F8\u624B\u3058\u3083\u306A\u3044\u3002\r\n\u3060\u304C\u3001\u305F\u3060\u306E\u4E00\u822C\u4EBA\u3067\u3042\u308B\u4FFA\u306B\u4F55\u304C\u3067\u304D\u308B\uFF1F
+      \u6BB4\u308A\u304B\u304B\u3063\u305F\u3068\u3053\u308D\u3067\u3001\u4E00\u77AC\u3067\u9996\u3092\u520E\u306D\u3089\u308C\u3066\u7D42\u308F\u308A\u3060\u3002\r\n"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 2e9eb551d51ae2543aaae4335aa1a2dc, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u2014\u2014\u3044\u3084\u3001\u9055\u3046\u3002\r\n\u30D1\u30CB\u30C3\u30AF\u306B\u306A\u308A\u304B\u3051\u305F\u8133\u88CF\u306B\u3001\u306A\u3093\u3068\u304B\u4ED5\u8FBC\u3093\u3060\u300E\u7B56\u300F\u304C\u30D5\u30E9\u30C3\u30B7\u30E5\u30D0\u30C3\u30AF\u3057\u305F\u3002\r\n\u4FFA\u306F\u3001\u305F\u3060\u7121\u529B\u306B\u5B88\u3089\u308C\u308B\u305F\u3081\u3060\u3051\u306B\u3001\u3053\u3053\u3078\u6765\u305F\u308F\u3051\u3058\u3083\u306A\u3044\uFF01"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u9707\u3048\u308B\u53F3\u624B\u3092\u3001\u4E0A\u7740\u306E\u5185\u30DD\u30B1\u30C3\u30C8\u3078\u3068\u6ED1\u308A\u8FBC\u307E\u305B\u308B\u3002\r\n\u6307\u5148\u306B\u89E6\u308C\u308B\u3001\u51B7\u305F\u304F\u3001\u91CD\u3005\u3057\u3044\u91D1\u5C5E\u306E\u611F\u89E6\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u2026\u2026\u3053\u308C\u3067\u3001\u7D42\u308F\u308A\u3088\u300D"
+    charName: "\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3"
+    char1Sprite: {fileID: 21300000, guid: 9c553c920e83db4439c059101db4ea71, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 3cca79d114231754982e518af3575475, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3\u304C\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6\u306E\u7D30\u3044\u9996\u7B4B\u3078\u3068\u3001\u7259\u3092\u5265\u304D\u51FA\u3057\u306B\u3057\u3066\u8EAB\u3092\u4E57\u308A\u51FA\u3057\u305F\u2014\u2014\u305D\u306E\u77AC\u9593\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u4FFA\u306F\u74E6\u792B\u306E\u9670\u304B\u3089\u98DB\u3073\u51FA\u3057\u3001\u4E21\u624B\u3067\u69CB\u3048\u305F\u300E\u305D\u308C\u300F\u306E\u5F15\u304D\u91D1\u3092\u3001\u8E8A\u8E87\u306A\u304F\u5F15\u304D\u7D5E\u3063\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u2014\u2014\u2014\u2014\u30D0\u30AE\u30E5\u30A5\u30A5\u30A5\u30F3\u30C3\u30C3\u30C3\uFF01\uFF01\uFF01\uFF01"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: e852c683aab0194409dac516862317c4, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u591C\u306E\u9759\u5BC2\u3092\u6728\u3063\u7AEF\u5FAE\u5875\u306B\u5439\u304D\u98DB\u3070\u3059\u3001\u8F5F\u7136\u305F\u308B\u9283\u58F0\u3002\r\n\u706B\u85AC\u306E\u5302\u3044\u3068\u9583\u5149\u304C\u5439\u304D\u8352\u308C\u308B\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u53CD\u52D5\u3067\u4FFA\u306E\u624B\u9996\u304C\u6FC0\u75DB\u3092\u4E0A\u3052\u308B\u4E2D\u3001\u653E\u305F\u308C\u305F\u5F3E\u4E38\u306F\u2014\u2014\u5438\u8840\u9B3C\u306E\u83EF\u5962\u306A\u80F8\u306E\u771F\u3093\u4E2D\u3092\u3001\u6B63\u78BA\u306B\u6483\u3061\u629C\u3044\u3066\u3044\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u2026\u2026\u3048\u2026\u2026\uFF1F\u300D"
+    charName: "\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3"
+    char1Sprite: {fileID: 21300000, guid: dbf24202ac51f94489eed5a222e9d5c8, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 3cca79d114231754982e518af3575475, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3\u306E\u52D5\u304D\u304C\u3001\u30D4\u30BF\u30EA\u3068\u6B62\u307E\u308B\u3002\r\n\u5F7C\u5973\u306E\u8179\u90E8\u306B\u3001\u62F3\u5927\u306E\u98A8\u7A74\u304C\u7A7A\u3044\u3066\u3044\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 21300000, guid: dbf24202ac51f94489eed5a222e9d5c8, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u2026\u2026\u30B7\u30EB\u30D0\u30FC\u2026\u2026\u30D0\u30EC\u30C3\u30C8\u2026\u2026\uFF1F\u300D\r\n"
+    charName: "\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3"
+    char1Sprite: {fileID: 21300000, guid: dbf24202ac51f94489eed5a222e9d5c8, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u4FE1\u3058\u3089\u308C\u306A\u3044\u3082\u306E\u3092\u898B\u308B\u3088\u3046\u306B\u3001\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3\u304C\u7A74\u3092\u624B\u3067\u62BC\u3055\u3048\u306A\u304C\u3089\u3053\u3061\u3089\u3092\u898B\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u30CF\u30A1\u30C3\u2026\u2026\u30CF\u30A1\u30C3\u2026\u2026\u9AD8\u304B\u3063\u305F\u3093\u3060\u305E\u3001\u30DE\u30B8\u3067\u2026\u2026\u30C3\uFF01
+      \u30A2\u30D7\u30EA\u3067\u932C\u6210\u3057\u305F\u672D\u675F\u3092\u5168\u90E8\u53E9\u3044\u3066\u2026\u2026\u88CF\u30EB\u30FC\u30C8\u3067\u624B\u306B\u5165\u308C\u305F\u3001\u6559\u4F1A\u3067\u8056\u5225\u3055\u308C\u305F\u672C\u7269\u306E\u300E\u5BFE\u9B54\u306E\u9280\u5F3E\u300F\u3060\u30C3\u2026\u2026\uFF01\u300D\r\n"
+    charName: "\u30A2\u30A4\u30C8"
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u30E1\u30C0\u30EB\u30B2\u30FC\u30E0\u306E\u529B\u3067\u7A3C\u3044\u3060\u5168\u8CA1\u7523\u3002\r\n\u6570\u5343\u4E07\u5186\u3068\u3044\u3046\u5E38\u8ECC\u3092\u9038\u3057\u305F\u5927\u91D1\u306B\u7269\u3092\u8A00\u308F\u305B\u3001\u95C7\u30EB\u30FC\u30C8\u3092\u99C6\u3051\u305A\u308A\u56DE\u3063\u3066\u624B\u306B\u5165\u308C\u305F\u3001\u73FE\u4EE3\u306B\u304A\u3051\u308B\u552F\u4E00\u306E\u300C\u602A\u7570\u6BBA\u3057\u300D\u3002\r\n"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 2e9eb551d51ae2543aaae4335aa1a2dc, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u672C\u5F53\u306B\u52B9\u3044\u305F...\uFF01\u4E00\u6483\u5165\u3063\u305F...\uFF01\u3053\u308C\u306A\u3089\u2014\u2014\uFF01"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 2e9eb551d51ae2543aaae4335aa1a2dc, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u4ECA\u306E\u3046\u3061\u306B\u3001\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6\u2026\u2026\uFF01\u300D\r\n"
+    charName: "\u30A2\u30A4\u30C8"
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 3cca79d114231754982e518af3575475, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u53EB\u307C\u3046\u3068\u3057\u305F\u3001\u305D\u306E\u6642\u3060\u3063\u305F\u3002\r\n"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u2026\u2026\u2026\u2026\u3063\u3075\u3075\u300D\r\n"
+    charName: "\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3"
+    char1Sprite: {fileID: 21300000, guid: 3cca79d114231754982e518af3575475, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u30AF\u30B9\u30AF\u30B9\u3068\u3001\u9234\u306E\u9CF4\u308B\u3088\u3046\u306A\u7B11\u3044\u58F0\u304C\u805E\u3053\u3048\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u2026\u2026\u306F\uFF1F\u300D"
+    charName: "\u30A2\u30A4\u30C8"
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u30D0\u30C1\u30D0\u30C1\u3068\u97F3\u3092\u7ACB\u3066\u3066\u3044\u305F\u50B7\u53E3\u304B\u3089\u6D41\u308C\u51FA\u3066\u3044\u305F\u8840\u304C\u8822\u3044\u305F\u3068\u601D\u3048\u3070\u2014\u2014\u77AC\u304F\u9593\u306B\u3001\u80F8\u306E\u98A8\u7A74\u3092\u57CB\u3081\u5C3D\u304F\u3057\u3066\u3044\u304F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 5cb0aeb2fbdc8c94ead5ab0ee1150063, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u308F\u305A\u304B\u6570\u79D2\u3002\r\n\u4F55\u4E8B\u3082\u306A\u304B\u3063\u305F\u304B\u306E\u3088\u3046\u306B\u6ED1\u3089\u304B\u306A\u3001\u767D\u3044\u7D20\u808C\u304C\u518D\u751F\u3057\u3066\u3044\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u3075\u3075\u3075\u2026\u2026\u3042\u306F\u306F\u306F\u306F\uFF01
+      \u3042\u306F\u306F\u306F\u306F\u306F\u306F\u306F\u30C3\u30C3\uFF01\uFF01\u300D"
+    charName: "\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3"
+    char1Sprite: {fileID: 21300000, guid: dc2da0faafa028945b0c118a6b384e6f, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 3cca79d114231754982e518af3575475, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u5438\u8840\u9B3C\u306F\u72C2\u3063\u305F\u3088\u3046\u306B\u7B11\u3063\u305F\u3002\r\n\u6B7B\u3002\r\n\u7D76\u5BFE\u7684\u306A\u6B7B\u306E\u6C17\u914D\u304C\u3001\u4FFA\u306E\u982D\u4E0A\u304B\u3089\u964D\u308A\u6CE8\u3050\u3002\r\n\u52B9\u304B\u306A\u304B\u3063\u305F\u3002\u4E07\u5168\u306E\u6E96\u5099\u3059\u3089\u3001\u3053\u306E\u602A\u7269\u306E\u524D\u306B\u306F\u7121\u610F\u5473\u3060\u3063\u305F\u306E\u304B\u2014\u2014\u3002\r\n"
+    charName: none
+    char1Sprite: {fileID: 21300000, guid: dc2da0faafa028945b0c118a6b384e6f, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u819D\u304C\u9707\u3048\u3001\u305D\u306E\u5834\u306B\u3078\u305F\u308A\u8FBC\u307F\u305D\u3046\u306B\u306A\u308B\u3002\r\n\u3060\u304C\u3001\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3\u306F\u722A\u3092\u632F\u308A\u4E0A\u3052\u308B\u3069\u3053\u308D\u304B\u3001\u5FC3\u5E95\u6109\u5FEB\u305D\u3046\u306B\u76EE\u3092\u7D30\u3081\u3001\u3086\u3063\u304F\u308A\u3068\u4FFA\u306E\u76EE\u306E\u524D\u307E\u3067\u6B69\u3044\u3066\u304D\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 21300000, guid: dc2da0faafa028945b0c118a6b384e6f, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u7D20\u6674\u3089\u3057\u3044\u308F\u3002\u672C\u5F53\u306B\u2026\u2026\u7D20\u6674\u3089\u3057\u3044\u308F\u3001\u8CB4\u65B9\u300D"
+    charName: "\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3"
+    char1Sprite: {fileID: 21300000, guid: 13a1aa3c32dbf714f926483a211b6c54, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u5F7C\u5973\u306E\u51B7\u305F\u3044\u6307\u5148\u304C\u3001\u4FFA\u306E\u984E\u3092\u305D\u3063\u3068\u6301\u3061\u4E0A\u3052\u308B\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u767D\u9280\u306E\u9A0E\u58EB\u3068\u306E\u518D\u6226\u3082\u697D\u3057\u304B\u3063\u305F\u3051\u308C\u3069\u2026\u2026\u4F55\u3088\u308A\u3001\u4F55\u306E\u9B54\u529B\u3082\u6301\u305F\u306A\u3044\u305F\u3060\u306E\u4EBA\u9593\u3067\u3042\u308B\u3042\u306A\u305F\u304C\u3001\u77E5\u6075\u3068\u8CA1\u3092\u5C3D\u304F\u3057\u3066\u3001\u305D\u3053\u306E\u9A0E\u58EB\u306E\u305F\u3081\u306B\u3053\u306E\u79C1\u306B\u98A8\u7A74\u3092\u958B\u3051\u3066\u307F\u305B\u305F\u3053\u3068\u3002\u2026\u2026\u6700\u9AD8\u306B\u3001\u6C17\u306B\u5165\u3063\u305F\u308F\u300D"
+    charName: "\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3"
+    char1Sprite: {fileID: 21300000, guid: 33e44b7f10d7eb140bed74b551659b36, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u306A\u2026\u2026\u306B\u3092\u2026\u2026\u300D"
+    charName: "\u30A2\u30A4\u30C8"
+    char1Sprite: {fileID: 21300000, guid: 33e44b7f10d7eb140bed74b551659b36, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u547D\u61F8\u3051\u306E\u4F59\u8208\u3078\u306E\u3001\u3054\u8912\u7F8E\u3088\u300D\r\n"
+    charName: "\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3"
+    char1Sprite: {fileID: 21300000, guid: 087df9b6b542b004ab70b4b80b0ebb80, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3\u306F\u5996\u8276\u306B\u5FAE\u7B11\u3080\u3068\u3001\u4FFA\u306E\u9996\u7B4B\u2014\u2014\u304B\u3064\u3066\u523B\u5370\u3092\u523B\u3093\u3060\u305D\u306E\u5834\u6240\u3078\u3001\u512A\u3057\u304F\u67D4\u3089\u304B\u306A\u5507\u3092\u843D\u3068\u3057\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 2e9eb551d51ae2543aaae4335aa1a2dc, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u30C1\u30E5\u30C3\u3001\u3068\u5C0F\u3055\u306A\u6C34\u97F3\u304C\u97FF\u304F\u3002\r\n\u7518\u7F8E\u306A\u75FA\u308C\u304C\u5168\u8EAB\u3092\u99C6\u3051\u629C\u3051\u3001\u8996\u754C\u304C\u30D6\u30E9\u30C3\u30AF\u30A2\u30A6\u30C8\u3059\u308B\u3002\u540C\u6642\u306B\u3001\u4F53\u306E\u5965\u5E95\u3067\u8108\u6253\u3063\u3066\u3044\u305F\u925B\u306E\u3088\u3046\u306A\u7570\u7269\u611F\u304C\u3001\u7DBA\u9E97\u3055\u3063\u3071\u308A\u6D88\u3048\u53BB\u3063\u3066\u3044\u304F\u306E\u304C\u5206\u304B\u3063\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u3068\u3063\u3066\u3082\u697D\u3057\u304B\u3063\u305F\u308F\u3002\u3042\u306A\u305F\u306E\u304A\u304B\u3052\u3067\u3001\u3053\u306E\u9000\u5C48\u306A\u4E16\u754C\u3082\u5C11\u3057\u306F\u611B\u305B\u305D\u3046\u3088\u3002\u2026\u2026\u307E\u305F\u3044\u3064\u304B\u3001\u5225\u306E\u5F62\u3067\u4F1A\u3044\u307E\u3057\u3087\u3046\uFF1F
+      \u79C1\u306E\u611B\u3057\u3044\u3001\u9280\u306E\u4E3B\u541B\u3055\u3093\u2026\u2026\u3075\u3075\u3075\u300D\r\n"
+    charName: "\u30F4\u30A7\u30EB\u30DF\u30EA\u30AA\u30F3"
+    char1Sprite: {fileID: 21300000, guid: 33e44b7f10d7eb140bed74b551659b36, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u30D5\u30C3\u3001\u3068\u591C\u98A8\u304C\u5439\u304D\u629C\u3051\u308B\u3002\r\n\u6B21\u306E\u77AC\u9593\u306B\u306F\u3001\u5F7C\u5973\u306E\u6C17\u914D\u3082\u3001\u7D05\u3044\u30C9\u30EC\u30B9\u306E\u6B8B\u5F71\u3082\u3001\u3069\u3053\u306B\u3082\u5B58\u5728\u3057\u306A\u304B\u3063\u305F\u3002\r\n\u305F\u3060\u3001\u53E3\u4ED8\u3051\u306E\u611F\u89E6\u304C\u30DD\u30C4\u30F3\u3068\u53D6\u308A\u6B8B\u3055\u308C\u3066\u3044\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 3cca79d114231754982e518af3575475, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u2026\u2026\u3063\uFF01 \u30EA\u30FC\u30BC\u30ED\u30C3\u30C6\uFF01\uFF01\u300D\r\n"
+    charName: "\u30A2\u30A4\u30C8"
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u6211\u306B\u8FD4\u3063\u305F\u4FFA\u306F\u3001\u614C\u3066\u3066\u8840\u6E9C\u307E\u308A\u306E\u4E2D\u306E\u5F7C\u5973\u3078\u3068\u99C6\u3051\u5BC4\u3063\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u304A\u3044\u3001\u5927\u4E08\u592B\u304B\uFF01\uFF1F \u50B7\u306F\u2026\u2026\u3063\uFF01\uFF1F\u300D\r\n"
+    charName: "\u30A2\u30A4\u30C8"
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u2026\u2026\u5C11\u5E74\u304B\u3002\u3059\u307E\u306A\u3044\u2026\u2026\u7121\u69D8\u3092\u6652\u3057\u305F\u3002\u3060\u304C\u3001\u3082\u3046\u5927\u4E08\u592B\u3060\u300D"
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 21300000, guid: 197e7f72855c4e947a6b0e8e749cccd9, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u5927\u4E08\u592B\u306A\u308F\u3051\u3042\u308B\u304B\u3001\u3053\u3093\u306A\u306B\u51FA\u8840\u3057\u3066\u2026\u2026\u3063\u3066\u3001\u3042\u308C\uFF1F\u300D"
+    charName: "\u30A2\u30A4\u30C8"
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u614C\u3066\u3066\u50B7\u53E3\u3092\u62BC\u3055\u3048\u3088\u3046\u3068\u3057\u305F\u304C\u3001\u7834\u308C\u305F\u93A7\u306E\u9699\u9593\u304B\u3089\u898B\u3048\u308B\u8179\u90E8\u306E\u50B7\u306F\u3001\u3059\u3067\u306B\u8D64\u9ED2\u3044\u304B\u3055\u3076\u305F\u306B\u306A\u308A\u3001\u6025\u901F\u306B\u585E\u304C\u308A\u3064\u3064\u3042\u3063\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u81F4\u547D\u50B7\u3092\u907F\u3051\u308C\u3070\u3001\u3053\u306E\u7A0B\u5EA6\u3067\u6B7B\u306B\u306F\u305B\u3093\u3002\u300D"
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 21300000, guid: b66c5430db8577649a1321a9408e8a88, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u3080\u304F\u308A\u3068\u3001\u4F55\u4E8B\u3082\u306A\u304B\u3063\u305F\u304B\u306E\u3088\u3046\u306B\u4E0A\u534A\u8EAB\u3092\u8D77\u3053\u3059\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6\u3002\r\n\u305D\u306E\u8D85\u4EBA\u3076\u308A\u306B\u5446\u6C17\u306B\u3068\u3089\u308C\u3064\u3064\u3082\u3001\u4FFA\u306F\u3078\u306A\u3078\u306A\u3068\u5730\u9762\u306B\u5EA7\u308A\u8FBC\u3093\u3067\u3057\u307E\u3063\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 21300000, guid: 3befcb292eeb91244b359ee67cf753ff, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u2026\u2026\u3088\u304B\u3063\u305F\u3002\u672C\u5F53\u306B\u2026\u2026\u3088\u304B\u3063\u305F\u2026\u2026\u300D\r\n"
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 21300000, guid: 9be88a5f366e29e41a7a67f239ff7d29, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u30A2\u30A4\u30C8\u2026\u2026\u3002\u304A\u524D\u3001\u305D\u306E\u9996\u306E\u523B\u5370\u2026\u2026\u5974\u304C\u3001\u81EA\u3089\u89E3\u3044\u305F\u306E\u304B\uFF1F\u300D\r\n"
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 21300000, guid: b05786924760b8f4bb0e1a77ec50de81, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u3042\u3042\u2026\u2026\u306A\u3093\u304B\u3001\u6C17\u306B\u5165\u3089\u308C\u305F\u307F\u305F\u3044\u3067\u3055\u3002\u610F\u5473\u308F\u304B\u3093\u306D\u3047\u3088\u3001\u3042\u306E\u5438\u8840\u9B3C\u2026\u2026\u300D\r\n"
+    charName: "\u30A2\u30A4\u30C8"
+    char1Sprite: {fileID: 21300000, guid: b05786924760b8f4bb0e1a77ec50de81, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u2026\u2026\u305D\u3046\u304B\u3002\u672C\u5F53\u306B\u3001\u5974\u306E\u8003\u3048\u308B\u3053\u3068\u306F\u5206\u304B\u3089\u3093\u306A\u300D\r\n"
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 21300000, guid: b66c5430db8577649a1321a9408e8a88, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6\u306F\u91CD\u3044\u5927\u5263\u3092\u80CC\u8CA0\u3044\u76F4\u3059\u3068\u3001\u305D\u3063\u3068\u4FFA\u306B\u624B\u3092\u5DEE\u3057\u4F38\u3079\u3066\u304D\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u2026\u2026\u5E30\u308D\u3046\u3001\u30A2\u30A4\u30C8\u3002\u79C1\u305F\u3061\u306E\u5BB6\u306B\u300D\r\n"
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 21300000, guid: 9be88a5f366e29e41a7a67f239ff7d29, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "...\u25C7\u25C7\u25C7..."
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 2e9eb551d51ae2543aaae4335aa1a2dc, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u6771\u306E\u7A7A\u304C\u3001\u767D\u307F\u59CB\u3081\u3066\u3044\u305F\u3002\r\n\u591C\u3068\u671D\u306E\u72ED\u9593\u3001\u7D2B\u8272\u306E\u8584\u660E\u304B\u308A\u306B\u5305\u307E\u308C\u305F\u5BC2\u308C\u305F\u306E\u9053\u8DEF\u3092\u3001\u4FFA\u305F\u3061\u306F\u4E26\u3093\u3067\u6B69\u3044\u3066\u3044\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 21300000, guid: 845783d149b268b408c0ad34ac9bf03d, type: 3}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u6050\u308D\u3057\u3044\u4E00\u591C\u3060\u3063\u305F\u3002\n\u305D\u308C\u3067\u3082\u3001\u751F\u304D\u3066\u5E30\u3063\u3066\u3053\u3089\u308C\u305F\u3002\u305D\u306E\u4E8B\u5B9F\u3060\u3051\u3067\u5341\u5206\u3060\u3063\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u6570\u5206\u9593\u3001\u9759\u304B\u306A\u8DB3\u97F3\u3060\u3051\u304C\u30A2\u30B9\u30D5\u30A1\u30EB\u30C8\u306B\u97FF\u3044\u3066\u3044\u305F\u304C\u2014\u2014\u3084\u304C\u3066\u3001\u96A3\u3092\u6B69\u304F\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6\u304C\u3001\u91CD\u3044\u53E3\u3092\u958B\u3044\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u2026\u2026\u30A2\u30A4\u30C8\u300D"
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 21300000, guid: 9be88a5f366e29e41a7a67f239ff7d29, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u3093\uFF1F \u306A\u3093\u3060\uFF1F\u300D"
+    charName: "\u30A2\u30A4\u30C8"
+    char1Sprite: {fileID: 21300000, guid: 9be88a5f366e29e41a7a67f239ff7d29, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u2026\u2026\u52A9\u3051\u3089\u308C\u305F\u306A\u3002\u79C1\u306E\u65B9\u3053\u305D\u300D"
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 21300000, guid: 9e562593a4e54764297425e33b3c75c7, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u5F7C\u5973\u306E\u6A2A\u9854\u306B\u306F\u3001\u671D\u713C\u3051\u306E\u5149\u3082\u5C4A\u304B\u306A\u3044\u3088\u3046\u306A\u3001\u6DF1\u3044\u7FF3\u308A\u304C\u3042\u3063\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 0}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u79C1\u306F\u2026\u2026\u304A\u524D\u306E\u4E3B\u541B\u306B\u306A\u308B\u3068\u8A93\u3044\u3001\u304A\u524D\u3092\u5B88\u308B\u76FE\u306B\u306A\u308B\u3068\u5927\u898B\u5F97\u3092\u5207\u3063\u305F\u3002\u3060\u3068\u3044\u3046\u306E\u306B\u2026\u2026\u7D50\u679C\u306F\u3069\u3046\u3060\u3002\u79C1\u306F\u6575\u306E\u7B56\u306B\u5D4C\u307E\u3063\u3066\u6557\u5317\u3057\u3001\u7D50\u5C40\u3001\u304A\u524D\u306E\u6A5F\u8EE2\u3068\u899A\u609F\u306B\u547D\u3092\u6551\u308F\u308C\u305F\u300D"
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 21300000, guid: 0c14ff8cb739ad4418dcdb661c979c53, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u6C17\u306B\u3059\u308B\u306A\u3063\u3066\u3002\u8A00\u3063\u305F\u3060\u308D\u3001\u4FFA\u3082\u6226\u308F\u306A\u304D\u3083\u6C17\u304C\u6E08\u307E\u306A\u304B\u3063\u305F\u3093\u3060\u3002\u307E\u3001\u305D\u306E\u305B\u3044\u3067\u8CAF\u91D1\u306F\u307E\u305F\u30B9\u30C3\u30AB\u30E9\u30AB\u30F3\u306B\u306A\u3063\u3061\u307E\u3063\u305F\u3051\u3069\u306A\u2026\u2026\u30CF\u30CF\u300D"
+    charName: "\u30A2\u30A4\u30C8"
+    char1Sprite: {fileID: 21300000, guid: 0c14ff8cb739ad4418dcdb661c979c53, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u982D\u3092\u63BB\u304D\u306A\u304C\u3089\u7B11\u3044\u98DB\u3070\u305D\u3046\u3068\u3059\u308B\u4FFA\u3092\u3001\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6\u306F\u7ACB\u3061\u6B62\u307E\u308A\u3001\u3058\u3063\u3068\u771F\u3063\u76F4\u3050\u306B\u898B\u3064\u3081\u3066\u304D\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 21300000, guid: 0c14ff8cb739ad4418dcdb661c979c53, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u2026\u2026\u304A\u524D\u306F\u3044\u3064\u3082\u3001\u305D\u3046\u3084\u3063\u3066\u8AA4\u9B54\u5316\u3059\u306E\u3060\u306A\u300D"
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 21300000, guid: 45f36b7112bd1cf408e744f25b207912, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u3048\u2026\u2026\uFF1F\u300D"
+    charName: "\u30A2\u30A4\u30C8"
+    char1Sprite: {fileID: 21300000, guid: 45f36b7112bd1cf408e744f25b207912, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u306A\u3041\u3001\u30A2\u30A4\u30C8\u3002\u2026\u2026\u79C1\u306F\u3001\u9A0E\u58EB\u3068\u3057\u3066\u3069\u3046\u306A\u306E\u3060\uFF1F\u300D"
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 21300000, guid: 0691b3b13776ff848b7f79b920cecd82, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u7D5E\u308A\u51FA\u3059\u3088\u3046\u306A\u3001\u9707\u3048\u308B\u58F0\u3060\u3063\u305F\u3002\r\n"
+    charName: none
+    char1Sprite: {fileID: 21300000, guid: 0691b3b13776ff848b7f79b920cecd82, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u3053\u306E\u5E73\u548C\u306A\u4E16\u754C\u3067\u3001\u79C1\u306F\u4F55\u306E\u5F79\u306B\u3082\u7ACB\u305F\u305A\u3001\u7269\u3092\u58CA\u3057\u3001\u305F\u3060\u98EF\u3092\u98DF\u3089\u3046\u3060\u3051\u306E\u5F79\u7ACB\u305F\u305A\u3060\u3002\u305D\u308C\u3067\u3082\u2026\u2026\u5B88\u308B\u3079\u304D\u304A\u524D\u3092\u898B\u3064\u3051\u3001\u9A0E\u58EB\u3068\u3057\u3066\u751F\u304D\u308B\u9053\u3092\u898B\u51FA\u3057\u305F\u3068\u601D\u3063\u305F\u3002\u3060\u304C\u3001\u305D\u308C\u3059\u3089\u3082\u2026\u2026\u6700\u5F8C\u306B\u306F\u304A\u524D\u306B\u5B88\u3089\u308C\u3066\u3057\u307E\u3063\u305F\u300D"
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 21300000, guid: 0691b3b13776ff848b7f79b920cecd82, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6\u306F\u304E\u3085\u3063\u3068\u81EA\u5206\u306E\u670D\u306E\u88FE\u3092\u63B4\u307F\u3001\u6D88\u3048\u5165\u308A\u305D\u3046\u306A\u58F0\u3067\u554F\u3044\u304B\u3051\u308B\u3002"
+    charName: none
+    char1Sprite: {fileID: 21300000, guid: 0691b3b13776ff848b7f79b920cecd82, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u79C1\u306F\u2026\u2026\u304A\u524D\u306E\u5074\u306B\u3044\u3066\u3044\u3044\u306E\u3060\u308D\u3046\u304B\uFF1F
+      \u4E3B\u541B\u4E00\u4EBA\u6E80\u8DB3\u306B\u5B88\u308C\u306C\u9A0E\u58EB\u304C\u3001\u304A\u524D\u306E\u96A3\u306B\u7ACB\u3064\u8CC7\u683C\u306A\u3069\u2026\u2026\u672C\u5F53\u306B\u3042\u308B\u306E\u3060\u308D\u3046\u304B\uFF1F
+      \u79C1\u306F\u3082\u3046\u3001\u304A\u524D\u306E\u5074\u306B\u3044\u308B\u610F\u5473\u306A\u3069\u2026\u2026\u300D"
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 21300000, guid: 98628c76689233b4ea6ed290b617d02e, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u306A\u3001\u4F55\u8A00\u3063\u3066\u3093\u3060\u3088\u3001\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6\u2026\u2026\u300D"
+    charName: "\u30A2\u30A4\u30C8"
+    char1Sprite: {fileID: 21300000, guid: 98628c76689233b4ea6ed290b617d02e, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u52D5\u63FA\u3059\u308B\u4FFA\u306B\u3001\u5F7C\u5973\u306F\u6D99\u3092\u582A\u3048\u308B\u3088\u3046\u306B\u77B3\u3092\u6F64\u307E\u305B\u306A\u304C\u3089\u3001\u5207\u5B9F\u306A\u773C\u5DEE\u3057\u3092\u3076\u3064\u3051\u3066\u304D\u305F\u3002"
+    charName: none
+    char1Sprite: {fileID: 21300000, guid: 98628c76689233b4ea6ed290b617d02e, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
+  - text: "\u300C\u983C\u3080\u3001\u306F\u3063\u304D\u308A\u3068\u8A00\u3063\u3066\u304F\u308C\u2026\u2026\u3002\u79C1\u306F\u2026\u2026\u79C1\u306F\u3001\u304A\u524D\u306B\u3068\u3063\u3066\u2026\u2026\u300D"
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 21300000, guid: 0691b3b13776ff848b7f79b920cecd82, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
