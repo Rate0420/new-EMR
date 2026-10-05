@@ -5326,6 +5326,7 @@ MonoBehaviour:
   BlackOutImage: {fileID: 964368338}
   roundChange: {fileID: 755666152}
   statusGet: {fileID: 0}
+  IsTransitioning: 0
   menuManager: {fileID: 1282841340}
   MiniEvents:
   - {fileID: 11400000, guid: d44089d921dcbe14b941f92b0d0d567b, type: 2}
@@ -19375,7 +19376,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 828441235}
         m_TargetAssemblyTypeName: CameraSwitch, Assembly-CSharp
-        m_MethodName: CameraNo4
+        m_MethodName: SetJPCC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26264,7 +26265,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 828441235}
         m_TargetAssemblyTypeName: CameraSwitch, Assembly-CSharp
-        m_MethodName: CameraNo3
+        m_MethodName: SetJPC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26416,7 +26417,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 828441235}
         m_TargetAssemblyTypeName: CameraSwitch, Assembly-CSharp
-        m_MethodName: CameraNo2
+        m_MethodName: SetSlotZoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30405,7 +30406,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 828441235}
         m_TargetAssemblyTypeName: CameraSwitch, Assembly-CSharp
-        m_MethodName: CameraNo1
+        m_MethodName: SetDefault
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
