@@ -124,7 +124,7 @@ public class S_WriteText : MonoBehaviour
         {
             if (!string.IsNullOrEmpty(nextScene))
             {
-                SceneManager.LoadScene("TestScene_sakaguchi_v3");
+                TitleFade.Instance.SceneChangeAni();
                 return;
             }
         }

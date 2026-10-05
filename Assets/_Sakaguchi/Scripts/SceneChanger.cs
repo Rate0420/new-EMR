@@ -143,7 +143,4 @@ public class SceneChanger : MonoBehaviour
         menuManager.isAllMF = false;
         StartCoroutine(EndMenuCoroutine());
     }
-
-
-
 }

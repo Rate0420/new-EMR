@@ -94,7 +94,6 @@ public class TitleFade : MonoBehaviour
             await SceneManager.LoadSceneAsync(prologueScene);
             //BGMManager.Instance.BGMChange(3);
         }
-
         else if (currentScene == prologueScene)
         {
             await SceneManager.LoadSceneAsync(gameSceneName);
