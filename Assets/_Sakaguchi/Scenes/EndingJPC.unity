@@ -913,10 +913,11 @@ MonoBehaviour:
   bounder: {fileID: 0}
   jpccManager: {fileID: 0}
   ballEventQueue: {fileID: 0}
-  isJPC: 1
+  isJPC: 0
   prizeText: {fileID: 599002500}
-  isEnding: 0
+  isEnding: 1
   isGoodEndHole: 0
+  endingJPCManager: {fileID: 414427041}
 --- !u!135 &410045609
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1031,8 +1032,26 @@ MonoBehaviour:
   - {fileID: 818440550}
   - {fileID: 756565468}
   - {fileID: 410045608}
-  Ball: {fileID: 5301785042666199167, guid: f00c3570fab13954e94512ae80ee451e, type: 3}
+  Ball: {fileID: 5301785042666199167, guid: 67de06253ef0213469e802586f8073df, type: 3}
   BallSpawnPos: {fileID: 353534618}
+  EndingstoryData:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: a86eea320797b324abd04af86654497f, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  GoodEndingstoryData:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 3105144ae80cf44439a957616eea1e4c, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &414427042
 Transform:
   m_ObjectHideFlags: 0
@@ -1100,10 +1119,11 @@ MonoBehaviour:
   bounder: {fileID: 0}
   jpccManager: {fileID: 0}
   ballEventQueue: {fileID: 0}
-  isJPC: 1
+  isJPC: 0
   prizeText: {fileID: 102306579}
-  isEnding: 0
+  isEnding: 1
   isGoodEndHole: 0
+  endingJPCManager: {fileID: 414427041}
 --- !u!135 &569535600
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1406,10 +1426,11 @@ MonoBehaviour:
   bounder: {fileID: 0}
   jpccManager: {fileID: 0}
   ballEventQueue: {fileID: 0}
-  isJPC: 1
+  isJPC: 0
   prizeText: {fileID: 399102122}
-  isEnding: 0
+  isEnding: 1
   isGoodEndHole: 0
+  endingJPCManager: {fileID: 414427041}
 --- !u!135 &634409871
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1879,10 +1900,11 @@ MonoBehaviour:
   bounder: {fileID: 0}
   jpccManager: {fileID: 0}
   ballEventQueue: {fileID: 0}
-  isJPC: 1
+  isJPC: 0
   prizeText: {fileID: 1094040532}
-  isEnding: 0
+  isEnding: 1
   isGoodEndHole: 0
+  endingJPCManager: {fileID: 414427041}
 --- !u!135 &756565469
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2185,10 +2207,11 @@ MonoBehaviour:
   bounder: {fileID: 0}
   jpccManager: {fileID: 0}
   ballEventQueue: {fileID: 0}
-  isJPC: 1
+  isJPC: 0
   prizeText: {fileID: 784569832}
-  isEnding: 0
+  isEnding: 1
   isGoodEndHole: 0
+  endingJPCManager: {fileID: 414427041}
 --- !u!135 &818440551
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2315,10 +2338,11 @@ MonoBehaviour:
   bounder: {fileID: 0}
   jpccManager: {fileID: 0}
   ballEventQueue: {fileID: 0}
-  isJPC: 1
+  isJPC: 0
   prizeText: {fileID: 1548730246}
-  isEnding: 0
+  isEnding: 1
   isGoodEndHole: 0
+  endingJPCManager: {fileID: 414427041}
 --- !u!135 &857081669
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3209,10 +3233,11 @@ MonoBehaviour:
   bounder: {fileID: 0}
   jpccManager: {fileID: 0}
   ballEventQueue: {fileID: 0}
-  isJPC: 1
+  isJPC: 0
   prizeText: {fileID: 1403658301}
-  isEnding: 0
+  isEnding: 1
   isGoodEndHole: 0
+  endingJPCManager: {fileID: 414427041}
 --- !u!135 &1350897950
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3287,6 +3312,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350897947}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1387207484
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7121465404733165838, guid: d06fe63fbe6329a4eb3efe23b08be151, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121465404733165838, guid: d06fe63fbe6329a4eb3efe23b08be151, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121465404733165838, guid: d06fe63fbe6329a4eb3efe23b08be151, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121465404733165838, guid: d06fe63fbe6329a4eb3efe23b08be151, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121465404733165838, guid: d06fe63fbe6329a4eb3efe23b08be151, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121465404733165838, guid: d06fe63fbe6329a4eb3efe23b08be151, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121465404733165838, guid: d06fe63fbe6329a4eb3efe23b08be151, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121465404733165838, guid: d06fe63fbe6329a4eb3efe23b08be151, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121465404733165838, guid: d06fe63fbe6329a4eb3efe23b08be151, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121465404733165838, guid: d06fe63fbe6329a4eb3efe23b08be151, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211478197605397812, guid: d06fe63fbe6329a4eb3efe23b08be151, type: 3}
+      propertyPath: m_Name
+      value: S_DontDestroyStory
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d06fe63fbe6329a4eb3efe23b08be151, type: 3}
 --- !u!1 &1403658299
 GameObject:
   m_ObjectHideFlags: 0
@@ -3728,10 +3810,11 @@ MonoBehaviour:
   bounder: {fileID: 0}
   jpccManager: {fileID: 0}
   ballEventQueue: {fileID: 0}
-  isJPC: 1
+  isJPC: 0
   prizeText: {fileID: 662242551}
-  isEnding: 0
+  isEnding: 1
   isGoodEndHole: 0
+  endingJPCManager: {fileID: 414427041}
 --- !u!135 &1594672331
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3858,10 +3941,11 @@ MonoBehaviour:
   bounder: {fileID: 0}
   jpccManager: {fileID: 0}
   ballEventQueue: {fileID: 0}
-  isJPC: 1
+  isJPC: 0
   prizeText: {fileID: 29939813}
-  isEnding: 0
+  isEnding: 1
   isGoodEndHole: 0
+  endingJPCManager: {fileID: 414427041}
 --- !u!135 &1924665978
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3988,10 +4072,11 @@ MonoBehaviour:
   bounder: {fileID: 0}
   jpccManager: {fileID: 0}
   ballEventQueue: {fileID: 0}
-  isJPC: 1
+  isJPC: 0
   prizeText: {fileID: 1313049100}
-  isEnding: 0
+  isEnding: 1
   isGoodEndHole: 0
+  endingJPCManager: {fileID: 414427041}
 --- !u!135 &2001743249
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4283,3 +4368,4 @@ SceneRoots:
   - {fileID: 1554836089}
   - {fileID: 414427042}
   - {fileID: 353534618}
+  - {fileID: 1387207484}

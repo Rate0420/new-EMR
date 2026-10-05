@@ -16,9 +16,9 @@ MonoBehaviour:
   storyParts:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 11400000, guid: 9a54ec8d0669e7f4fabda6843b27668d, type: 2}
   - {fileID: 11400000, guid: d956e320e455ed341a43da76a9f28f3d, type: 2}
   - {fileID: 11400000, guid: 1021e0d716ac7fc4e8ecd3cb5ac120d5, type: 2}
   - {fileID: 11400000, guid: b531da3fb34f15842be029e5b4d89143, type: 2}
   - {fileID: 11400000, guid: d670dcff3f462a747a8ab960af89f0bf, type: 2}
-  - {fileID: 11400000, guid: 9a54ec8d0669e7f4fabda6843b27668d, type: 2}
   - {fileID: 11400000, guid: a86eea320797b324abd04af86654497f, type: 2}

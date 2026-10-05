@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/_Sakaguchi/Scenes/ProlougeScene.unity
     guid: 98a0648d08f572143ad5779758eaa472
   - enabled: 1
+    path: Assets/_Sakaguchi/Scenes/EndingJPC.unity
+    guid: d47be33079b7a6c43962cd20cad9aa5a
+  - enabled: 1
     path: Assets/_Sakaguchi/Scenes/Sakaguchi_TestStoryScene.unity
     guid: c6fb59cdfee23574baa0e09ca15f6151
   m_configObjects:
