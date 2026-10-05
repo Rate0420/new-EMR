@@ -1,4 +1,5 @@
 using EMR.Core;
+using EMR.Round;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ public class StatusGet : MonoBehaviour
     [SerializeField] private CharacterDatabase characterDatabase;
     [SerializeField] private ItemDataBase itemDatabase;
     [SerializeField] private MenuManager menuManager;
+    [SerializeField] private RoundManager roundManager;
     [SerializeField] private CharacterData[] datas;
 
     [Header("各キャラの好感度")]
@@ -31,7 +33,7 @@ public class StatusGet : MonoBehaviour
 
     public CharacterData characterData;
     private int nowStory;   // ストーリー進行度
-    private int miniStory;  // ミニイベ進行度
+    public int miniStory;  // ミニイベ進行度
     private int nowNo = -1; // バフ削除用
 
     public bool isBuff;     // バフスロットに空きがあるか
@@ -58,13 +60,13 @@ public class StatusGet : MonoBehaviour
 
         cutinSprite.sprite = characterData.cutinSprite;
 
-        // ステータス取得　未実装
-        nowStory = 1;
+        // ステータス取得
+        nowStory = roundManager.CurrentRound;
         miniStory = 1;
 
         // 画面左のステータス画面に反映
         nowStoryText.text = nowStory.ToString() + "/7";
-        miniStoryText.text = miniStory.ToString() + "/8";
+        miniStoryText.text = miniStory.ToString() + "回";
         statusLikeability.text = characterData.likeability.ToString();
         GameState.Instance.OwnedModel.OnCountChanged += UpdateUI;
         UpdateUI(GameState.Instance.OwnedModel.Count);

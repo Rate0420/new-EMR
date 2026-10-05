@@ -12,6 +12,7 @@ public class SceneChanger : MonoBehaviour
     [SerializeField] GameObject menuCanvas;
     [SerializeField] GameObject BlackOutImage;
     [SerializeField] RoundChange roundChange;
+    [SerializeField] StatusGet statusGet;
 
     [SerializeField] private MenuManager menuManager;
 
@@ -140,6 +141,7 @@ public class SceneChanger : MonoBehaviour
     {
         S_StoryData storyData = MiniEvents[Random.Range(0, MiniEvents.Length)];
         S_DontDestroyStory.instance.story = storyData;
+        statusGet.miniStory = statusGet.miniStory ++;
         StartCoroutine(StartScenarioCoroutine("Sakaguchi_TestStoryScene"));
     }
 
