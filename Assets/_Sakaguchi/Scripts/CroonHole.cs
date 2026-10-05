@@ -9,17 +9,18 @@ public class CroonHole : MonoBehaviour
     [SerializeField] BallEventQueue ballEventQueue; // Å© í«â¡
     public bool isJPC = false;
     [SerializeField] TextMeshPro prizeText;
+    public bool isEnding = false;
 
     private void Start()
     {
-        if (prizeText != null)
+        if (prizeText != null && isEnding == false)
         {
             prizeText.text = jpccManager?.GetPriseText(holeIndex, isJPC);
         }
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (!isJPC)
+        if (!isJPC && isEnding == false)
         {
             if (other.transform.parent.CompareTag("Ball"))
             {
@@ -34,7 +35,7 @@ public class CroonHole : MonoBehaviour
             }
         }
 
-        else if (other.transform.parent.CompareTag("Ball"))
+        else if (other.transform.parent.CompareTag("Ball") && isEnding == false)
         {
             // otherÇçÌèú
             jpccManager?.JPCPrise(holeIndex);
@@ -44,7 +45,7 @@ public class CroonHole : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (!isJPC)
+        if (!isJPC && isEnding == false)
         {
             if (other.transform.parent.CompareTag("Ball"))
             {

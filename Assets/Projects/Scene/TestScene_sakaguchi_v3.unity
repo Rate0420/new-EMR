@@ -531,6 +531,7 @@ MonoBehaviour:
   ballEventQueue: {fileID: 2112621051}
   isJPC: 1
   prizeText: {fileID: 1628336362}
+  isEnding: 0
 --- !u!135 &17301760
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1989,6 +1990,7 @@ MonoBehaviour:
   ballEventQueue: {fileID: 2112621051}
   isJPC: 1
   prizeText: {fileID: 1229421703}
+  isEnding: 0
 --- !u!135 &96252926
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3333,6 +3335,7 @@ MonoBehaviour:
   ballEventQueue: {fileID: 2112621051}
   isJPC: 1
   prizeText: {fileID: 1631082360}
+  isEnding: 0
 --- !u!135 &196858589
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5316,6 +5319,7 @@ MonoBehaviour:
   menuCanvas: {fileID: 2058236794}
   BlackOutImage: {fileID: 964368338}
   roundChange: {fileID: 755666152}
+  statusGet: {fileID: 0}
   menuManager: {fileID: 1282841340}
   MiniEvents:
   - {fileID: 11400000, guid: d44089d921dcbe14b941f92b0d0d567b, type: 2}
@@ -6312,6 +6316,7 @@ MonoBehaviour:
   ballEventQueue: {fileID: 2112621051}
   isJPC: 1
   prizeText: {fileID: 1099420361}
+  isEnding: 0
 --- !u!135 &353640668
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12937,6 +12942,7 @@ MonoBehaviour:
   ballEventQueue: {fileID: 2112621051}
   isJPC: 1
   prizeText: {fileID: 728119688}
+  isEnding: 0
 --- !u!135 &762262790
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -17958,6 +17964,7 @@ MonoBehaviour:
   ballEventQueue: {fileID: 2112621051}
   isJPC: 1
   prizeText: {fileID: 1510985077}
+  isEnding: 0
 --- !u!135 &1068152942
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -20287,6 +20294,7 @@ MonoBehaviour:
   ballEventQueue: {fileID: 2112621051}
   isJPC: 1
   prizeText: {fileID: 658565038}
+  isEnding: 0
 --- !u!135 &1173913330
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -23438,6 +23446,7 @@ MonoBehaviour:
   ballEventQueue: {fileID: 2112621051}
   isJPC: 1
   prizeText: {fileID: 791083658}
+  isEnding: 0
 --- !u!135 &1332066303
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -27080,6 +27089,7 @@ MonoBehaviour:
   ballEventQueue: {fileID: 2112621051}
   isJPC: 1
   prizeText: {fileID: 240079937}
+  isEnding: 0
 --- !u!135 &1530358321
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -27534,6 +27544,7 @@ MonoBehaviour:
   ballEventQueue: {fileID: 2112621051}
   isJPC: 1
   prizeText: {fileID: 1381561585}
+  isEnding: 0
 --- !u!135 &1568085754
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -30097,6 +30108,7 @@ MonoBehaviour:
   stopTime: 0
   JPC: 1
   useTimer: 0
+  isEnding: 0
 --- !u!1001 &1689431188
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38209,6 +38221,7 @@ MonoBehaviour:
   stopTime: 0
   JPC: 1
   useTimer: 0
+  isEnding: 0
 --- !u!54 &2129066997
 Rigidbody:
   m_ObjectHideFlags: 0

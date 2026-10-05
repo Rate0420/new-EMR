@@ -10,6 +10,7 @@ public class Croon : MonoBehaviour
     [SerializeField] bool useTimer;
     float t1, t2, t3, t4;
     Rigidbody rigit;
+    public bool isEnding = false;
 
     void Start()
     {

@@ -76,29 +76,27 @@ public class S_WriteText : MonoBehaviour
 
     private void OnAdvanceInput()
     {
-        if (chooseManager.IsShowingChoices) return;
+        // シーン遷移開始後は一切入力を受け付けない
+        if (isSceneChanged) return;
 
+        if (chooseManager.IsShowingChoices) return;
 
         if (isDrawing)
         {
-            // 書いている最中 → コルーチンを止めて全文一括表示
-            // ※ StopAllCoroutines でループ以降のCreateLog等が実行されなくなるため
-            //    ここで明示的に呼び出す
-            int snapIndex = Index;  // StopAllCoroutines前にIndexを退避
+            int snapIndex = Index;
+
             StopAllCoroutines();
+
             var currentEntry = storyData.Get(snapIndex);
             messageText.text = currentEntry.text;
             isDrawing = false;
 
-            // テキスト出し終わった後の処理を再現する
             if (currentEntry.HasChoices)
             {
-                // 選択肢エントリ：全文表示してから選択肢を出す
                 chooseManager.ShowChoices(snapIndex);
             }
             else
             {
-                // 通常テキスト：バックログ登録してから次へ
                 createBackLog?.CreateLog(snapIndex);
 
                 if (currentEntry.HasJump)
@@ -113,63 +111,53 @@ public class S_WriteText : MonoBehaviour
                     ShowNextArrow();
                 }
             }
+
             return;
         }
 
         var lastEntry = storyData.Get(Index - 1);
-
         string nextScene = lastEntry.nextScene;
 
+        // Gameへ
         if (nextScene == "Game")
         {
-            if (!string.IsNullOrEmpty(nextScene))
-            {
-                TitleFade.Instance.SceneChangeAni();
-                return;
-            }
+            isSceneChanged = true;
+
+            TitleFade.Instance.SceneChangeAni();
+            return;
         }
 
+        // Endへ
         if (nextScene == "End")
         {
             Debug.Log("end");
-            if (!string.IsNullOrEmpty(nextScene))
-            {
-                sceneChanger.StartCoroutine(sceneChanger.EndScenarioCoroutine("Sakaguchi_TestStoryScene"));
-            }
-        }
-        if (nextScene == "EndingScene")
-        {
-            SceneManager.LoadScene("EndingScene");
+
+            isSceneChanged = true;
+
+            sceneChanger.StartCoroutine(
+                sceneChanger.EndScenarioCoroutine("Sakaguchi_TestStoryScene")
+            );
+
+            return;
         }
 
+        // EndingSceneへ
+        if (nextScene == "EndingScene")
+        {
+            isSceneChanged = true;
+
+            SceneManager.LoadScene("EndingScene");
+            return;
+        }
+
+        // 次のテキストへ
         if (Index < storyData.Length)
         {
             HideNextArrow();
             BeginEntry(Index);
             return;
         }
-
-
-        // もし現在表示されているエントリの nextScene が指定されていればシーン遷移する
-        if (Index > 0 && Index <= storyData.Length)
-        {
-            Debug.Log("end");
-            if (!string.IsNullOrEmpty(nextScene))
-            {
-                sceneChanger.StartCoroutine(sceneChanger.EndScenarioCoroutine("Sakaguchi_TestStoryScene"));
-            }
-        }
-
-        //// 全エントリ終了 → シーン遷移
-        //if (fastAnim != null) fastAnim.SetBool("ScaleBool", false);
-        //string nextScene = storyData.Get(storyData.Length - 1).nextScene;
-        //if (!string.IsNullOrEmpty(nextScene) && !isSceneChanged)
-        //{
-        //    // SceneChangerのEndScenarioCoroutine("Sakaguchi_TestStoryScene")を実行
-        //    isSceneChanged = true;
-        //}
     }
-
     private void BeginEntry(int entryIndex)
     {
         StopAllCoroutines();

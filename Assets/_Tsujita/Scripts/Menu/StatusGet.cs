@@ -61,7 +61,7 @@ public class StatusGet : MonoBehaviour
         cutinSprite.sprite = characterData.cutinSprite;
 
         // ステータス取得
-        nowStory = roundManager.CurrentRound;
+        nowStory = GameState.Instance.RoundManager.CurrentRound;
         miniStory = 1;
 
         // 画面左のステータス画面に反映
