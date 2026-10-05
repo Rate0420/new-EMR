@@ -1645,6 +1645,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: de2da5905ff384b489507740670715b4, type: 3}
   - {fileID: 8300000, guid: 80688000bd236034c8c229aa68caecd0, type: 3}
   - {fileID: 8300000, guid: 753ea63f84a8997489caeb289763597c, type: 3}
+  - {fileID: 8300000, guid: e305e3bc096fd4a4fa6599625cf99f82, type: 3}
+  - {fileID: 8300000, guid: 107ee2dfbf0561143a04815e421cf23d, type: 3}
   bgmSource: {fileID: 1988665073}
   fadeTime: 0.5
 --- !u!4 &1988665075
