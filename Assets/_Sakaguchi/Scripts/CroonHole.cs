@@ -10,6 +10,14 @@ public class CroonHole : MonoBehaviour
     public bool isJPC = false;
     [SerializeField] TextMeshPro prizeText;
     public bool isEnding = false;
+    public bool isGoodEndHole = false;
+
+    [SerializeField] EndingJPCManager endingJPCManager;
+
+    public void SetText(string Set)
+    {
+        prizeText.text = Set;
+    }
 
     private void Start()
     {
@@ -18,6 +26,7 @@ public class CroonHole : MonoBehaviour
             prizeText.text = jpccManager?.GetPriseText(holeIndex, isJPC);
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (!isJPC && isEnding == false)
@@ -39,6 +48,13 @@ public class CroonHole : MonoBehaviour
         {
             // other‚ğíœ
             jpccManager?.JPCPrise(holeIndex);
+            Destroy(other.transform.parent.gameObject);
+        }
+
+        else if (other.transform.parent.CompareTag("Ball") && isEnding == true)
+        {
+            // other‚ğíœ
+            endingJPCManager.JPCEnd(holeIndex);
             Destroy(other.transform.parent.gameObject);
         }
     }
