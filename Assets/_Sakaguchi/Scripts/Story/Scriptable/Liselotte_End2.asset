@@ -26,7 +26,7 @@ MonoBehaviour:
     bgm: {fileID: 0}
     se: {fileID: 0}
     voice: {fileID: 0}
-    scEffect: 0
+    scEffect: 5
     nextScene: 
     nextIndex: -1
     choices: []
@@ -142,6 +142,23 @@ MonoBehaviour:
     nextScene: 
     nextIndex: -1
     choices: []
+  - text: "\u300C\u304A\u3001\u304A\u3001\u304A\u524D\u2026\u2026\u3063\uFF01\uFF1F
+      \u306A\u3001\u4F55\u3092\u2026\u2026\u4F55\u3092\u671D\u3063\u3071\u3089\u304B\u3089\u3001\u6B6F\u306E\u6D6E\u304F\u3088\u3046\u306A\u622F\u8A00\u3092\u8A00\u3063\u3066\u3044\u308B\u306E\u3060\u8CB4\u69D8\u306F\u3041\u3041\u3041\u3063\uFF01\uFF1F\u300D\r\n"
+    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
+    char1Sprite: {fileID: 21300000, guid: 601f5753c0825714696b7bb67a5253c4, type: 3}
+    char1OffsetX: 0
+    char1OffsetY: 0
+    char2Sprite: {fileID: 0}
+    char2OffsetX: 0
+    char2OffsetY: 0
+    bgSprite: {fileID: 0}
+    bgm: {fileID: 0}
+    se: {fileID: 0}
+    voice: {fileID: 0}
+    scEffect: 0
+    nextScene: 
+    nextIndex: -1
+    choices: []
   - text: "\u300C\u3063\u2026\u2026\u2026\u2026\uFF01\uFF1F\u300D"
     charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
     char1Sprite: {fileID: 21300000, guid: c3b75fa5bdf12db4983b8aa444da7d6c, type: 3}
@@ -161,23 +178,6 @@ MonoBehaviour:
   - text: "\u9759\u5BC2\u304C\u4E8C\u4EBA\u3092\u5305\u307F\u8FBC\u3093\u3060\u3002\r\n\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6\u306F\u4FE1\u3058\u3089\u308C\u306A\u3044\u3082\u306E\u3092\u898B\u308B\u3088\u3046\u306B\u76EE\u3092\u898B\u958B\u304D\u3001\u305D\u308C\u304B\u3089\u2014\u2014\u30AB\u30C3\u3068\u8033\u306E\u5148\u307E\u3067\u3001\u706B\u304C\u3064\u3044\u305F\u3088\u3046\u306B\u771F\u3063\u8D64\u306B\u67D3\u307E\u3063\u305F\u3002"
     charName: none
     char1Sprite: {fileID: 21300000, guid: c3b75fa5bdf12db4983b8aa444da7d6c, type: 3}
-    char1OffsetX: 0
-    char1OffsetY: 0
-    char2Sprite: {fileID: 0}
-    char2OffsetX: 0
-    char2OffsetY: 0
-    bgSprite: {fileID: 0}
-    bgm: {fileID: 0}
-    se: {fileID: 0}
-    voice: {fileID: 0}
-    scEffect: 0
-    nextScene: 
-    nextIndex: -1
-    choices: []
-  - text: "\u300C\u304A\u3001\u304A\u3001\u304A\u524D\u2026\u2026\u3063\uFF01\uFF1F
-      \u306A\u3001\u4F55\u3092\u2026\u2026\u4F55\u3092\u671D\u3063\u3071\u3089\u304B\u3089\u3001\u6B6F\u306E\u6D6E\u304F\u3088\u3046\u306A\u622F\u8A00\u3092\u8A00\u3063\u3066\u3044\u308B\u306E\u3060\u8CB4\u69D8\u306F\u3041\u3041\u3041\u3063\uFF01\uFF1F\u300D\r\n"
-    charName: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6"
-    char1Sprite: {fileID: 21300000, guid: 601f5753c0825714696b7bb67a5253c4, type: 3}
     char1OffsetX: 0
     char1OffsetY: 0
     char2Sprite: {fileID: 0}
@@ -558,7 +558,7 @@ MonoBehaviour:
     bgm: {fileID: 0}
     se: {fileID: 0}
     voice: {fileID: 0}
-    scEffect: 0
+    scEffect: 10
     nextScene: 
     nextIndex: -1
     choices: []

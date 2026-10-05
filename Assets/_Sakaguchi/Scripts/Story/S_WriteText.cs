@@ -168,9 +168,23 @@ public class S_WriteText : MonoBehaviour
         {
             HideNextArrow();
             BeginEntry(Index);
+
+            // BGMの変更
+            switch(storyData.Get(Index).scEffect)
+            {
+                case 5:
+                case 6:
+                case 9:
+                case 10:
+                case 11:
+                case 12:
+                    BGMManager.Instance.BGMChange(storyData.Get(Index).scEffect);
+                    break;
+            }
             return;
         }
     }
+
     private void BeginEntry(int entryIndex)
     {
         StopAllCoroutines();
