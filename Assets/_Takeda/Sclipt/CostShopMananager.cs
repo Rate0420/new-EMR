@@ -38,6 +38,9 @@ public class CostShopMananager : MonoBehaviour
 
     private ItemData currentItem;
 
+    // 無料リロール用変数
+    public int freeRerollCount = 0;
+    private int rerollCount = 0;
     void Start()
     {
         // 最初は詳細を隠す
@@ -127,18 +130,31 @@ public class CostShopMananager : MonoBehaviour
     //------------------------------------
     public void Reroll()
     {
-        if (GameState.Instance.OwnedModel.Count < 0)
+        // ★無料リロールがある場合
+        if (freeRerollCount > 0)
         {
-            Debug.Log("メダル不足");
-            return;
+            freeRerollCount--;
+            Debug.Log($"無料リロール使用！残り {freeRerollCount}");
+        }
+        else
+        {
+            rerollCount++;
+
+            int cost = rerollCost * rerollCount;
+
+            if (GameState.Instance.OwnedModel.Count < cost)
+            {
+                Debug.Log("メダル不足");
+                return;
+            }
+
+            GameState.Instance.OwnedModel.RemoveMedal(cost);
         }
 
         RerollFree();
 
         currentItem = null;
-
         detailPanel.SetActive(false);
-
         buyButton.interactable = false;
     }
 
@@ -166,5 +182,18 @@ public class CostShopMananager : MonoBehaviour
     public void RefreshUI()
     {
         UpdateBuyButton();
+    }
+    // ラウンド開始時に呼ぶ
+    public void RoundShopReset()
+    {
+        rerollCount = 0;
+        RerollFree();
+    }
+
+    // ID35から呼ぶ
+    public void AddFreeReroll(int count)
+    {
+        freeRerollCount += count;
+        Debug.Log($"無料リロール +{count}（現在 {freeRerollCount}回）");
     }
 }

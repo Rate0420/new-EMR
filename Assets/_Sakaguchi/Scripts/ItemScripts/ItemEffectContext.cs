@@ -10,15 +10,36 @@ public class ItemEffectContext : MonoBehaviour
     public VerticalShaking_process shakingProcess;
     public MedalExplosion_process medalExplosionProcess;
 
+    public SuperLuckyWater_process superLuckyWaterProcess;
+
+    public BuffShopManager buffshopManager;
+    public CostShopMananager costShopManager;
     public SlotManager slotManager;
+
 
     public void StartVerticalShaking(float duration)
     {
         shakingProcess.StartShake(duration);
     }
 
+
     public void StartMedalExplosion(GameObject medal)
     {
         medalExplosionProcess.BlowAway(medal);
+    }
+
+
+    public void StartSuperLuckyWater()
+    {
+        if (superLuckyWaterProcess == null)
+        {
+            Debug.LogWarning(
+                "【スーパーラッキーウォーター】SuperLuckyWater_processが設定されていません"
+            );
+
+            return;
+        }
+
+        superLuckyWaterProcess.Activate();
     }
 }

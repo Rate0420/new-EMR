@@ -41,9 +41,12 @@ public class BuffShopManager : MonoBehaviour
     [SerializeField] private StatusGet statusGet;
     [SerializeField] private TextMeshProUGUI levelText;
     ItemType itemType;
-    private int rerollCount;    // リロール回数のリセット
+    private int rerollCount;    // リロール回数
+    // ★ID35用：無料リロール残数
+    public int freeRerollCount = 0;
 
     // ラウンドマネージャーができるまでの仮
+    public int round;
 
     void Start()
     {
@@ -105,8 +108,8 @@ public class BuffShopManager : MonoBehaviour
         detailIcon.sprite = item.icon;
         detailName.text = item.itemName;
         detailDesc.text = item.description;
-        costText.text = $"{item.cost[item.level]}枚"; ;
-        levelText.text = "Lv." + item.level; 
+        costText.text = $"{item.cost[round]}枚"; ;
+        levelText.text = "Lv." + item.level;
 
         if (item.isConsumable)
         {
@@ -153,7 +156,7 @@ public class BuffShopManager : MonoBehaviour
 
         }
         // 消費アイテム
-        else 
+        else
         {
             for (int i = 0; i < currentItems.Length; i++)
             {
@@ -167,8 +170,7 @@ public class BuffShopManager : MonoBehaviour
         }
 
         // メダルの支払い
-        GameState.Instance.OwnedModel.RemoveMedal(currentItem.cost[currentItem.level]);
-        SEManager.Instance.SEPlays(SEManager.SEType.Buy);
+        GameState.Instance.OwnedModel.RemoveMedal(currentItem.cost[round]);
 
         currentItem = null;
 
@@ -189,34 +191,38 @@ public class BuffShopManager : MonoBehaviour
         }
 
         buyButton.interactable =
-            GameState.Instance.OwnedModel.Count >= currentItem.cost[currentItem.level];
+            GameState.Instance.OwnedModel.Count >= currentItem.cost[round];
     }
 
-    //------------------------------------
-    // リロール
-    //------------------------------------
     public void Reroll()
     {
-        rerollCount++;
-
-        if (GameState.Instance.OwnedModel.Count < rerollCost * rerollCount)
+        // ★無料リロールがあれば消費
+        if (freeRerollCount > 0)
         {
-            Debug.Log("メダル不足");
-            return;
+            freeRerollCount--;
+            Debug.Log($"無料リロール使用！残り {freeRerollCount}");
         }
+        else
+        {
+            rerollCount++;
 
-        // メダルの支払い
-        GameState.Instance.OwnedModel.RemoveMedal(rerollCost * rerollCount);
+            int cost = rerollCost * rerollCount;
+
+            if (GameState.Instance.OwnedModel.Count < cost)
+            {
+                Debug.Log("メダル不足");
+                return;
+            }
+
+            GameState.Instance.OwnedModel.RemoveMedal(cost);
+        }
 
         RerollFree();
 
         currentItem = null;
-
         detailPanel.SetActive(false);
-
         buyButton.interactable = false;
     }
-
     //------------------------------------
     // 重複なしでショップ生成
     //------------------------------------
@@ -232,7 +238,7 @@ public class BuffShopManager : MonoBehaviour
                 break;
 
             int randomIndex = Random.Range(0, pool.Count);
-            
+
             currentBuffs[i] = pool[randomIndex];
 
             buffButtons[i].SetItem(currentBuffs[i]);
@@ -265,7 +271,7 @@ public class BuffShopManager : MonoBehaviour
     /// </summary>
     private void ResetButton()
     {
-        for(int i = 0; i < buffButtons.Length; i++)
+        for (int i = 0; i < buffButtons.Length; i++)
         {
             buffButtons[i].gameObject.SetActive(true);
             itemButtons[i].gameObject.SetActive(true);
@@ -280,5 +286,11 @@ public class BuffShopManager : MonoBehaviour
         // リロール回数のリセット・ショップの更新
         rerollCount = 0;
         RerollFree();
+    }
+    // ★ID35から呼ばれる
+    public void AddFreeReroll(int count)
+    {
+        freeRerollCount += count;
+        Debug.Log($"無料リロール +{count}（現在 {freeRerollCount}回）");
     }
 }

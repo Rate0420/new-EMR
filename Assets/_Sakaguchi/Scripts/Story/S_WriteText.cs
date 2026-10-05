@@ -119,6 +119,16 @@ public class S_WriteText : MonoBehaviour
         var lastEntry = storyData.Get(Index - 1);
 
         string nextScene = lastEntry.nextScene;
+
+        if (nextScene == "Game")
+        {
+            if (!string.IsNullOrEmpty(nextScene))
+            {
+                SceneManager.LoadScene("TestScene_sakaguchi_v3");
+                return;
+            }
+        }
+
         if (nextScene == "End")
         {
             Debug.Log("end");

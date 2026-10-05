@@ -3777,6 +3777,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c3e32037c8d4504e9d47c948561fcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Liselotte: {fileID: 11400000, guid: 6e70425a5d0859845b0c5806da4c8a97, type: 2}
+  Sayo: {fileID: 0}
   story: {fileID: 11400000, guid: d956e320e455ed341a43da76a9f28f3d, type: 2}
   characterStory: {fileID: 11400000, guid: 6e70425a5d0859845b0c5806da4c8a97, type: 2}
 --- !u!4 &223477580
@@ -13338,7 +13340,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946feaac6e76a2e46946d7c6c872b762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cameraSwitch: {fileID: 828441235}
   _medalRigidbodyPrefab: {fileID: 2764741081746486083, guid: 3cb9304156e295e458528324926f3f35, type: 3}
   _medalParentTransform: {fileID: 1852758205}
   _mouseInputCamera: {fileID: 1020852543}
@@ -13352,6 +13353,7 @@ MonoBehaviour:
   _mouseInputLeftWorldPosition: {x: -10, y: -0, z: -0}
   _mouseInputRightWorldPosition: {x: 10, y: 0, z: 0}
   _drawGizmos: 1
+  _goldMedalRigidbodyPrefab: {fileID: 0}
 --- !u!114 &781038536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31428,6 +31430,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakingProcess: {fileID: 1763991158}
   medalExplosionProcess: {fileID: 1763991159}
+  superLuckyWaterProcess: {fileID: 0}
+  buffshopManager: {fileID: 0}
+  costShopManager: {fileID: 0}
   slotManager: {fileID: 614288897}
 --- !u!114 &1763991161
 MonoBehaviour:
