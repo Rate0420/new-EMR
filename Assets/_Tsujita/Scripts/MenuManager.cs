@@ -123,7 +123,7 @@ public class MenuManager : MonoBehaviour
     {
         if (isLBOpen)    // 好感度パネル
         {
-            SEManager.Instance.SEPlays(SEManager.SEType.Slide);
+            //SEManager.Instance.SEPlays(SEManager.SEType.Slide);
             panelAnis[currentPanelNo].Close();
             isLBOpen = false;
             currentPanelNo = -1;
@@ -134,7 +134,7 @@ public class MenuManager : MonoBehaviour
         }
         else if (isMenuFlg) // パネル全般の切り替え
         {
-            SEManager.Instance.SEPlays(SEManager.SEType.Slide);
+            //SEManager.Instance.SEPlays(SEManager.SEType.Slide);
             panelAnis[nowPanelNo].Close();
             nowPanelNo = -1;
 
@@ -164,7 +164,7 @@ public class MenuManager : MonoBehaviour
     /// <param name="buttonNo"></param>
     private void PanelSet(int buttonNo)
     {
-        SEManager.Instance.SEPlays(SEManager.SEType.Slide);
+        //SEManager.Instance.SEPlays(SEManager.SEType.Slide);
         if (!isMenuFlg)
         {
             nowPanelNo = buttonNo;
