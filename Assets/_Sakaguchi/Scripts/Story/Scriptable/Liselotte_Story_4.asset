@@ -23,7 +23,7 @@ MonoBehaviour:
     char2OffsetX: 0
     char2OffsetY: 0
     bgSprite: {fileID: 21300000, guid: 2e9eb551d51ae2543aaae4335aa1a2dc, type: 3}
-    bgm: {fileID: 0}
+    bgm: {fileID: 8300000, guid: 97f2888bc3e560141a35ecc89f43af2f, type: 3}
     se: {fileID: 0}
     voice: {fileID: 0}
     scEffect: 5

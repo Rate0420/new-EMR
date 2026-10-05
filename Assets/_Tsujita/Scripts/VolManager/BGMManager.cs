@@ -52,6 +52,28 @@ public class BGMManager : MonoBehaviour
         bgmCoroutine = StartCoroutine(ChangeBGM(bgmNo));
     }
 
+
+    /// <summary>
+    /// BGM‚ğ•ÏX
+    /// </summary>
+    public void BGMChange2(AudioClip bgmClip)
+    {
+        if (bgmClip == null)
+        {
+            return;
+        }
+
+        int bgmNo = System.Array.IndexOf(bgmClips, bgmClip);
+
+        if (bgmNo < 0)
+        {
+            Debug.LogError("BGMManager‚É“o˜^‚³‚ê‚Ä‚¢‚È‚¢BGM‚Å‚· : " + bgmClip.name);
+            return;
+        }
+
+        BGMChange(bgmNo);
+    }
+
     /// <summary>
     /// BGM‚Ì•ÏXˆ—
     /// </summary>

@@ -168,19 +168,6 @@ public class S_WriteText : MonoBehaviour
         {
             HideNextArrow();
             BeginEntry(Index);
-
-            // BGMの変更
-            switch(storyData.Get(Index).scEffect)
-            {
-                case 5:
-                case 6:
-                case 9:
-                case 10:
-                case 11:
-                case 12:
-                    BGMManager.Instance.BGMChange(storyData.Get(Index).scEffect);
-                    break;
-            }
             return;
         }
     }
@@ -226,11 +213,21 @@ public class S_WriteText : MonoBehaviour
 
     // ----------------------------------------------------------------
 
+
+
     private IEnumerator CorDrawText(int entryIndex)
     {
         isDrawing = true;
 
         var entry = storyData.Get(entryIndex);
+
+        // BGM変更
+        // bgmがnullなら現在のBGMをそのまま継続
+        if (entry.bgm != null)
+        {
+            BGMManager.Instance.BGMChange2(entry.bgm);
+        }
+
         setStoryUI.Apply(entryIndex);
 
         // テキストを1文字ずつ表示（選択肢エントリも通常テキストも同じルートを通す）
