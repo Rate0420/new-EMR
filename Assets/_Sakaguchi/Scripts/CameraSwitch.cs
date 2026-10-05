@@ -38,7 +38,7 @@ public class CameraSwitch : MonoBehaviour
         pip.SetActive(false);
         targetPoint = DefaultCameraPoint;
         currentCameraPosition = CameraPosition.Default;
-        CameraS();
+        Updete();
     }
 
     public void CameraNo2()
@@ -46,7 +46,7 @@ public class CameraSwitch : MonoBehaviour
         pip.SetActive(false);
         targetPoint = SlotZoomCameraPoint;
         currentCameraPosition = CameraPosition.SlotZoom;
-        CameraS();
+        Updete();
     }
 
     public void CameraNo3()
@@ -54,7 +54,7 @@ public class CameraSwitch : MonoBehaviour
         pip.SetActive(true);
         targetPoint = JPCCCameraPoint;
         currentCameraPosition = CameraPosition.JPCC;
-        CameraS();
+        Updete();
     }
 
     public void CameraNo4()
@@ -62,10 +62,10 @@ public class CameraSwitch : MonoBehaviour
         pip.SetActive(false);
         targetPoint = JPCCameraPoint;
         currentCameraPosition = CameraPosition.JPC;
-        CameraS();
+        Updete();
     }
 
-    private void CameraS()
+    private void Updete()
     {
         // ‚È‚ß‚ç‚©‚ÉˆÚ“®
         transform.position = Vector3.Lerp(
