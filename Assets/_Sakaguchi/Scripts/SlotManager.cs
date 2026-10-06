@@ -423,6 +423,7 @@ public class SlotManager : MonoBehaviour
                 {
                     Kakuhen = true;
                     // 確変ステージに移行させる
+                    BGMManager.Instance.BGMChange(4);
                     bgManager.ChangeStage(StageType.Special);
                     playCount = 0;
                 }
@@ -432,6 +433,7 @@ public class SlotManager : MonoBehaviour
                     if (Kakuhen)
                     {
                         bgManager.ChangeStage((StageType)Random.Range(0, (int)StageType.Special));
+                        BGMManager.Instance.BGMChange(3);
                     }
                     Kakuhen = false;
                     playCount = 0;

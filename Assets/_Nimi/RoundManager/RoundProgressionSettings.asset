@@ -18,13 +18,13 @@ MonoBehaviour:
   - <RequiredBallCount>k__BackingField: 6
     <RequiredMedalCount>k__BackingField: 333
   - <RequiredBallCount>k__BackingField: 8
-    <RequiredMedalCount>k__BackingField: 888
+    <RequiredMedalCount>k__BackingField: 555
   - <RequiredBallCount>k__BackingField: 12
-    <RequiredMedalCount>k__BackingField: 1555
-  - <RequiredBallCount>k__BackingField: 16
-    <RequiredMedalCount>k__BackingField: 2222
-  - <RequiredBallCount>k__BackingField: 20
-    <RequiredMedalCount>k__BackingField: 5555
+    <RequiredMedalCount>k__BackingField: 777
+  - <RequiredBallCount>k__BackingField: 12
+    <RequiredMedalCount>k__BackingField: 999
+  - <RequiredBallCount>k__BackingField: 18
+    <RequiredMedalCount>k__BackingField: 1222
   - <RequiredBallCount>k__BackingField: 0
     <RequiredMedalCount>k__BackingField: 11
   - <RequiredBallCount>k__BackingField: 0
