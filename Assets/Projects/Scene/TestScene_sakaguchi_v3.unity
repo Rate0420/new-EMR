@@ -6221,6 +6221,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5850254793991222648, guid: 4b8eb7ef1956979468e74990acb6fbd2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629519228760761571, guid: 4b8eb7ef1956979468e74990acb6fbd2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7341290539331128005, guid: 4b8eb7ef1956979468e74990acb6fbd2, type: 3}
       propertyPath: m_Name
       value: SideHole
