@@ -36,8 +36,8 @@ public class TitleManager : MonoBehaviour
         // カットイン画像の変更
         TitleFade.Instance.ImageChange(characterData[index].cutinSprite);
         // ボイスの再生
-        startVoice.clip = characterData[index].startVoice;
-        startVoice.PlayOneShot(startVoice.clip);
+        //startVoice.clip = characterData[index].startVoice;
+        //startVoice.PlayOneShot(startVoice.clip);
 
         TitleFade.Instance.SceneChangeAni();
     }
