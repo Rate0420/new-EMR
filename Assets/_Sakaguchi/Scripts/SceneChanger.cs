@@ -129,6 +129,12 @@ public class SceneChanger : MonoBehaviour
 
         yield return SceneManager.UnloadSceneAsync(sceneName);
 
+        // Šm•Ï‚È‚ç”Ô†‚SA’Êí‚È‚ç”Ô†‚R
+        if (!slotManager.Kakuhen)
+            BGMManager.Instance.BGMChange(3);
+        else
+            BGMManager.Instance.BGMChange(4);
+
         MedalRoot.SetActive(true);
 
         yield return new WaitForSeconds(returnDelay);
