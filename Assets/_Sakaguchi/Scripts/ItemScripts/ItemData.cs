@@ -10,8 +10,8 @@ public class ItemData : ScriptableObject
     public string itemName;
 
     // 詳細画面などに表示する説明文
-    [TextArea(3, 5)]
-    public string description;
+    //[TextArea(3, 5)]
+    public string[] description;
 
     // 購入に必要なメダル数
     public int[] cost;

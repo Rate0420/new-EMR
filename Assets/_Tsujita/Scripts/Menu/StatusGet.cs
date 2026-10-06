@@ -85,7 +85,7 @@ public class StatusGet : MonoBehaviour
             if (buffStats[i] != null)
             {
                 buffNameTexts[i].text = buffStats[i].itemName;
-                buffStatsTexts[i].text = buffStats[i].description;
+                buffStatsTexts[i].text = buffStats[i].description[buffStats[i].level];
                 buffLevelTexts[i].text = "Lv." + buffStats[i].level.ToString();
                 deleteButtons[i].SetActive(true);
             }

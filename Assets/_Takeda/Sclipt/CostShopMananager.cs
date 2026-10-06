@@ -72,7 +72,7 @@ public class CostShopMananager : MonoBehaviour
 
         detailIcon.sprite = item.icon;
         detailName.text = item.itemName;
-        detailDesc.text = item.description;
+        detailDesc.text = item.description[item.level];
         costText.text = item.cost + "–‡";
 
         if (item.isConsumable)
