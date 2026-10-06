@@ -5326,13 +5326,13 @@ MonoBehaviour:
   BlackOutImage: {fileID: 964368338}
   roundChange: {fileID: 755666152}
   statusGet: {fileID: 194873956}
-  IsTransitioning: 0
   menuManager: {fileID: 1282841340}
   MiniEvents:
   - {fileID: 11400000, guid: d44089d921dcbe14b941f92b0d0d567b, type: 2}
   - {fileID: 11400000, guid: 2ef6aecd202be7741b9b3ea6357ce086, type: 2}
   - {fileID: 11400000, guid: 2e8a39792112ce04e96b180d84c909fb, type: 2}
   returnDelay: 3
+  IsTransitioning: 0
   slotManager: {fileID: 614288897}
 --- !u!1 &313012504
 GameObject:
@@ -21053,7 +21053,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216257572}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1216257575
 Camera:
   m_ObjectHideFlags: 0

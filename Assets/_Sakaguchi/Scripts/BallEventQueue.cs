@@ -59,16 +59,15 @@ public class BallEventQueue : MonoBehaviour
 
     void TryStartProcessing()
     {
-        if (!isProcessing)
-        {
-            StartCoroutine(ProcessQueue());
-        }
+        if (isProcessing)
+            return;
+
+        isProcessing = true;
+        StartCoroutine(ProcessQueue());
     }
 
     IEnumerator ProcessQueue()
     {
-        isProcessing = true;
-
         while (eventQueue.Count > 0)
         {
             BallEvent e = eventQueue.Dequeue();
@@ -108,11 +107,28 @@ public class BallEventQueue : MonoBehaviour
     }
     IEnumerator WaitForMiniEvent()
     {
+        // 現在のシナリオが終わるまで待つ
+        yield return new WaitUntil(() =>
+            !sceneChanger.IsSceneActive &&
+            !sceneChanger.IsTransitioning
+        );
+
+        Debug.Log("[BallEventQueue] ミニイベント開始可能");
+
         sceneChanger.StartMiniEvent();
-        yield return new WaitForSeconds(0.2f);
-        yield return new WaitUntil(() => sceneChanger.IsSceneActive);
+
+        // ミニイベントが開始されるまで待つ
+        yield return new WaitUntil(() =>
+            sceneChanger.IsSceneActive
+        );
+
         Debug.Log("[BallEventQueue] ミニイベント開始確認");
-        yield return new WaitUntil(() => !sceneChanger.IsSceneActive);
+
+        // ミニイベント終了まで待つ
+        yield return new WaitUntil(() =>
+            !sceneChanger.IsSceneActive
+        );
+
         Debug.Log("[BallEventQueue] ミニイベント終了");
     }
 }

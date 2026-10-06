@@ -13,7 +13,6 @@ public class SceneChanger : MonoBehaviour
     [SerializeField] GameObject BlackOutImage;
     [SerializeField] RoundChange roundChange;
     [SerializeField] StatusGet statusGet;
-    public bool IsTransitioning = false;
 
     [SerializeField] private MenuManager menuManager;
 
@@ -27,7 +26,12 @@ public class SceneChanger : MonoBehaviour
     // シナリオ・メニューが開いている間trueになるフラグ
     public bool IsSceneActive { get; private set; } = false;
 
+    public bool IsTransitioning = false;
+
+    private bool isStartingScenario = false;
     private bool isEndingScenario = false;
+
+    public bool CanStartScenario => !IsSceneActive && !IsTransitioning;
 
     private void Start()
     {
@@ -51,12 +55,41 @@ public class SceneChanger : MonoBehaviour
 
     public void StartScenario(string sceneName)
     {
-        if (IsTransitioning)
+        if (IsSceneActive || IsTransitioning ||
+            isStartingScenario || isEndingScenario)
+        {
+            Debug.Log("[SceneChanger] StartScenario拒否");
             return;
+        }
 
         StartCoroutine(StartScenarioCoroutine(sceneName));
     }
 
+    private IEnumerator StartScenarioCoroutine(string sceneName)
+    {
+        if (isStartingScenario)
+            yield break;
+
+        isStartingScenario = true;
+        IsTransitioning = true;
+        IsSceneActive = true;
+
+        yield return null;
+
+        yield return GameState.Instance.GameLock.Acquire("Scenario");
+
+        gamePause.ChangePause(true);
+
+        yield return SceneManager.LoadSceneAsync(
+            sceneName,
+            LoadSceneMode.Additive
+        );
+
+        MedalRoot.SetActive(false);
+
+        isStartingScenario = false;
+        IsTransitioning = false;
+    }
 
     IEnumerator StartMenu()
     {
@@ -77,26 +110,6 @@ public class SceneChanger : MonoBehaviour
         isStartmenuprocessing = false;
     }
 
-    IEnumerator StartScenarioCoroutine(string sceneName)
-    {
-        IsTransitioning = true;
-        IsSceneActive = true;
-
-        yield return null;
-
-        yield return GameState.Instance.GameLock.Acquire("Scenario");
-
-        gamePause.ChangePause(true);
-
-        yield return SceneManager.LoadSceneAsync(
-            sceneName,
-            LoadSceneMode.Additive
-        );
-
-        MedalRoot.SetActive(false);
-
-        IsTransitioning = false;
-    }
     public IEnumerator StartShopCoroutine()
     {
         IsSceneActive = true;
@@ -111,13 +124,16 @@ public class SceneChanger : MonoBehaviour
 
     public void EndScenario(string sceneName)
     {
-        if (IsTransitioning)
+        if (isEndingScenario)
+        {
+            Debug.Log("[SceneChanger] EndScenario二重実行拒否");
             return;
+        }
 
         StartCoroutine(EndScenarioCoroutine(sceneName));
     }
 
-    public IEnumerator EndScenarioCoroutine(string sceneName)
+    private IEnumerator EndScenarioCoroutine(string sceneName)
     {
         if (isEndingScenario)
             yield break;
@@ -129,7 +145,6 @@ public class SceneChanger : MonoBehaviour
 
         yield return SceneManager.UnloadSceneAsync(sceneName);
 
-        // 確変時なら番号４、通常時なら番号３
         if (!slotManager.Kakuhen)
             BGMManager.Instance.BGMChange(3);
         else
@@ -146,8 +161,8 @@ public class SceneChanger : MonoBehaviour
 
         roundChange.CompleteRoundChange();
 
-        IsTransitioning = false;
         isEndingScenario = false;
+        IsTransitioning = false;
     }
     IEnumerator EndMenuCoroutine()
     {
@@ -163,10 +178,19 @@ public class SceneChanger : MonoBehaviour
 
     public void StartMiniEvent()
     {
-        S_StoryData storyData = MiniEvents[Random.Range(0, MiniEvents.Length)];
+        if (IsSceneActive || IsTransitioning)
+        {
+            Debug.Log("[SceneChanger] ミニイベント開始待機中：現在シーンがActive");
+            return;
+        }
+
+        S_StoryData storyData =
+            MiniEvents[Random.Range(0, MiniEvents.Length)];
+
         S_DontDestroyStory.instance.story = storyData;
-        statusGet.miniStory = statusGet.miniStory ++;
-        StartCoroutine(StartScenarioCoroutine("Sakaguchi_TestStoryScene"));
+        statusGet.miniStory++;
+
+        StartScenario("Sakaguchi_TestStoryScene");
     }
 
     [SerializeField] SlotManager slotManager;

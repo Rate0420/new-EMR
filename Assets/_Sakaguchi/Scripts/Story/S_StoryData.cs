@@ -15,7 +15,10 @@ public class S_StoryData : ScriptableObject
     public List<StoryEntry> entries;
 
     public int Length => entries != null ? entries.Count : 0;
-    public StoryEntry Get(int i) => entries[i];
+    // public StoryEntry Get(int i) => entries[i];
+    // アウトレンジの場合はentriesの最後の値を返す
+    public StoryEntry Get(int i) => entries[Mathf.Clamp(i, 0, Length - 1)];
+
 
     // ============================================================
     //  StoryEntry : 1セリフ分のすべてのデータ
