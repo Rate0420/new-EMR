@@ -67,14 +67,14 @@ MonoBehaviour:
       statusDeltas:
       - characterId: Liselotte
         statusKey: likeability
-        delta: 2
+        delta: 5
       resourceCost: 10
     - label: "\u3069\u3063\u304B\u3067\u96E8\u5BBF\u308A\u3059\u308B"
       jumpToIndex: 10
       statusDeltas:
       - characterId: Liselotte
         statusKey: likeability
-        delta: 4
+        delta: 10
       resourceCost: 10
   - text: "\u30EA\u30FC\u30BC\u30ED\u30C3\u30C6\u3092\u4FFA\u306E\u5098\u306B\u5165\u308C\u3066\u3084\u308B\u3053\u3068\u306B\u3057\u305F\u3002"
     charName: none

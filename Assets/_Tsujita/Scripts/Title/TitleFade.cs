@@ -38,6 +38,8 @@ public class TitleFade : MonoBehaviour
 
     private bool isChara;
 
+    private bool isChangingScene = false;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -64,6 +66,11 @@ public class TitleFade : MonoBehaviour
     /// </summary>
     public void SceneChangeAni()
     {
+        if (isChangingScene)
+            return;
+
+        isChangingScene = true;
+
         fadePanel.SetActive(true);
         targetPanel = panel;
         targerDuration = duration;
@@ -120,6 +127,9 @@ public class TitleFade : MonoBehaviour
         await ScaleAnimation(zoomOutPos, zoomInPos);
         await UniTask.WaitForSeconds(wSF);
         fadePanel.SetActive(false);
+       
+        isChangingScene = false;
+
     }
 
     private async UniTask ScaleAnimation(Vector3 start, Vector3 end)

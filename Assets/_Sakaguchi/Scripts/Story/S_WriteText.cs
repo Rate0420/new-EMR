@@ -1,6 +1,5 @@
 using System.Collections;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -32,6 +31,7 @@ public class S_WriteText : MonoBehaviour
     // true の間は入力を無視する（Start直後・JumpTo直後の誤発火防止）
     private bool inputBlocked = true;
 
+    private bool isSceneChanging = false;
     SceneChanger sceneChanger;
 
     // ----------------------------------------------------------------
@@ -60,6 +60,7 @@ public class S_WriteText : MonoBehaviour
     private void Update()
     {
         if (inputBlocked) return;
+        if (isSceneChanging) return;
         if (chooseManager.IsShowingChoices) return;
         if (backLogManager != null && backLogManager.isBackLog) return;
 
@@ -67,12 +68,7 @@ public class S_WriteText : MonoBehaviour
             OnAdvanceInput();
 
         if (Input.GetMouseButton(1) || Input.GetKey(KeyCode.LeftShift))
-        {
             OnAdvanceInput();
-            //isFast = !isFast;
-            //textSpeed = isFast ? fastTextSpeed : 0.1f;
-            //if (fastAnim != null) fastAnim.SetBool("ScaleBool", isFast);
-        }
 
         GuardTimer += Time.deltaTime;
     }
@@ -124,37 +120,41 @@ public class S_WriteText : MonoBehaviour
         string nextScene = lastEntry.nextScene;
 
         // Gameへ
-        if (nextScene == "Game" && GuardTimer >= 2)
+        if (nextScene == "Game" && GuardTimer >= 1)
         {
+            isSceneChanging = true;
             GuardTimer = 0;
+
             TitleFade.Instance.SceneChangeAni();
             return;
         }
 
         // Endへ
-        if (nextScene == "End" && GuardTimer >= 2)
+        if (nextScene == "End" && GuardTimer >= 1)
         {
+            isSceneChanging = true;
             GuardTimer = 0;
 
-            sceneChanger.StartCoroutine(
-                sceneChanger.EndScenarioCoroutine("Sakaguchi_TestStoryScene")
-            );
-
+            sceneChanger.EndScenario("Sakaguchi_TestStoryScene");
             return;
         }
 
         // JPCへ
-        if (nextScene == "JPC" && GuardTimer >= 2)
+        if (nextScene == "JPC" && GuardTimer >= 1)
         {
+            isSceneChanging = true;
             GuardTimer = 0;
+
             SceneManager.LoadScene("EndingJPC");
             return;
         }
 
         // EndingSceneへ
-        if (nextScene == "EndingScene" && GuardTimer >= 2)
+        if (nextScene == "EndingScene" && GuardTimer >= 1)
         {
+            isSceneChanging = true;
             GuardTimer = 0;
+
             SceneManager.LoadScene("TitleScene");
             return;
         }

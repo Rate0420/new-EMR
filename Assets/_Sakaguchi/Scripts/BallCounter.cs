@@ -25,7 +25,7 @@ public class BallCounter : MonoBehaviour
     void BallCountCheck()
     {
         // %3でミニイベント（キューに積む）
-        if (ballCount % 3 == 0)
+        if (ballCount % 6 == 0)
         {
             ballEventQueue.EnqueueMiniEvent();
         }

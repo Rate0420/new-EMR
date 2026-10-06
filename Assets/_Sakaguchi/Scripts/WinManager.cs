@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using static Unity.Cinemachine.CinemachineFreeLookModifier;
 
 /// <summary>
 /// 当たり演出とメダル払い出しを管理する。
@@ -126,7 +127,9 @@ public class WinManager : MonoBehaviour
 
             var notifier = GameState.Instance.RefundNotifier;
             notifier.RequestRefund(amount);
-            payoutText.text = $"{notifier.RefundAmount}枚";
+
+                
+            
 
             Debug.Log($"[Win] 払い出し中のため加算 +{amount}枚 (通算:{sessionTotal}枚)");
         }
@@ -169,6 +172,7 @@ public class WinManager : MonoBehaviour
 
         notifier.RequestRefund(payout);
         payoutText.text = $"{notifier.RefundAmount}枚";
+        if(notifier.RefundAmount == 0) payoutText.text = "";
 
         // 「残り枚数が0」かつ「排出ループも終了」するまで待つ。
         // その間に加算された分は、動いている排出ループがそのまま拾う。
@@ -203,6 +207,7 @@ public class WinManager : MonoBehaviour
     void OnMedalSpawned(int remaining)
     {
         payoutText.text = $"{remaining}枚";
+        if (remaining == 0) payoutText.text = "";
 
         // 通算で何枚出したか。自分の分を出し切った当たりから順に完了扱いにする
         int dispensed = sessionTotal - remaining;
