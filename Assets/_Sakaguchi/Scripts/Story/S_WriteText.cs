@@ -1,6 +1,5 @@
 using System.Collections;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -32,13 +31,14 @@ public class S_WriteText : MonoBehaviour
     // true の間は入力を無視する（Start直後・JumpTo直後の誤発火防止）
     private bool inputBlocked = true;
 
+    private bool isSceneChanging = false;
     SceneChanger sceneChanger;
 
     // ----------------------------------------------------------------
 
     private void Start()
     {
-       
+
 
         storyData = S_DontDestroyStory.instance.story;
         if (fastAnim == null && fastUI != null)
@@ -60,6 +60,7 @@ public class S_WriteText : MonoBehaviour
     private void Update()
     {
         if (inputBlocked) return;
+        if (isSceneChanging) return;
         if (chooseManager.IsShowingChoices) return;
         if (backLogManager != null && backLogManager.isBackLog) return;
 
@@ -67,12 +68,7 @@ public class S_WriteText : MonoBehaviour
             OnAdvanceInput();
 
         if (Input.GetMouseButton(1) || Input.GetKey(KeyCode.LeftShift))
-        {
             OnAdvanceInput();
-            //isFast = !isFast;
-            //textSpeed = isFast ? fastTextSpeed : 0.1f;
-            //if (fastAnim != null) fastAnim.SetBool("ScaleBool", isFast);
-        }
 
         GuardTimer += Time.deltaTime;
     }
@@ -81,12 +77,8 @@ public class S_WriteText : MonoBehaviour
 
     private void OnAdvanceInput()
     {
-        // シーン遷移開始後は一切入力を受け付けない
-    if (sceneChanger != null && sceneChanger.IsTransitioning)
-        return;
-
-    if (chooseManager.IsShowingChoices)
-        return;
+        if (chooseManager.IsShowingChoices)
+            return;
 
         if (isDrawing)
         {
@@ -98,7 +90,7 @@ public class S_WriteText : MonoBehaviour
             messageText.text = currentEntry.text;
             isDrawing = false;
 
-            
+
 
             if (currentEntry.HasChoices)
             {
@@ -128,37 +120,41 @@ public class S_WriteText : MonoBehaviour
         string nextScene = lastEntry.nextScene;
 
         // Gameへ
-        if (nextScene == "Game" && GuardTimer >= 5)
+        if (nextScene == "Game" && GuardTimer >= 1)
         {
+            isSceneChanging = true;
             GuardTimer = 0;
+
             TitleFade.Instance.SceneChangeAni();
             return;
         }
 
         // Endへ
-        if (nextScene == "End" && GuardTimer >= 5)
+        if (nextScene == "End" && GuardTimer >= 1)
         {
+            isSceneChanging = true;
             GuardTimer = 0;
 
-            sceneChanger.StartCoroutine(
-                sceneChanger.EndScenarioCoroutine("Sakaguchi_TestStoryScene")
-            );
-
+            sceneChanger.EndScenario("Sakaguchi_TestStoryScene");
             return;
         }
 
         // JPCへ
-        if (nextScene == "JPC" && GuardTimer >= 5)
+        if (nextScene == "JPC" && GuardTimer >= 1)
         {
+            isSceneChanging = true;
             GuardTimer = 0;
+
             SceneManager.LoadScene("EndingJPC");
             return;
         }
 
         // EndingSceneへ
-        if (nextScene == "EndingScene" && GuardTimer >= 5)
+        if (nextScene == "EndingScene" && GuardTimer >= 1)
         {
+            isSceneChanging = true;
             GuardTimer = 0;
+
             SceneManager.LoadScene("TitleScene");
             return;
         }
@@ -168,6 +164,19 @@ public class S_WriteText : MonoBehaviour
         {
             HideNextArrow();
             BeginEntry(Index);
+
+            // BGMの変更
+            switch (storyData.Get(Index).scEffect)
+            {
+                case 5:
+                case 6:
+                case 9:
+                case 10:
+                case 11:
+                case 12:
+                    BGMManager.Instance.BGMChange(storyData.Get(Index).scEffect);
+                    break;
+            }
             return;
         }
     }
@@ -177,6 +186,9 @@ public class S_WriteText : MonoBehaviour
         StopAllCoroutines();
         isDrawing = false;
         messageText.text = "";
+        // 配列の範囲外だったら、エントリindexを最後にする
+        if (entryIndex < 0 || entryIndex >= storyData.Length)
+            entryIndex = storyData.Length - 1;
         StartCoroutine(CorDrawText(entryIndex));
     }
 
@@ -212,8 +224,6 @@ public class S_WriteText : MonoBehaviour
     }
 
     // ----------------------------------------------------------------
-
-
 
     private IEnumerator CorDrawText(int entryIndex)
     {

@@ -429,8 +429,8 @@ MonoBehaviour:
       jumpToIndex: -1
       statusDeltas:
       - characterId: Liselotte
-        statusKey: key
-        delta: 1
+        statusKey: likeability
+        delta: 10
       resourceCost: 0
     - label: "\u300C\u3060\u2026\u2026\u3060\u3063\u3066\u3001\u4E8B\u5B9F\u3058\u3083\u306A\u3044\u304B\u2026\u2026\uFF01\u300D"
       jumpToIndex: 30

@@ -27,6 +27,8 @@ public class SceneChanger : MonoBehaviour
     // シナリオ・メニューが開いている間trueになるフラグ
     public bool IsSceneActive { get; private set; } = false;
 
+    private bool isEndingScenario = false;
+
     private void Start()
     {
         gamePause = GameState.Instance.GamePause;
@@ -49,6 +51,9 @@ public class SceneChanger : MonoBehaviour
 
     public void StartScenario(string sceneName)
     {
+        if (IsTransitioning)
+            return;
+
         StartCoroutine(StartScenarioCoroutine(sceneName));
     }
 
@@ -104,8 +109,20 @@ public class SceneChanger : MonoBehaviour
         MedalRoot.SetActive(false);
     }
 
+    public void EndScenario(string sceneName)
+    {
+        if (IsTransitioning)
+            return;
+
+        StartCoroutine(EndScenarioCoroutine(sceneName));
+    }
+
     public IEnumerator EndScenarioCoroutine(string sceneName)
     {
+        if (isEndingScenario)
+            yield break;
+
+        isEndingScenario = true;
         IsTransitioning = true;
 
         roundChange.ResetMethod();
@@ -124,6 +141,7 @@ public class SceneChanger : MonoBehaviour
         roundChange.CompleteRoundChange();
 
         IsTransitioning = false;
+        isEndingScenario = false;
     }
     IEnumerator EndMenuCoroutine()
     {

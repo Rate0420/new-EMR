@@ -29,6 +29,17 @@ public class CroonHole : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (isEnding == true)
+        {
+            if (other.transform.parent.CompareTag("Ball"))
+            {
+                Debug.Log("FFFFFFFFFFf");
+                // other‚ğíœ
+                endingJPCManager.JPCEnd(holeIndex);
+                Destroy(other.transform.parent.gameObject);
+            }
+        }
+
         if (!isJPC && isEnding == false)
         {
             if (other.transform.parent.CompareTag("Ball"))
@@ -49,14 +60,7 @@ public class CroonHole : MonoBehaviour
             // other‚ğíœ
             jpccManager?.JPCPrise(holeIndex);
             Destroy(other.transform.parent.gameObject);
-        }
-
-        else if (other.transform.parent.CompareTag("Ball") && isEnding == true)
-        {
-            // other‚ğíœ
-            endingJPCManager.JPCEnd(holeIndex);
-            Destroy(other.transform.parent.gameObject);
-        }
+        }        
     }
 
     private void OnTriggerExit(Collider other)

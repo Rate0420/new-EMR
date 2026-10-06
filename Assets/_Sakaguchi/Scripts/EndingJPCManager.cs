@@ -23,7 +23,7 @@ public class EndingJPCManager : MonoBehaviour
 
     void Start()
     {
-        switch(PlayerPrefs.GetInt("RouteNo"))
+        switch (PlayerPrefs.GetInt("RouteNo"))
         {
             case 5:
                 Routename = "Liselotte";
@@ -32,7 +32,11 @@ public class EndingJPCManager : MonoBehaviour
                 Routename = "Sayo";
                 break;
         }
-        likeAbbility = S_AffinityManager.Instance.Get("Routename", "likability");
+
+        Debug.Log("BaseLike" + " " + S_AffinityManager.Instance.Get(Routename, "likeability"));
+        likeAbbility = S_AffinityManager.Instance.Get(Routename, "likeability");
+        Debug.Log("likeAbbility: " + likeAbbility);
+        
 
         // likeAbbilityの値に応じて、JPCHoleの穴の状態を変更する。
         int goodEndHoleCount = likeAbbility / 10; // 好感度が10につき1つの穴をtrueにする
@@ -41,8 +45,10 @@ public class EndingJPCManager : MonoBehaviour
             int randomIndex;
             do
             {
+                Debug.Log("aaaaaaa");
                 randomIndex = Random.Range(0, endingJPCHoles.Length);
             } while (goodEndHoleIndices.Contains(randomIndex)); // 既にtrueになっている穴のインデックスは避ける
+            Debug.Log("iiiiiiiii");
             endingJPCHoles[randomIndex].isGoodEndHole = true;
             goodEndHoleIndices.Add(randomIndex); // trueにした穴のインデックスをリストに追加
             endingJPCHoles[randomIndex].SetText("Best");
