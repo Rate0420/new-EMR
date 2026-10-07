@@ -13383,6 +13383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946feaac6e76a2e46946d7c6c872b762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cameraSwitch: {fileID: 828441235}
   _medalRigidbodyPrefab: {fileID: 2764741081746486083, guid: 3cb9304156e295e458528324926f3f35, type: 3}
   _medalParentTransform: {fileID: 1852758205}
   _mouseInputCamera: {fileID: 1020852543}
@@ -14249,7 +14250,7 @@ MonoBehaviour:
   moveSpeed: 5
   rotateSpeed: 5
   Camera: {fileID: 828441232}
-  currentCameraPosition: 0
+  CurrentCameraPosition: 0
 --- !u!4 &828836610 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1840463067707330430, guid: 3cb9304156e295e458528324926f3f35, type: 3}

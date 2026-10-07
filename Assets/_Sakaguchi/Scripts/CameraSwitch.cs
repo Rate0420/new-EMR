@@ -22,7 +22,7 @@ public class CameraSwitch : MonoBehaviour
 
     public GameObject Camera;
 
-    public CameraPosition currentCameraPosition;
+    public CameraPosition CurrentCameraPosition;
 
     private Transform targetPoint;
 
@@ -31,7 +31,7 @@ public class CameraSwitch : MonoBehaviour
         pip.SetActive(false);
 
         targetPoint = DefaultCameraPoint;
-        currentCameraPosition = CameraPosition.Default;
+        CurrentCameraPosition = CameraPosition.Default;
     }
 
     private void Update()
@@ -60,7 +60,7 @@ public class CameraSwitch : MonoBehaviour
         pip.SetActive(false);
 
         targetPoint = DefaultCameraPoint;
-        currentCameraPosition = CameraPosition.Default;
+        CurrentCameraPosition = CameraPosition.Default;
     }
 
     public void SetSlotZoom()
@@ -68,7 +68,7 @@ public class CameraSwitch : MonoBehaviour
         pip.SetActive(false);
 
         targetPoint = SlotZoomCameraPoint;
-        currentCameraPosition = CameraPosition.SlotZoom;
+        CurrentCameraPosition = CameraPosition.SlotZoom;
     }
 
     public void SetJPCC()
@@ -76,7 +76,7 @@ public class CameraSwitch : MonoBehaviour
         pip.SetActive(true);
 
         targetPoint = JPCCCameraPoint;
-        currentCameraPosition = CameraPosition.JPCC;
+        CurrentCameraPosition = CameraPosition.JPCC;
     }
 
     public void SetJPC()
@@ -84,6 +84,6 @@ public class CameraSwitch : MonoBehaviour
         pip.SetActive(false);
 
         targetPoint = JPCCameraPoint;
-        currentCameraPosition = CameraPosition.JPC;
+        CurrentCameraPosition = CameraPosition.JPC;
     }
 }
