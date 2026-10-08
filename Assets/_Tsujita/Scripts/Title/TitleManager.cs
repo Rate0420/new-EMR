@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -40,5 +41,15 @@ public class TitleManager : MonoBehaviour
         //startVoice.PlayOneShot(startVoice.clip);
 
         TitleFade.Instance.SceneChangeAni();
+    }
+
+    public void QuitGame()
+    {
+
+#if UNITY_EDITOR
+        EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 }
