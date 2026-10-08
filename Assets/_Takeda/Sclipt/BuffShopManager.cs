@@ -45,9 +45,6 @@ public class BuffShopManager : MonoBehaviour
     // ★ID35用：無料リロール残数
     public int freeRerollCount = 0;
 
-    // ラウンドマネージャーができるまでの仮
-    public int round;
-
     void Start()
     {
         // 最初は詳細を隠す
@@ -108,7 +105,7 @@ public class BuffShopManager : MonoBehaviour
         detailIcon.sprite = item.icon;
         detailName.text = item.itemName;
         detailDesc.text = item.description[item.level];
-        costText.text = $"{item.cost[round]}枚"; ;
+        costText.text = $"{item.cost[item.level]}枚"; ;
         levelText.text = "Lv." + item.level;
 
         if (item.isConsumable)
@@ -170,7 +167,7 @@ public class BuffShopManager : MonoBehaviour
         }
 
         // メダルの支払い
-        GameState.Instance.OwnedModel.RemoveMedal(currentItem.cost[round]);
+        GameState.Instance.OwnedModel.RemoveMedal(currentItem.cost[currentItem.level]);
 
         currentItem = null;
 
@@ -191,7 +188,7 @@ public class BuffShopManager : MonoBehaviour
         }
 
         buyButton.interactable =
-            GameState.Instance.OwnedModel.Count >= currentItem.cost[round];
+            GameState.Instance.OwnedModel.Count >= currentItem.cost[currentItem.level];
     }
 
     public void Reroll()

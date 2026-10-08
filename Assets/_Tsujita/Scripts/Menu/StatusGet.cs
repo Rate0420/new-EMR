@@ -33,7 +33,7 @@ public class StatusGet : MonoBehaviour
 
     public CharacterData characterData;
     private int nowStory;   // ストーリー進行度
-    public int miniStory;  // ミニイベ進行度
+    public int miniStory;   // ミニイベ進行度
     private int nowNo = -1; // バフ削除用
 
     public bool isBuff;     // バフスロットに空きがあるか

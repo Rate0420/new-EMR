@@ -15,13 +15,9 @@ public class ItemButton : MonoBehaviour
 
     public event Action<ItemData> OnButtonClicked;
 
-    // ‰¼’u‚«
-    public int round = 3;
-
     private void Awake()
     {
         button = GetComponent<Button>();
-        round = 3;
     }
 
     private void OnEnable()
@@ -40,7 +36,7 @@ public class ItemButton : MonoBehaviour
         this.item = item;
         icon.sprite = item.icon;
         nameText.text = item.itemName;
-        costText.text = $"{item.cost[round]}–‡"; ;
+        costText.text = $"{item.cost[item.level]}–‡"; ;
     }
 
     private void Select()
