@@ -1041,7 +1041,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 11400000, guid: a86eea320797b324abd04af86654497f, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 382db9b9039931540950a1a9d4c5d715, type: 2}
   - {fileID: 0}
   GoodEndingstoryData:
   - {fileID: 0}
@@ -1050,7 +1050,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 11400000, guid: 3105144ae80cf44439a957616eea1e4c, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 9981697586e17f14c9b42fcf2d56935e, type: 2}
   - {fileID: 0}
 --- !u!4 &414427042
 Transform:

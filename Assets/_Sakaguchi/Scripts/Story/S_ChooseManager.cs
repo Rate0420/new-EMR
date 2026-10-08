@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
-using Microsoft.Win32.SafeHandles;
+using EMR.Core;
 
 /// <summary>
 /// S_StoryData の ChoiceEntry に基づき選択肢UIを表示し、
@@ -37,6 +37,8 @@ public class S_ChooseManager : MonoBehaviour
     [SerializeField] S_CharacterStory Sayo_1;
     [SerializeField] S_CharacterStory Sayo_2;
 
+    [SerializeField] private int medalPerEffect = 10;
+
 
     public bool IsShowingChoices { get; private set; } = false;
 
@@ -47,6 +49,8 @@ public class S_ChooseManager : MonoBehaviour
 
     // 選択肢表示中にフォーカスを維持するための参照
     private GameObject currentFirstBtn = null;
+
+    public MiniEventBet miniEventBet;
 
     // ----------------------------------------------------------------
 
@@ -123,31 +127,73 @@ public class S_ChooseManager : MonoBehaviour
 
         var choice = choices[choiceIndex];
 
-        // キャラ別・ステータス別に変化量をまとめて適用
-        S_AffinityManager.Instance?.ApplyDeltas(choice.statusDeltas);
+        // キャラ別・ステータス別に変化量を適用
+        if (choice.statusDeltas != null && storyData.isMiniEvent)
+        {
+            // 通常は0
+            int effectBonus = 0;
+
+            // ミニイベントなら、消費メダル15枚につき効果+1
+            if (storyData.isMiniEvent && choice.resourceCost > 0)
+            {
+                effectBonus = miniEventBet.betMedal / medalPerEffect;
+            }
+
+            // 実際に消費
+            if (storyData.isMiniEvent && choice.resourceCost > 0)
+            {
+                GameState.Instance.OwnedModel.RemoveMedal(
+                    miniEventBet.betMedal
+                );
+            }
+
+            foreach (var delta in choice.statusDeltas)
+            {
+                int finalDelta = delta.delta;
+
+                // 好感度だけメダルによる強化を適用
+                if (delta.statusKey == "likeability")
+                {
+                    finalDelta += effectBonus;
+                }
+
+                S_AffinityManager.Instance?.Add(
+                    delta.characterId,
+                    delta.statusKey,
+                    finalDelta
+                );
+
+                Debug.Log(
+                    $"[Choice] {delta.characterId}.{delta.statusKey} " +
+                    $"基本:{delta.delta} " +
+                    $"メダル強化:+{effectBonus} " +
+                    $"最終:{finalDelta}"
+                );
+            }
+        }
         // affinity以外(特にlikabilityの処理)
 
         // もしchoiceのkeyがlikabilityだったら
-        if(choice.statusDeltas != null)
-        {
-            foreach (var delta in choice.statusDeltas)
-            {
-                if (delta.statusKey == "likeability")
-                {
-                    switch (delta.characterId)
-                    {
-                        case "Liselotte":
-                            Liselotte.likeability += delta.delta;
-                            Debug.Log("リーゼロッテの好感度");
-                            break;
-                        case "Sayo":
-                            Sayo.likeability += delta.delta;
-                            Debug.Log("小夜の好感度");
-                            break;
-                    }
-                }
-            }
-        }
+        //if (choice.statusDeltas != null)
+        //{
+        //    foreach (var delta in choice.statusDeltas)
+        //    {
+        //        if (delta.statusKey == "likeability")
+        //        {
+        //            switch (delta.characterId)
+        //            {
+        //                case "Liselotte":
+        //                    Liselotte.likeability += delta.delta;
+        //                    Debug.Log("リーゼロッテの好感度");
+        //                    break;
+        //                case "Sayo":
+        //                    Sayo.likeability += delta.delta;
+        //                    Debug.Log("小夜の好感度");
+        //                    break;
+        //            }
+        //        }
+        //    }
+        //}
 
         if (choice.statusDeltas != null)
         {

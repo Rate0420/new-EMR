@@ -29,6 +29,10 @@ public class BallEventQueue : MonoBehaviour
     [SerializeField] BallTest JPCballTest;
     [SerializeField] BallTest JPCCballTest;
 
+    [SerializeField] CameraSwitch cameraSwitch;
+
+    [SerializeField] StatusGet statusGet;
+
     public void EnqueueMiniEvent()
     {
         eventQueue.Enqueue(new BallEvent { type = EventType.MiniEvent });
@@ -92,9 +96,11 @@ public class BallEventQueue : MonoBehaviour
                     yield return GameState.Instance.GameLock.Acquire("Ball", GameLockKind.SubMonitor);
                     isBallActive = true;
                     JPCCballTest.StartJPCC();
+                    cameraSwitch.SetJPCC();
                     Debug.Log("[BallEventQueue] ボール生成完了 isBallActive=true");
                     yield return new WaitUntil(() => !isBallActive);
                     Debug.Log("[BallEventQueue] ボール着地確認");
+                    
                     GameState.Instance.GameLock.Release("Ball");
                     break;
             }
@@ -122,12 +128,19 @@ public class BallEventQueue : MonoBehaviour
             sceneChanger.IsSceneActive
         );
 
+
+
         Debug.Log("[BallEventQueue] ミニイベント開始確認");
 
         // ミニイベント終了まで待つ
         yield return new WaitUntil(() =>
             !sceneChanger.IsSceneActive
         );
+        S_StoryData storyData =
+sceneChanger.MiniEvents[Random.Range(0, sceneChanger.MiniEvents.Length)];
+
+        S_DontDestroyStory.instance.story = storyData;
+        statusGet.miniStory++;
 
         Debug.Log("[BallEventQueue] ミニイベント終了");
     }

@@ -755,7 +755,7 @@ MonoBehaviour:
     se: {fileID: 0}
     voice: {fileID: 0}
     scEffect: 0
-    nextScene: EndingScene
+    nextScene: 
     nextIndex: -1
     choices: []
   - text: "\u4FFA\u306F\u30DD\u30B1\u30C3\u30C8\u306E\u5C0F\u92AD\u3092\u9CF4\u3089\u3057\u306A\u304C\u3089\u3001\u524D\u3092\u8D70\u308B\u6211\u304C\u5BB6\u306E\u30C8\u30E9\u30D6\u30EB\u30E1\u30FC\u30AB\u30FC\u3078\u3068\u3001\u529B\u3044\u3063\u3071\u3044\u58F0\u3092\u5F35\u308A\u4E0A\u3052\u305F\u3002"
@@ -771,6 +771,6 @@ MonoBehaviour:
     se: {fileID: 0}
     voice: {fileID: 0}
     scEffect: 0
-    nextScene: 
+    nextScene: EndingScene
     nextIndex: -1
     choices: []

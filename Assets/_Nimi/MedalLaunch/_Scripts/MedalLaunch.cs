@@ -136,7 +136,7 @@ namespace EMR.Medal.Launch
                 }
             }
         }
-
+        
         /// <summary>
         /// メダルPrefabを生成し、着地点に向かう初速をRigidbodyへ設定する。
         /// </summary>

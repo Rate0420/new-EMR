@@ -21,6 +21,6 @@ MonoBehaviour:
   - "\u30E1\u30C0\u30EB\u767A\u5C04\u6642\u3001\\n\u304B\u308F\u308A\u306B15\uFF05\u3067\u4FA1\u5024\u304C5\u500D\u306E\\n\u91D1\u30E1\u30C0\u30EB\u3092\u767A\u5C04\u3059\u308B\u200B"
   cost: 960000002c010000f401000078030000
   icon: {fileID: 21300000, guid: 611bbe7b44fdb764dbd13fa8403e353f, type: 3}
-  effect: {fileID: 11400000, guid: 80eb1eff844317d4aa6c27d2636282cc, type: 2}
+  effect: {fileID: 11400000, guid: f6517fb61b2451e43ada6d1542a94ed7, type: 2}
   isConsumable: 0
   level: 1
