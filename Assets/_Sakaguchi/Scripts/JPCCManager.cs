@@ -18,6 +18,8 @@ public class JPCCManager : MonoBehaviour
 
     public int JPCMaxPrise;
 
+    [SerializeField] CameraSwitch cameraSwitch;
+
 
     [SerializeField] BallTest JPCBallTest;
     [SerializeField] BallTest JPCCBallTest;
@@ -76,6 +78,7 @@ public class JPCCManager : MonoBehaviour
                 JPCBallTest.StartJPCC();
                 // ballsをdestroyする
                 JPCCBallTest.Balls.ForEach(ball => Destroy(ball));
+                cameraSwitch.SetJPC();
 
                 break;
             case 4:
@@ -83,11 +86,13 @@ public class JPCCManager : MonoBehaviour
                 // ← BallEventQueue経由をやめて直接JPCPayoutManagerへ依頼
                 //   (ミニイベント/ボール発射と同じキューに並ぶと払い出しが後回しになるため)
                 payoutManager.Payout(HighPrise[0]); // 今は仮だがラウンド進行によって変わるようにする
+                cameraSwitch.SetDefault();
                 break;
             case 2:
             case 6:
                 // Middle
                 payoutManager.Payout(MiddlePrise[0]); // 今は仮だがラウンド進行によって変わるようにする
+                cameraSwitch.SetDefault();
                 break;
             case 1:
             case 3:
@@ -95,6 +100,7 @@ public class JPCCManager : MonoBehaviour
             case 7:
                 // Low
                 payoutManager.Payout(LowPrise[0]); // 今は仮だがラウンド進行によって変わるようにする
+                cameraSwitch.SetDefault();
                 break;
         }
     }
@@ -105,26 +111,30 @@ public class JPCCManager : MonoBehaviour
         {
             case 0:
                 payoutManager.Payout(JPCMaxPrise);
+                cameraSwitch.SetDefault();
                 break;
             case 3:
             case 7:
                 // High
                 // ← BallEventQueue経由をやめて直接JPCPayoutManagerへ依頼
                 //   (ミニイベント/ボール発射と同じキューに並ぶと払い出しが後回しになるため)
-                payoutManager.Payout(HighPrise[0]); // 今は仮だがラウンド進行によって変わるようにする
+                payoutManager.Payout(JPCHighPrise[0]); // 今は仮だがラウンド進行によって変わるようにする
+                cameraSwitch.SetDefault();
                 break;
             case 2:
             case 5:
             case 8:
                 // Middle
-                payoutManager.Payout(MiddlePrise[0]); // 今は仮だがラウンド進行によって変わるようにする
+                payoutManager.Payout(JPCMiddlePrise[0]); // 今は仮だがラウンド進行によって変わるようにする
+                cameraSwitch.SetDefault();
                 break;
             case 1:
             case 4:
             case 6:
             case 9:
                 // Low
-                payoutManager.Payout(LowPrise[0]); // 今は仮だがラウンド進行によって変わるようにする
+                payoutManager.Payout(JPCLowPrise[0]); // 今は仮だがラウンド進行によって変わるようにする
+                cameraSwitch.SetDefault();
                 break;
         }
     }

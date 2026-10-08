@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: RoundProgressionSettings
   m_EditorClassIdentifier: 
   _roundRequirements:
+  - <RequiredBallCount>k__BackingField: 2
+    <RequiredMedalCount>k__BackingField: 55
   - <RequiredBallCount>k__BackingField: 4
     <RequiredMedalCount>k__BackingField: 111
   - <RequiredBallCount>k__BackingField: 6
-    <RequiredMedalCount>k__BackingField: 333
+    <RequiredMedalCount>k__BackingField: 222
   - <RequiredBallCount>k__BackingField: 8
+    <RequiredMedalCount>k__BackingField: 333
+  - <RequiredBallCount>k__BackingField: 10
     <RequiredMedalCount>k__BackingField: 555
   - <RequiredBallCount>k__BackingField: 12
     <RequiredMedalCount>k__BackingField: 777
-  - <RequiredBallCount>k__BackingField: 12
-    <RequiredMedalCount>k__BackingField: 999
-  - <RequiredBallCount>k__BackingField: 18
-    <RequiredMedalCount>k__BackingField: 1222
   - <RequiredBallCount>k__BackingField: 0
     <RequiredMedalCount>k__BackingField: 11
   - <RequiredBallCount>k__BackingField: 0

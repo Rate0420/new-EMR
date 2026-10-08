@@ -15,7 +15,8 @@ public class MiniEventBet : MonoBehaviour
     [SerializeField] TextMeshProUGUI consumptionText;
     [SerializeField] TextMeshProUGUI EffectText;
 
-    public int consumptionMedal = 15;
+    public int consumptionMedal = 10;
+    public int betMedal = 0;
 
     void Start()
     {
@@ -40,7 +41,8 @@ public class MiniEventBet : MonoBehaviour
         effectInt++;
 
         medalText.text = "所持メダル：" + textMedals.ToString();
-        consumptionText.text = "消費メダル"+(consumptionMedal*effectInt).ToString();
+        betMedal = consumptionMedal * effectInt;
+        consumptionText.text = "消費メダル"+ betMedal.ToString();
         EffectText.text = Effect();
         
     }
@@ -53,7 +55,8 @@ public class MiniEventBet : MonoBehaviour
             textMedals += consumptionMedal;
 
             medalText.text = "所持メダル：" + textMedals.ToString();
-            consumptionText.text = "消費メダル" + (consumptionMedal * effectInt).ToString();
+            betMedal = consumptionMedal * effectInt;
+            consumptionText.text = "消費メダル" + betMedal.ToString();
             EffectText.text = Effect();
         }
     }
@@ -64,9 +67,9 @@ public class MiniEventBet : MonoBehaviour
         { 
             case 0: return "効果なし";
             case 1: return "微増";
-            case 2: return "微増";
-            case 3: return "増加";
-            case 4: return "増加";
+            case 2: return "増加";
+            case 3: return "中増加";
+            case 4: return "大増加";
         }
         if (effectInt >= 5)
         {

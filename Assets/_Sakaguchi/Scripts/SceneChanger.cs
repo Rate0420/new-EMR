@@ -18,7 +18,10 @@ public class SceneChanger : MonoBehaviour
 
     bool isStartmenuprocessing = false;
 
-    [SerializeField] S_StoryData[] MiniEvents;  // ミニイベントのシナリオデータを格納する配列。プロローグ後に攻略キャラを選んだ際に格納する事
+    public S_StoryData[] MiniEvents;  // ミニイベントのシナリオデータを格納する配列。プロローグ後に攻略キャラを選んだ際に格納する事
+
+    [SerializeField] S_StoryData[] Liselotte_MiniEvents;
+    [SerializeField] S_StoryData[] Sayo_MiniEvents;
 
     // メニュー・シナリオ終了時にpauseRequestedを解除する
     [SerializeField] float returnDelay = 2.0f; // Inspectorで調整可能
@@ -36,6 +39,18 @@ public class SceneChanger : MonoBehaviour
     private void Start()
     {
         gamePause = GameState.Instance.GamePause;
+        switch (PlayerPrefs.GetInt("RouteNo"))
+        {
+            case 5:
+                MiniEvents = Liselotte_MiniEvents;
+                break;
+        }
+        switch (PlayerPrefs.GetInt("RouteNo"))
+        {
+            case 6:
+                MiniEvents = Sayo_MiniEvents;
+                break;
+        }
     }
 
     private void Update()

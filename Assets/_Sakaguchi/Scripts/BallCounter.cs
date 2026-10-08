@@ -31,7 +31,7 @@ public class BallCounter : MonoBehaviour
         }
 
         // %5でJPC（キューに積む）
-        if (ballCount % 5 == 0)
+        if (ballCount % 4 == 0)
         {
             ballEventQueue.EnqueueBallSpawn();
         }
