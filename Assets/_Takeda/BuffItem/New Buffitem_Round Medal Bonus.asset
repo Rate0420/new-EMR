@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: New Buffitem_Round Medal Bonus
   m_EditorClassIdentifier: 
   roundMedalBonus:
-  - 5
-  - 10
-  - 20
-  - 25
+  - 0.05
+  - 0.1
+  - 0.2
+  - 0.25

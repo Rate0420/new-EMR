@@ -13,6 +13,7 @@ namespace EMR.Medal.Hole
         [SerializeField] bool _isCount = false;    // カウントするかどうか
         [SerializeField] ReserveManager reserveManager;
         [SerializeField] BallCounter ballCounter;
+        [SerializeField] SlotManager slotManager;
 
         /// <summary>
         /// 何かが判定されたときに発行されるイベント（引数を汎用的なICollectableに変更）
@@ -64,6 +65,19 @@ namespace EMR.Medal.Hole
                     // SE予定地:チャッカー
                     reserveManager?.AddReserve();
                     SEManager.Instance.SEPlays(SEManager.SEType.Chukka);
+                }
+
+                if (!_isCount && !_isJackSpot)
+                {
+                    // randomRangeして、slotManagerのsideHoleSaveChance以下だったらカウント
+                    float randomValue = UnityEngine.Random.Range(0f, 1f);
+                    if (randomValue < slotManager.sideHoleSaveChance)
+                    {
+                        // SE予定地:コイン獲得時SE
+                        SEManager.Instance.SEPlays(SEManager.SEType.GetCoin);
+                        OnCollected?.Invoke(collectable);
+                        OnCollectedAt?.Invoke(collectable, HitPosition);
+                    }
                 }
             }
         }

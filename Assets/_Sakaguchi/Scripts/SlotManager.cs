@@ -26,6 +26,8 @@ public class SlotManager : MonoBehaviour
 
     public bool IsBusy { get; private set; } = false;
 
+    public float sideHoleSaveChance = 0f;
+
     /*
      
     ・Weak（ほぼ外れ）

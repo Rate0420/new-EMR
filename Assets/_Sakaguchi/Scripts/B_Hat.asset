@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 0
   itemName: "\u6D3E\u624B\u306A\u5E3D\u5B50"
-  description: "20\uFF05\u306E\u78BA\u7387\u3067\u6A2A\u7A74\u306B\u843D\u3061\u305F\u30E1\u30C0\u30EB\u3092\\n\u7372\u5F97\u6271\u3044\u306B\u3059\u308B"
-  cost: 
+  description: []
+  cost: c8000000900100005802000020030000
   icon: {fileID: 21300000, guid: 47888ff2ebd13aa40a1ccb4f85bee32c, type: 3}
-  effect: {fileID: 0}
+  effect: {fileID: 11400000, guid: 4a366cc8132a09b479d425044cb5aab4, type: 2}
   isConsumable: 0
   level: 0

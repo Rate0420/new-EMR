@@ -7,7 +7,7 @@ public class Buffitem_FlashyHat : ItemEffect
 
     public override void OnInventoryChanged(ItemEffectContext context, int itemLevel)
     {
-       // context.slotManager.sideHoleSaveChance = sideHoleSaveChance[itemLevel];
+       context.slotManager.sideHoleSaveChance = sideHoleSaveChance[itemLevel];
 
         Debug.Log($"”hè‚È–XqF‰¡ŒŠ‹~ÏŠm—¦ {sideHoleSaveChance[itemLevel] * 100}%");
     }

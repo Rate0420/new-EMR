@@ -2651,6 +2651,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2112621049}
     - target: {fileID: 7241398322343055628, guid: 64189d66509631d49b71f4d5f609d5e6, type: 3}
+      propertyPath: slotManager
+      value: 
+      objectReference: {fileID: 614288897}
+    - target: {fileID: 7241398322343055628, guid: 64189d66509631d49b71f4d5f609d5e6, type: 3}
       propertyPath: reserveManager
       value: 
       objectReference: {fileID: 3145812315458884391}
@@ -5101,6 +5105,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2112621049}
     - target: {fileID: -1976194871765231957, guid: d47a8f7886fdca84cb751e783c1539de, type: 3}
+      propertyPath: slotManager
+      value: 
+      objectReference: {fileID: 614288897}
+    - target: {fileID: -1976194871765231957, guid: d47a8f7886fdca84cb751e783c1539de, type: 3}
       propertyPath: reserveManager
       value: 
       objectReference: {fileID: 3145812315458884391}
@@ -5118,7 +5126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3234403400580695367, guid: d47a8f7886fdca84cb751e783c1539de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.5
+      value: -21.2
       objectReference: {fileID: 0}
     - target: {fileID: 3234403400580695367, guid: d47a8f7886fdca84cb751e783c1539de, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5933,6 +5941,7 @@ MonoBehaviour:
   testflg: 0
   bgManager: {fileID: 2038123585}
   winManager: {fileID: 611267530}
+  sideHoleSaveChance: 0
 --- !u!4 &614288898
 Transform:
   m_ObjectHideFlags: 0
@@ -6425,6 +6434,10 @@ PrefabInstance:
       propertyPath: ballCounter
       value: 
       objectReference: {fileID: 2112621049}
+    - target: {fileID: -1976194871765231957, guid: d47a8f7886fdca84cb751e783c1539de, type: 3}
+      propertyPath: slotManager
+      value: 
+      objectReference: {fileID: 614288897}
     - target: {fileID: -1976194871765231957, guid: d47a8f7886fdca84cb751e783c1539de, type: 3}
       propertyPath: reserveManager
       value: 
