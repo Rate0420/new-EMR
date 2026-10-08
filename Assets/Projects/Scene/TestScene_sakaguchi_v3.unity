@@ -7794,6 +7794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946feaac6e76a2e46946d7c6c872b762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cameraSwitch: {fileID: 828441235}
   _medalRigidbodyPrefab: {fileID: 2764741081746486083, guid: 3cb9304156e295e458528324926f3f35, type: 3}
   _medalParentTransform: {fileID: 1852758205}
   _mouseInputCamera: {fileID: 1020852543}
@@ -8404,7 +8405,7 @@ MonoBehaviour:
   moveSpeed: 5
   rotateSpeed: 5
   Camera: {fileID: 828441232}
-  currentCameraPosition: 0
+  CurrentCameraPosition: 0
 --- !u!1001 &853884200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13493,7 +13494,7 @@ PrefabInstance:
     - target: {fileID: 4181196725714426870, guid: d584136267bea624f966dcf3043aec4b, type: 3}
       propertyPath: 'buffStats.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 947cdafa365898f41ac685b1c3748473, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4603365489695426938, guid: d584136267bea624f966dcf3043aec4b, type: 3}
       propertyPath: m_IsActive
       value: 0

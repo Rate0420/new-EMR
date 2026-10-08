@@ -127,8 +127,8 @@ namespace EMR.Medal.Launch
             if (Input.GetMouseButtonDown(0))
             {
                 if (GameState.Instance.OwnedModel.Count > 0 && !GameState.Instance.GamePause.isPaused
-                    && !EventSystem.current.IsPointerOverGameObject()
-                    && _cameraSwitch.CurrentCameraPosition == CameraPosition.Default)
+                    //&& !EventSystem.current.IsPointerOverGameObject()
+                    /*&& _cameraSwitch.CurrentCameraPosition == CameraPosition.Default*/)
                 {
                     Launch();
                     GameState.Instance.OwnedModel.RemoveMedal();
