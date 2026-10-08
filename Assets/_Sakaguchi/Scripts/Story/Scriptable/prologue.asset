@@ -22,7 +22,7 @@ MonoBehaviour:
     char2Sprite: {fileID: 0}
     char2OffsetX: 0
     char2OffsetY: 0
-    bgSprite: {fileID: 0}
+    bgSprite: {fileID: 21300000, guid: 1afec00ef3038b04397d98046bf0da09, type: 3}
     bgm: {fileID: 8300000, guid: 97f2888bc3e560141a35ecc89f43af2f, type: 3}
     se: {fileID: 0}
     voice: {fileID: 0}
@@ -150,7 +150,7 @@ MonoBehaviour:
     char2Sprite: {fileID: 0}
     char2OffsetX: 0
     char2OffsetY: 0
-    bgSprite: {fileID: 0}
+    bgSprite: {fileID: 21300000, guid: 338d50fa86fe7234dbac714a02553e1d, type: 3}
     bgm: {fileID: 0}
     se: {fileID: 0}
     voice: {fileID: 0}
@@ -390,7 +390,7 @@ MonoBehaviour:
     char2Sprite: {fileID: 0}
     char2OffsetX: 0
     char2OffsetY: 0
-    bgSprite: {fileID: 0}
+    bgSprite: {fileID: 21300000, guid: cca9b0c2433493c458fd1ef53732622e, type: 3}
     bgm: {fileID: 0}
     se: {fileID: 0}
     voice: {fileID: 0}

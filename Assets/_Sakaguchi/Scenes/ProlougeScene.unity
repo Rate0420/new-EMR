@@ -2240,6 +2240,8 @@ MonoBehaviour:
   Liselotte_2: {fileID: 11400000, guid: 1e3e975d3c3b7fd4aa752137dad59da2, type: 2}
   Sayo_1: {fileID: 0}
   Sayo_2: {fileID: 0}
+  medalPerEffect: 10
+  miniEventBet: {fileID: 0}
 --- !u!1 &742259843
 GameObject:
   m_ObjectHideFlags: 0
@@ -3501,7 +3503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Liselotte: {fileID: 11400000, guid: 6e70425a5d0859845b0c5806da4c8a97, type: 2}
-  Sayo: {fileID: 0}
+  Sayo: {fileID: 11400000, guid: d1d9ea4171a7a214ca04c2ebbbc75986, type: 2}
   story: {fileID: 11400000, guid: c7f8f1d132414d047ad52af2126dbc38, type: 2}
   characterStory: {fileID: 0}
 --- !u!4 &946415719
@@ -5190,6 +5192,7 @@ MonoBehaviour:
   consumptionText: {fileID: 788535339}
   EffectText: {fileID: 743071710}
   consumptionMedal: 15
+  betMedal: 0
 --- !u!4 &2097658646
 Transform:
   m_ObjectHideFlags: 0
