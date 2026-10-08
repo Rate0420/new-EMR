@@ -8,12 +8,14 @@ public enum ItemType
     [InspectorName("高そうな腕時計")] b_Watch,
     [InspectorName("スタイリッシュなズボン")] b_Pants,
     [InspectorName("スポーツ店の靴")] b_Shoes,
+    [InspectorName("懐かしい手袋")] b_Gloves,
 
     //消費アイテム
     [InspectorName("観覧車のチケット")]c_Wheel,
     [InspectorName("メダルウォール")] c_Wall,
     [InspectorName("フリーシューティング")] c_Shutar,
-    [InspectorName("クエイクスタンプ")]c_stamp,
+    [InspectorName("クエイクスタンプ")] c_Stamp,
+    [InspectorName("ラッキーセブン")] c_Seven,
 
     // 選択肢ボール
     [InspectorName("選択肢ボール1")] s_Ball_1,

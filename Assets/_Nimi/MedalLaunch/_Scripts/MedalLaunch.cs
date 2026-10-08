@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using EMR.Core;
 using EMR.Medal;
+using UnityEngine.EventSystems;
 namespace EMR.Medal.Launch
 {
     /// <summary>
@@ -10,6 +11,8 @@ namespace EMR.Medal.Launch
     /// </summary>
     public partial class MedalLaunch : MonoBehaviour, IMedalLaunch
     {
+        [SerializeField] CameraSwitch _cameraSwitch;
+
         //発射時に生成するメダルPrefabのRigidbody。
         [Header("メダルの設定")]
         [SerializeField, FormerlySerializedAs("_medalPrefab")]
@@ -123,7 +126,9 @@ namespace EMR.Medal.Launch
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (GameState.Instance.OwnedModel.Count > 0 && !GameState.Instance.GamePause.isPaused)
+                if (GameState.Instance.OwnedModel.Count > 0 && !GameState.Instance.GamePause.isPaused
+                    && !EventSystem.current.IsPointerOverGameObject()
+                    && _cameraSwitch.CurrentCameraPosition == CameraPosition.Default)
                 {
                     Launch();
                     GameState.Instance.OwnedModel.RemoveMedal();

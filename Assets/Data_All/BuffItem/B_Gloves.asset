@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a08cfff6061160c4dabe5fa9633f7202, type: 3}
+  m_Name: B_Gloves
+  m_EditorClassIdentifier: 
+  itemType: 5
+  itemName: "\u61D0\u304B\u3057\u3044\u624B\u888B"
+  description:
+  - "\u305F\u307E\u306B\u767A\u5C04\u3057\u305F\u30E1\u30C0\u30EB\u304C\u7740\u5F3E\u6642/n\u7206\u767A\u3057\u5468\u8FBA\u306E\u3082\u306E\u3092\u5439\u304D\u98DB\u3070\u3059\u200B"
+  - "\u305F\u307E\u306B\u767A\u5C04\u3057\u305F\u30E1\u30C0\u30EB\u304C\u7740\u5F3E\u6642/n\u7206\u767A\u3057\u5468\u8FBA\u306E\u3082\u306E\u3092\u5439\u304D\u98DB\u3070\u3059\u200B(\u7BC4\u56F2\u304C\u4E0A\u6607)"
+  - "\u305F\u307E\u306B\u767A\u5C04\u3057\u305F\u30E1\u30C0\u30EB\u304C\u7740\u5F3E\u6642/n\u7206\u767A\u3057\u5468\u8FBA\u306E\u3082\u306E\u3092\u5439\u304D\u98DB\u3070\u3059\u200B(\u7BC4\u56F2\u304C\u4E0A\u6607)"
+  - "\u305F\u307E\u306B\u767A\u5C04\u3057\u305F\u30E1\u30C0\u30EB\u304C\u7740\u5F3E\u6642/n\u7206\u767A\u3057\u5468\u8FBA\u306E\u3082\u306E\u3092\u5439\u304D\u98DB\u3070\u3059\u200B(\u7BC4\u56F2\u304C\u4E0A\u6607)"
+  cost: 5e0100000d020000ee020000e8030000
+  icon: {fileID: 21300000, guid: e5b9312826961cf48a689760078e3386, type: 3}
+  effect: {fileID: 0}
+  isConsumable: 0
+  level: 0
